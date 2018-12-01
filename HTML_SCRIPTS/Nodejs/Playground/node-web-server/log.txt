@@ -1,0 +1,6 @@
+{
+    "user": "aryan",
+    "time": "Sat Nov 24 2018 13:25:26 GMT+0530 (DST)",
+    "httpMethod": "GET",
+    "url": "/favicon.ico"
+}

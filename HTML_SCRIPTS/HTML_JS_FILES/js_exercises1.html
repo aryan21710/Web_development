@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html><head>
+<meta charset=utf-8 />
+<title>Return first and last name from a form - w3resource</title>
+</head><body>
+<form id="form1" onsubmit="getFormvalue()">
+First name: <input type="text" name="fname" value="David"><br>
+Last name: <input type="text" name="lname" value="Beckham"><br>
+<input type="submit" value="Submit">
+</form>
+<p><a id="w3r" type="text/html" hreflang="en-us" rel="nofollow" target="_self" href="https://www.w3resource.com/">w3resource</a></p>
+<button onclick="getAttributes()">Click here to get  attributes value</button>
+<hr>
+<table id="sampleTable" border="1">
+<tr><td>Row1 cell1</td>
+<td>Row1 cell2</td></tr>
+<tr><td>Row2 cell1</td>
+<td>Row2 cell2</td></tr>
+</table><br>
+<input type="button" onclick="insert_Row()" value="Insert row"> 
+<br><hr>
+
+<table id="myTable" border="1">
+<tr>
+	<td>Row1 cell1</td>
+    <td>Row1 cell2</td>
+</tr>
+<tr>
+	<td>Row2 cell1</td>
+    <td>Row2 cell2</td>
+</tr>
+<tr>
+	<td>Row3 cell1</td>
+    <td>Row3 cell2</td>
+</tr>
+</table><form>
+<input type="button" onclick="changeContent(1,2,'changed by JS')" value="Change content">
+</form>
+<br><hr>
+
+
+
+<p>Click the button to get multiply every element in the array with a specific number.</p>
+<p>Multiply with: <input type="number" id="multiplyWith" value="100"></p>
+<button onclick="numbers.forEach(myFunction)">Try it</button>
+
+<p>Updated array: <span id="demo">5</span></p>
+
+<script>
+
+	numbers=[11,22,33,44];
+	// function myFunction(item,index,arr) {
+
+	// }
+	myFunction=(item,index,arr)=> {
+		var value=document.getElementById('multiplyWith').value;
+		arr[index]=value*item;
+		document.getElementById('demo').innerHTML=numbers;	
+	}
+
+	function getFormvalue() {
+		var id=document.querySelectorAll('INPUT');
+		for (var i=0; i < id.length; i++) {
+			if (id[i].type=='text') {
+				alert(id[i].value);
+			}
+			
+		}
+		
+	}
+
+	function getAttributes() {
+		var id=document.querySelector('#w3r');
+		alert('hreflang:='+id.hreflang);
+		alert('target:-'+id.target);
+		alert('href:-'+id.href);
+	}
+
+	function insert_Row() {
+
+		var id=document.getElementById('sampleTable');
+		var tr=document.createElement('tr');
+		var td1=document.createElement('td');
+		var t1=document.createTextNode('NEW ROW1');
+		var td2=document.createElement('td');
+		var t2=document.createTextNode('NEW ROW2');
+		td1.appendChild(t1);
+		td2.appendChild(t2);
+		tr.appendChild(td1);
+		tr.appendChild(td2);
+		id.appendChild(tr);
+
+	}
+
+	function changeContent(r,c,st) {
+		var id=document.getElementById('myTable');
+		var tr=id.querySelectorAll('tr');
+		var td=id.querySelectorAll('td');
+
+		// alert(trlist.length+':'+tdlist.length);
+
+		// for (var i=0; i < tdlist.length; i++) {
+		// 	alert(tdlist[i].childNodes.innerHTML);
+		// }
+
+		for  (var i=1; i <= tr.length; i++) {
+			for ( var j=1; j <= td.length; j++) {
+					if (i==r && j==c) {
+						//var a=tr[i].childNodes;
+					   //alert(a);
+					alert('row' + i + 'X' + 'cell'+j+':-'+tr[i][j].innerHTML);
+					}
+			}
+
+		}
+
+	}
+</script>
+</body>
+</html>

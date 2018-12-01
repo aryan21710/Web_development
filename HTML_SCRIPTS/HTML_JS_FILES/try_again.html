@@ -1,0 +1,92 @@
+<html>
+  <head>
+    <style type="text/css">
+
+      * {
+        margin: 0px;
+      }
+
+
+      h1 {
+        background: rgba(100,100,100,0.4);
+        text-align: center;
+        height:60px;
+        color : blue;
+        padding: 20px;
+
+      }
+
+         .c1 {
+        background: rgba(255,0,0,0.4);
+        padding: 50px;
+      }
+
+        .c2 {
+        background: blue;
+        padding: 100px 300px;
+      }
+
+        .c3 {
+        background: rgba(0,0,255,0.4);
+      }
+
+      .c1 p {
+        border: 40px solid black;
+        border-radius: 80px;
+        padding: 50px;
+        width: 70px;
+        height: 50px;
+        font: 10px bold arial;
+        transition: .5s;
+        display: block;
+        margin: 0 auto;
+      }
+
+  .c2 p {
+        border: 10px solid black;
+        border-radius: 180px;
+        padding: 100px;
+        width: 100px;
+        height: 50px;
+        font: 20px bold arial;
+        transition: .5s;
+        display: block;
+      }
+
+      .c1,.c2, .c3 {
+        height: 60%
+      }
+
+      .c1 p:hover {
+        border-radius: 180px;
+        transition: .5s;
+        width: 200px;
+        height: 100px;
+      }
+
+      .c2 p:hover {
+        border-radius: 80px;
+        width: 200px;
+        height: 100px;
+        transition: .5s;
+        opacity: 0.5;
+        box-shadow: 0px 0px 100px 50px rgba(255,255,255,.5);
+      }
+
+      p:hover {
+        background: rgba(255,255,255,0.8);
+        border-color: red;
+      }
+
+    </style>
+  </head>
+  <body>
+    <h1>'WELCOME TO THE TRANSITION EFFECT'</h1>
+    <div class='c1'>
+      <p> BIG TO SMALL </p>
+    </div>
+    <div class='c2'>
+      <p> SMALL TO BIG </p>
+    </div>
+  </body>
+</html>

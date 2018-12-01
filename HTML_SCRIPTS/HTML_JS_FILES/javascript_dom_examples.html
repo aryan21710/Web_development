@@ -1,0 +1,250 @@
+<html>
+  <head>
+    <style type="text/css">
+
+    * {
+      box-sizing: border-box;
+    }
+
+      #boxdiv {
+        width : 100%;
+        height: 100%;
+        background: lightblue;
+        margin : auto;
+        cursor : pointer;
+        overflow: auto;
+
+      }
+
+      #container {
+        display: flex;
+        flex-wrap: nowrap;
+        background-color: aqua;
+        border: 5px solid black;
+
+      }
+
+      #container.first-child{
+        display: inline-block;
+      }
+
+      .c1 {
+            width : 30%;
+            text-align : center;
+            color : black;
+            padding : 10px 0px;
+            word-spacing: 1px;
+            font: 20px solid arial;
+            float: left;
+            border : 5px solid black;
+            margin : 20px 10px 20px 10px;
+            display: block;
+          }
+
+      #boxdiv .c1:first-child {
+        background-color: red
+      }
+
+      #boxdiv .c1:nth-child(even) {
+        background-color: green;
+      }
+
+      #boxdiv .c1:last-child {
+        background-color: blue;
+      }
+
+/*  2nd Example */
+      #vis-expandId, #hid-expandId {
+        margin : auto;
+        background-color: blue;
+        color : orange;
+        width: 95%;
+        clear : both;
+        padding: 20px 150px;
+        box-sizing: border-box;
+        border: 1px solid white;
+        text-align: center;
+        letter-spacing: 2px;
+        font: 20px oblique arial;
+      }
+
+      #vis-expandId {
+        display: block;
+      }
+
+      #hid-expandId {
+        display: none;
+      }
+
+/* 3rd Example */
+
+      #navbar p  {
+        margin:20px 0px 0px 0px;
+        background: grey;
+        width: 150px;
+        border: 1px solid white;
+        border-collapse: collapse;
+        display: inline-block;
+      }
+
+
+      #hid-expandNav-File, #hid-expandNav-Edit, #hid-expandNav-Find{
+        background: grey;
+        width: 141px;
+        text-align: left;
+        padding : 0px 5px;
+        margin-top:0px;
+        visibility: hidden;
+        border: 1px solid white;
+        border-collapse: collapse;
+        display: inline-block;
+
+      }
+
+      h1 {
+        word-spacing: 1px;
+        font-weight: bold;
+        text-align: center;
+        margin: auto;
+
+      }
+
+
+
+      li {
+        list-style-type: none;
+        display: block;
+        text-align: left;
+
+      }
+
+      a:hover, input:hover {
+        color: red;
+        text-shadow: 1px 1px 2px;
+      }
+
+
+
+
+    </style>
+  </head>
+
+  <body>
+       <div id="boxdiv">
+          <h1> WITHOUT HEIGHT ATTR, THE 3 BOXES ARE ALIGNED <br>
+            PROPERLY. <br> THANKS TO DISPLAY : FLEX ATTR </h1>
+        <div id="container">
+
+          <div id="panel1" class="c1">
+            <p> CLICK <br> TO HIDE <br> THE PANEL <br> </p>
+            <button onclick="hide()"> HIDE </button>
+          </div>
+
+           <div id="panel2" class="c1">
+              <p> CLICK TO REMOVE THE PANEL </p>
+              <button onclick="remove()"> REMOVE </button>
+            </div>
+
+            <div id="panel3" class="c1">
+              <p> CLICK TO RESET THE LAYOUT </p>
+              <button onclick="reset()"> RESET ALL </button>
+            </div>
+          </div>
+
+            <p id="vis-expandId" onclick='expand()'><input type="submit" name="HIDE" value="EXPAND"></p>
+            <div id="hid-expandId">
+              <p>'THESE ARE THE CONTENTS OF THE HIDDEN BLOCK'</p>
+              <p>'THESE ARE THE CONTENTS OF THE HIDDEN BLOCK'</p>
+              <p onclick='hidepanel()'><input type="submit" name="submit" value="HIDE"></p>
+            </div>
+
+            <div id="navbar">
+                <p onclick="expandNavFile()"><a> File </a></p>
+                <p onclick="expandNavEdit()"><a> Edit </a></p>
+                <p onclick="expandNavFind()"><a> View </a></p>
+                <br>
+                  <ul id="hid-expandNav-File">
+                    <li><a>  Open File </a></li>
+                    <li><a>  New File  </a></li>
+                    <li><a>  Save As   </a></li>
+                    <li><a>  Close File </a></li>
+                    <li><a>  Quit  </a></li>
+                  </ul>
+
+
+                <ul id="hid-expandNav-Edit">
+                  <li><a>  Copy </a></li>
+                  <li><a>  Cut  </a></li>
+                  <li><a>  Paste   </a></li>
+                  <li><a>  Paste and Indent </a></li>
+                  <li><a>  Paste and History  </a></li>
+                </ul>
+
+
+                <ul id="hid-expandNav-Find">
+                  <li><a>  Find </a></li>
+                  <li><a>  Find-All  </a></li>
+                  <li><a>  Find-Next  </a></li>
+                  <li><a>  Replace   </a></li>
+                  <li><a>  Replace-All </a></li>
+                </ul>
+
+
+
+            </div>
+          </div>
+
+    <script>
+
+
+
+        function hide() {
+          document.getElementById("panel1").style.display="none";
+        }
+
+        function remove() {
+          document.getElementById("panel2").style.visibility="hidden";
+        }
+
+        function reset() {
+          document.getElementById("panel1").style.display="block";
+          document.getElementById("panel2").style.visibility="visible";
+        }
+
+        function expand() {
+          document.getElementById("hid-expandId").style.display="block";
+        }
+
+        function hidepanel() {
+          document.getElementById("hid-expandId").style.display="none";
+        }
+
+
+        function expandNavFile() {
+          document.getElementById("hid-expandNav-File").style.visibility="visible";
+          document.getElementById("hid-expandNav-Edit").style.visibility="hidden";
+          document.getElementById("hid-expandNav-Find").style.visibility="hidden";
+
+
+        }
+
+        function expandNavEdit() {
+          document.getElementById("hid-expandNav-Edit").style.visibility="visible";
+          document.getElementById("hid-expandNav-File").style.visibility="hidden";
+          document.getElementById("hid-expandNav-Find").style.visibility="hidden";
+
+        }
+
+        function expandNavFind() {
+                    document.getElementById("hid-expandNav-Find").style.visibility="visible";
+          document.getElementById("hid-expandNav-File").style.visibility="hidden";
+          document.getElementById("hid-expandNav-Edit").style.visibility="hidden";
+        }
+
+
+    </script>
+  </body>
+</html>
+
+
+

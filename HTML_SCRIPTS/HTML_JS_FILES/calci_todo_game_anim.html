@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+
+	<style>
+		body {
+			background-image: url('red-black-spiderman.jpg');
+			background-size: 1400px 800px;
+			background-repeat: no-repeat;
+			font-family: 'Fjalla One', sans-serif;
+			text-decoration: none;
+
+		}
+
+		#navbar {
+			margin-top : 20px;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			position: relative;
+
+		}
+
+		#ToDo, #Calci, #Games {
+			/*border: 1px solid red;*/
+			position: absolute;
+			top: 10px;
+		}
+
+		#ToDo {
+			left : 0px;
+		}
+
+		#Calci {
+			left : 900px;
+		}
+
+		#Games {
+			left : 600px;
+		}
+
+		#Calci {width:30%; height: 100px;margin-top: 20px;}
+		#ToDo {width: 40.5%; height: 100px;margin: 20px 0px;}
+		#Games {width: 15%; height:200px;  margin-top: 10px;}
+
+		#navbarToDo, #navbarCalci, #navbarGames {
+			color: white;
+			height: 20px;
+			text-decoration: none;
+			font-size: 25px;	
+			text-align: center;
+			/*border : 1px solid red;*/
+		}
+
+		#navbarToDo {
+			margin-left: 230px;
+
+		}
+
+		#navbarCalci {
+				margin-left: 130px;
+		}
+
+		#navbarGames {
+				margin-left: 0px;
+		}
+
+		#Games ul {
+			margin:0;
+			padding:0;
+		}
+
+
+		#Games li {
+			width: 180px;
+			height: 30px;
+			text-align: center;
+			/*border : 1px solid red;		*/
+			padding: 10px 0px;
+			cursor: pointer;
+		}
+
+		#Games li:first-child a{
+			color: white;
+			text-decoration: none;
+			font-size: 25px;
+			/*text-shadow: 2px 2px #FF0000;*/
+		}
+
+		#Games li a {
+			color: white;
+			text-decoration: none;
+			font-size: 20px;
+			/*text-shadow: 2px 2px #FF0000;*/
+		}
+
+		#Games li:nth-child(2), #Games li:nth-child(3), #Games li:nth-child(4) {
+			display: none;
+		}
+
+		@keyframes example {
+			from {color: white; top:20px;}
+			to {color: #bfbfbf; text-shadow: 2px 2px #FF0000; top: 300px;}
+		}
+
+		@keyframes example1 {
+			
+			from {color: #bfbfbf; text-shadow: 2px 2px #FF0000; top: 500px;}
+			to {color: white; top:20px;}
+		}
+
+		#ToDo:hover, #Games:hover, #Calci:hover {
+			color: #bfbfbf; text-shadow: 2px 2px #FF0000;
+		}
+
+
+
+	</style>
+
+
+	</style>
+</head>
+<body>
+		<div id="navbar">
+			<div id="ToDo" >
+			<a id="navbarToDo" href="#" onmouseover="expand(this),anim(this)" onmouseleave='orig(this)'> To-Do  </a>	
+			</div>
+			
+			<div id="Games" onmouseleave="hide()">
+				<ul>
+					<li> <a id="navbarGames" href="#" onmouseover="drpdwn(),anim(this)" onmouseleave='orig(this)'> Games  </a> </li>
+					<li><a href='file:///C:/Users/aryan/Desktop/CODING/HTML_SCRIPTS/maths_game.html'> Maths Game </a></li>
+					<li><a> BomberMan </a></li>
+					<li><a> Box Blaster </a></li>
+				<ul>
+			</div>
+			
+			<div id="Calci" >
+			<a id="navbarCalci" href="#"  onmouseover="anim(this)" onmouseleave='orig(this)' onclick='expand(this)'> Calculator </a>
+			</div>
+		</div>
+
+			
+			
+
+<script type="text/javascript">
+
+
+		function anim(x) {
+			var cal=document.getElementById('Calci');
+			var gam=document.getElementById('Games');
+			var nav=document.getElementById('ToDo');
+			// alert(cal.childNodes.length+':::'+nav.childNodes.length);
+			if ((cal.childNodes.length==3) && (nav.childNodes.length<5)) {
+			if (x.id=='navbarToDo') {
+				cal.style.animation='example 0.8s linear 1 forwards';
+				gam.style.animation='example 0.8s linear 1 forwards';
+			} else if (x.id=='navbarCalci') {
+				nav.style.animation='example 0.8s linear 1 forwards';
+				gam.style.animation='example 0.8s linear 1 forwards';
+			} else if (x.id=='navbarGames') {
+							// alert('anim');
+
+				nav.style.animation='example 0.8s linear 1 forwards';
+				cal.style.animation='example 0.8s linear 1 forwards';
+			}
+			}
+		}
+
+		function orig(x) {
+
+			var cal=document.getElementById('Calci');
+			var gam=document.getElementById('Games');
+			var nav=document.getElementById('ToDo');
+			// alert(cal.childNodes.length+':::'+nav.childNodes.length);
+			if ((cal.childNodes.length>=3) && (nav.childNodes.length<5)) {
+			if (x.id=='navbarToDo') {
+			cal.style.animation='example1 0.1s linear 1 forwards';
+			gam.style.animation='example1 0.1s linear 1 forwards';
+			} else if (x.id=='navbarCalci') {
+				nav.style.animation='example1 0.1s linear 1';
+				gam.style.animation='example1 0.1s linear 1';
+			} else if (x.id=='navbarGames') {
+							// alert('orig');
+
+				nav.style.animation='example1 0.1s linear 1';
+				cal.style.animation='example1 0.1s linear 1';
+			}
+			}
+			
+		}
+
+		function drpdwn() {
+			var a=document.getElementById('Games').childNodes[1];
+			for(var i=0; i < a.childNodes.length; i++) {
+				if (a.childNodes[i].nodeType!=3) {
+				a.childNodes[i].style.display='block';
+			}
+			}
+		}
+
+		function hide() {
+			var a=document.getElementById('Games').childNodes[1];
+			for(var i=0; i < a.childNodes.length; i++) {
+				if (a.childNodes[i].nodeType!=3) {
+				 if(i > 1) {
+				a.childNodes[i].style.display='none';
+				}
+				}
+			}
+		}
+
+		function toDoLayout() {
+			// alert('inside todo');
+			var todo= document.getElementById('ToDo');
+			var addDelCont=document.createElement('div');
+			addDelCont.style.pointer='cursor';
+			addDelCont.id='addDelContToDo';
+			addDelCont.style.width='100%';
+			addDelCont.style.height='50px'
+			addDelCont.style.boxSizing='border-box';
+			addDelCont.style.background='white';
+			addDelCont.style.marginTop='10px';
+			var addBtn=document.createElement('BUTTON');
+			var btnText=document.createTextNode('Add Task');
+			addBtn.style.color='red';
+			addBtn.style.width='51%';
+			addBtn.style.height='50px';
+			addBtn.style.marginLeft='0px';
+			addBtn.style.fontSize='20px';
+			addBtn.style.fontWeight='900';
+			addBtn.style.fontFamily='Fjalla One';
+			addBtn.style.border='4px solid black';
+			addBtn.style.textAlign='center';
+			addBtn.appendChild(btnText);
+			addBtn.addEventListener('click',function addTodo() {
+
+				var div1=document.createElement('div');
+				div1.id='div1';
+				div1.style.background='white';
+				div1.style.width='534px';
+				div1.style.height='55px';
+				div1.style.margin='0px';
+				div1.style.border='4px solid black';
+
+				var addChkBox=document.createElement('INPUT');
+				addChkBox.setAttribute('type','checkbox');
+				addChkBox.style.height='45px';
+				addChkBox.style.width='25px';
+				addChkBox.style.display='inline-block';
+				addChkBox.style.float="left";
+
+				addChkBox.style.margin='5px 0px 0px 10px';
+				addChkBox.addEventListener('click',function addDelToDo(cnt) {
+
+					var textid=this.nextSibling;
+					if(textid.style.opacity=='0.5')  {
+						textid.style.opacity='1';
+					textid.style.background='black';
+										textid.style.color='red';
+
+				} else {
+						textid.style.opacity='0.5';
+					textid.style.background='red';
+					textid.style.color='black';
+				}
+
+
+				});
+
+
+				// var addDiv=document.createElement('INPUT');
+				// addDiv.setAttribute('type','text');
+				var addDiv=document.createElement('TEXTAREA');
+				addDiv.setAttribute('placeholder','ENTER YOUR TASK. CHECK ONCE DONE.');
+				addDiv.setAttribute('id','textBox');
+				addDiv.setAttribute('name','textBox');
+				addDiv.style.resize='none';
+				addDiv.style.background='white';
+				addDiv.style.width='483px';
+				addDiv.style.height='33px';
+				addDiv.style.background='black';
+				addDiv.style.color='red';
+				addDiv.style.textAlign='center';
+				addDiv.style.margin='0px';
+				addDiv.style.padding='10px 0px';
+				addDiv.style.fontSize='20px';
+				addDiv.style.fontWeight='900';
+				addDiv.style.fontFamily='Fjalla One';
+				addDiv.style.marginLeft='10px';
+				addDiv.style.display='inline-block';
+				addDiv.style.float="left";
+				// addDiv.style.lineHeight='50px';
+				div1.appendChild(addChkBox);
+				div1.appendChild(addDiv);
+				todo.appendChild(div1);
+			});
+
+
+
+			var delBtn=document.createElement('BUTTON');
+			var btnText1=document.createTextNode('Delete All');
+			delBtn.style.color='red';
+			delBtn.style.width='49%';
+			delBtn.style.height='50px';
+			delBtn.style.marginLeft='0px';
+			delBtn.style.fontSize='20px';
+			delBtn.style.fontWeight='900';
+			delBtn.style.fontFamily='Fjalla One';
+
+			delBtn.style.border='3px solid black';
+			delBtn.style.textAlignCenter='center';
+			delBtn.addEventListener('click',function deleteall() {
+				let inp=confirm('THIS WILL DELETE ALL THE TASKS FROM YOUR TO DO LIST');
+				if (inp==true) {
+					let inp=confirm('Are You Sure You Want to Proceed Ahead???');
+					if (inp==true) {
+						alert('DELETING IT ALL NOW....');
+						var todo=document.querySelectorAll('#div1');
+						for (var i=0; i < todo.length; i++) {
+							todo[i].parentNode.removeChild(todo[i]);
+						}
+
+						
+					}
+				}
+			});
+			delBtn.appendChild(btnText1);
+
+			// var displayBtn=document.createElement('BUTTON');
+			// var btnText2=document.createTextNode('Display');
+			// displayBtn.style.color='red';
+			// displayBtn.style.width='156px';
+			// displayBtn.style.height='50px';
+			// displayBtn.style.marginLeft='0px';
+			// displayBtn.style.fontSize='20px';
+			// displayBtn.style.fontWeight='900';
+			// displayBtn.style.fontFamily='Fjalla One';
+			// displayBtn.style.border='3px solid black';
+			// displayBtn.style.textAlignCenter='center';
+			// displayBtn.appendChild(btnText2);
+			addDelCont.appendChild(addBtn);
+			addDelCont.appendChild(delBtn);
+			// addDelCont.appendChild(displayBtn);
+			todo.appendChild(addDelCont);
+		}
+
+
+		
+		
+
+	function expand(x) {
+		var mathOperation=[];
+		var calci=document.getElementById("Calci");
+		var todo=document.getElementById("ToDo");
+		// alert(todo.childNodes.length+':'+calci.childNodes.length);
+
+		if (calci.childNodes.length == 3) {
+			if (x.id=="navbarCalci") {
+				calciLayout(mathOperation);
+				// calci.style.display="block";
+			} 
+		}
+
+		if (todo.childNodes.length == 3) {
+			if (x.id=="navbarToDo") {
+				toDoLayout();
+				// todo.style.display="block";
+			}
+		}
+	}
+
+	
+
+
+
+	function calciLayout(mathOperation) {
+	
+		var operator=['C','()','%','\/',7,8,9,'*',4,5,6,'-',1,2,3,'+','+\/-',0,'\.','\='];
+		var calci=document.getElementById("Calci")
+		var textInput=document.createElement('INPUT');
+		textInput.id='textArea';
+		textInput.setAttribute('type','text');
+		textInput.style.width="378px";
+		textInput.style.height="130px";
+		textInput.style.background="black";
+		textInput.style.padding="10px";
+		textInput.style.marginTop='10px';
+
+
+		calci.appendChild(textInput);
+		for (var i=0; i < 5; i++) {
+				var cnt=0;
+				var divBtn=document.createElement('div');
+				divBtn.style.display="flex";
+				divBtn.style.flexDirection="row";
+				divBtn.style.justifyContent="flex-start";
+				for (var j=0; j < 4; j++) {
+					var btn=document.createElement('button');
+					btn.id='btn'+String(i)+String(j);
+					btn.style.width="101px";
+					btn.style.height="45px";
+					btn.style.fontWeight="bold";
+					btn.style.fontSize="20px";
+					var textElm=document.createTextNode(operator[j]);
+					if (operator[j] != '=') {
+						btn.style.background="black";
+						btn.style.color="red";
+					} else {
+						btn.style.background="red";
+						btn.style.color="white";
+					}
+					btn.appendChild(textElm);
+					btn.addEventListener('click', function() {
+						calciBtnInput(this);
+					});
+					//KEYBOARD CALCI OPERATION NOT WORKING.
+					textInput.addEventListener('keypress', function() {
+						calciKeyPressInput(this);
+					});
+					divBtn.appendChild(btn);
+					cnt+=1;
+				}
+				operator.splice(0,cnt);
+				calci.appendChild(divBtn);
+
+		}
+	}
+
+	function calciBtnInput(x) {
+
+		var btntext=x.textContent;
+		var textInput=document.getElementById('textArea');
+		textInput.style.color="white";
+		textInput.style.fontSize="30px";
+
+		switch(btntext) {
+			case '=':
+				if (textInput.value) {
+					var inp=textInput.value;
+					textInput.value=eval(inp);
+				} else {
+					textInput.value="";
+				}
+				break;
+			case 'C':
+				textInput.value="";
+				break;
+			case '+': case '/': case '-': case'*': case'+/-': case '()': case'%': case'.':	
+				if (Number(textInput.value[0])) {
+					textInput.value+=btntext;
+				} else {
+					textInput.value="";
+				}
+				break;
+			default:
+				textInput.value+=btntext;
+			 	break;
+		}
+		
+	}
+
+
+	function calciKeyPressInput(x) {
+
+	
+		var btntext=x.textContent;
+		var textInput=document.getElementById('textArea');
+		textInput.style.color="white";
+		textInput.style.fontSize="30px";
+		if (isNaN(btntext)) {
+			switch(btntext) {
+				case '=':
+					if (textInput.value) {
+						var inp=textInput.value;
+						textInput.value=eval(inp);
+					} else {
+						textInput.value="";
+					}
+					break;
+				case 'C':
+					textInput.value="";
+					break;
+				case '+': case '/': case '-': case'*': case'+/-': case '()': case'%': case'.':	
+					if (Number(textInput.value[0])) {
+						textInput.value+=btntext;
+					} else {
+						textInput.value="";
+					}
+					break;
+				default:
+					textInput.value+=btntext;
+				 	break;
+			}
+		} else {
+			alert('PLEASE ENTER A VALID NO');
+		
+		}
+	}
+
+</script>
+</body>
+</html>

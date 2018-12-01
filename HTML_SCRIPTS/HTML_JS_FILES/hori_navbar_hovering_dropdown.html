@@ -1,0 +1,217 @@
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+      * {
+        box-sizing : border-box;
+      }
+
+      #h1Id {
+        background: #ffccd5;
+        padding: 30px;
+        text-align: center;
+        margin: 0;
+        display: block;
+        opacity : 0.7;
+      }
+
+      #h1Id h2 {
+
+        color : red;
+      }
+
+      #container {
+        float: left;
+        display:inline-block;
+        position: sticky;
+
+      }
+
+
+      #container #navbar {
+
+        list-style-type: none;
+        margin : 0;
+        padding: 0;
+        background:#4d4d4d;
+        overflow: hidden; /* when height is not specified, this takes care of the overflowing list-items */
+        position: sticky;
+      }
+
+      #container #navbar li {
+        float : left;
+      }
+
+      #container #navbar li a {
+        display: block;
+        padding : 20px 45px;
+        color : white;
+        text-decoration: none;
+        font : 20px bold;
+        text-align: center;
+      }
+
+      #container #navbar li:first-child a{
+        background : #00b300;
+      }
+
+      #divId {
+        clear : both;
+        background: #808000;
+        border : 1px solid black;
+        max-width : 607px;
+        display : none;
+        margin : auto;
+        overflow: auto;
+        clear: both;
+        float: left;
+        position: absolute;
+        top : 259px;
+        z-index : -1;
+      }
+
+      #container #DropDown {
+        list-style-type: none;
+        margin: auto;
+        padding: 0;
+        color : black;
+        display: none;
+        overflow: hidden;
+        float: right;
+        z-index : 1;
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+      }
+
+      #container #DropDown li {
+        display: block;
+        border: 1px solid black;
+        width: 180px;
+        padding : 10px;
+        text-align: center;
+
+      }
+
+      #container #DropDown li a {
+        text-align: center;
+        text-decoration: none;
+        color : white;
+        font : 20px bold;
+
+      }
+
+      #container #navbar li a:active, #container #navbar li:nth-child(odd) a:hover{
+        background : #00b300;
+      }
+
+      #container #navbar li:nth-child(even) a:hover{
+        background : #808000;
+
+      }
+
+      #container #DropDown li:hover {
+        box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      }
+
+      #h1Id h2:hover {
+        color : blue;
+      }
+
+    @media screen and (max-width:500px) {
+       #container #navbar li {
+        float : none;
+        }
+      }
+
+    </style>
+  </head>
+
+  <body>
+    <div id="h1Id">
+        <h1 > HOVER ON THE NAVBAR LINKS TO SEE THE PARAGRAPH </h1>
+        <h2> HOVER OVER THE DROPDOWN TO SEE THE DROPDOWN MENU </h2>
+
+    </div>
+
+    <div id="container">
+
+        <ul id="navbar">
+          <li><a  onmouseover="expand1()" href="#Home">Home</a></li>
+          <li><a onmouseover="expand2()" href="#News">News</a></li>
+          <li><a onmouseover="expand1()" href="#Contact">Contact</a></li>
+          <li><a onmouseover="DrpDwn()" href="#DropDown">DropDown</a></li>
+        </ul>
+
+        <ul  onmouseleave="noDrpDwn()" id="DropDown">
+            <li><a href="#Link1">Link1</a></li>
+            <li><a href="#Link2">Link2</a></li>
+            <li><a href="#Link3">Link3</a></li>
+            <li><a href="#Link4">Link4</a></li>
+        </ul>
+    </div>
+
+
+    <div id="divId">
+        <h1>Fixed Top Navigation Bar</h1>
+        <h2>Scroll this page to see the effect</h2>
+        <h2>The navigation bar will stay at the top of the page while scrolling</h2>
+
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+        <p>Some text some text some text some text..</p>
+    </div>
+  </body>
+
+  <script>
+      function expand1() {
+          document.getElementById("divId").style.display="block";
+          document.getElementById("divId").style.background="#00b300";
+          document.getElementById("DropDown").style.display="none";
+          document.getElementById("divId").style.opacity="1";
+
+
+      }
+
+         function expand2() {
+          document.getElementById("divId").style.background="#808000";
+          document.getElementById("divId").style.display="block";
+          document.getElementById("DropDown").style.display="none";
+          document.getElementById("divId").style.opacity="1";
+
+
+      }
+
+       function DrpDwn() {
+          document.getElementById("divId").style.background="#808000";
+          document.getElementById("divId").style.display="block";
+          document.getElementById("DropDown").style.display="block";
+          document.getElementById("divId").style.opacity="0.5";
+          document.getElementById("DropDown").style.background="#808000";
+
+      }
+
+      function noDrpDwn() {
+        document.getElementById("DropDown").style.display="none";
+        document.getElementById("divId").style.opacity="1";
+
+      }
+
+  </script>
+</html>

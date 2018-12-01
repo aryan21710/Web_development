@@ -1,0 +1,11 @@
+function NameMe(first, last) {
+    this.firstName = first;
+    this.lastName = last; 
+    
+    this.print = function() {
+        return {name: this.firstName + ' ' + this.lastName}; 
+     }
+ }
+
+ var n=new NameMe('ary','sharma');
+ console.log(n.print());

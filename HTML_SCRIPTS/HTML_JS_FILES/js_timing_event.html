@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+	<input type="button" value = "Try it" onclick="start()">
+    <p> Click on <strong>"Try it".</strong> I will display when two, four, and six seconds have passed. </p>
+    <br><br>
+    <p id="demo"> </p>
+
+<script>
+	function start() {
+        cnt=1
+        sec=2;
+        var myvar=setInterval(f1,2000)
+        function f1() {
+        	if (cnt < 4) {
+       		 	document.getElementById("demo").innerHTML=sec+" "+"seconds";
+            	cnt=cnt+1;
+                sec=sec+2;
+        	} else {
+            	document.getElementById("demo").innerHTML="TIME OVER. CLEARING THE TIMER NOW";
+
+            	clearInterval(myvar);
+             }
+          }
+           
+    }
+</script>
+
+</body>
+</html>

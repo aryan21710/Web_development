@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+</head>
+<body>
+	<h1> FOLLOWING WILL CONVERT THE JSON TEXT TO JS OBJ </h1>
+	<h2 id='h2demo'> OBJ:- {name : "John", age : 31, city : "New York"} </h2>
+	<p id='demo'>JSON:- {"name" : "John", "age" : 31, "city" : "New York"} </p>
+
+	<br>
+	<button style='width:150px; height: 30px; color : black; background: red' onclick='json_to_obj()'>JSON_TO_OBJ</button>
+
+	<button style='width:150px; height: 30px; color : black; background: red' onclick='obj_to_json()'>OBJ_TO_JSON</button>
+</body>
+<script>
+	//#KEYWORDS:- [JSON TO OBJECT]
+	
+	function json_to_obj() {
+		var p1=document.getElementById('demo');
+		var h2=document.getElementById('h2demo');
+
+		var myJson = '{"name":"John", "age":31, "city":"New York"}'; // json text should be always included inside '' and not inside ""
+		var obj=JSON.parse(myJson); // THIS IS USED FOR JSON-->OBJECT.
+
+		h2.innerHTML='THE JSON OUTPUT IS:-'+myJson;
+		p1.innerHTML='THE OBJECT CREATED FROM JSON:-'+Object.keys(obj)+ ':'+ JSON.stringify(obj,null,4);
+	}
+
+	function obj_to_json() {
+
+		var p1=document.getElementById('demo');
+		var h2=document.getElementById('h2demo');
+
+		var obj = {name:"John", age:31, city:"New York"}; // json text should be always included inside '' and not inside ""
+		var myJson=JSON.stringify(obj); // THIS IS USED FOR OBJ-->JSON.
+
+		h2.innerHTML='THE OBJECT INPUT IS:-'+Object.keys(obj)+':'+ JSON.stringify(obj,null,4);
+		p1.innerHTML='THE JSON CREATED FROM OBJECT:-'+myJson;
+
+	}
+
+</script>
+</html>
+
+

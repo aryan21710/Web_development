@@ -1,0 +1,66 @@
+<html>
+  <head>
+    <title>HTML SCRIPTS</title>
+    <link rel="stylesheet" type="text/css" href="header_footer_webpage.css"></li>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8">
+    <meta name="author" content="aryan sharma">
+    <meta http-equiv="refresh" content="30">
+  </head>
+
+  <body>
+
+    <header>
+      <h1> HTML AND CSS ARYPEDIA</h1>
+    </header>
+
+    <section>
+      <nav>
+        <p> SCRIPTS:-</p>
+        <ol>
+          <li><a href="file:///home/ary/BKP/HTML_SCRIPTS/form_list_dropdwn.html">FORM LIST DROPDOWN</a></li>
+          <li><a href="file:///home/ary/BKP/HTML_SCRIPTS/test.html">HTML SAMPLE's</a></li>
+          <li><a href="file:///home/ary/BKP/HTML_SCRIPTS/header_footer_webpage.html">TYPICAL HTML WEBPAGE</a></li>
+          <li><a href="file:///home/ary/BKP/HTML_SCRIPTS/css_examples.html">CSS SAMPLE PAGE</a></li>
+        </ol>
+
+      <p>DOCUMENTATION:-</p>
+      <ol>
+        <li><a href="https://docs.google.com/document/d/1abfi0DvhArOW-wIK20FIuDCsyO_V0EkGcFgJoBLE2H4/edit">HTML NOTES</a></li>
+        <li><a href="https://docs.google.com/document/d/1bP--wDKvl6UomxdcNAZGSuCxGS7fYTMUg0hRwssyFCQ/edit#">CSS NOTES</a></li>
+      </ol>
+
+      <p> IMP TUTORIAL LINKS:- </p>
+      <ol>
+        <li><a href="http://htmldog.com/guides/css/">CSS TUTORIAL</a> </li>
+        <li><a href="http://htmldog.com/guides/html/">HTML TUTORIAL</a> </li>
+      </ol>
+
+      <p> GITHUB REPOSITORY </p>
+       <ol>
+        <li><a href="https://github.com/aryan21710/HTML_SCRIPTS">HTML/CSS GITHUB LINK</a> </li>
+      </ol>
+
+    </nav>
+
+
+
+
+
+      <article>
+        <h1> SNEAK PEAK INTO THE PT COMMUNITY <h1>
+        <p>The current date is:-
+            <% import datetime
+            print datetime.date.today().strftime("%d:%m:%y")
+            %></p>
+      </article>
+    </section>
+
+    <footer>
+          <p> PRESTIGE TRANQUILITY:- HOME IS HERE AND NOWHERE ELSE</p>
+    </footer>
+
+
+  </body>
+
+</html>

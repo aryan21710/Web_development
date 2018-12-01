@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	#Maincont {
+		margin : 0px;
+		position: relative;
+		width: 1350px;
+		height : 680px;
+		background: white;
+		position: relative;
+		cursor : pointer;
+	}
+
+	#Maincont p {
+		color: white;
+		text-align: center;
+		font-size: 30px;
+		margin: 10px;
+	}
+
+	#targetCont {
+		width: 130px;
+		height : 50px;
+		text-align: center;
+		background: red;
+		font-size: 15px;
+		position: absolute;
+		top: 10px;
+		left : 10px;
+		color: white;
+	}
+
+	#Footer {
+		margin: 10px 0px;
+		background: black;
+		width: 100%;
+		height: 80px;
+	}
+
+	#startbtn {
+		width: 150px;
+		height: 40px;
+		background: red;
+		color: white;
+		text-align: center;
+		font-size: 20px;
+		outline :0;
+		margin :10px 0px 0px 500px;
+	}
+
+	#stopbtn {
+		width: 150px;
+		height: 40px;
+		background: red;
+		color: white;
+		text-align: center;
+		font-size: 20px;
+		outline :0;
+		margin :10px 10px;
+	}
+	</style>
+</head>
+<body>
+	<div id='Maincont'>
+				<p id='header'> CLICK ON THE BOX TO SCORE POINTS </p>
+				<button id='targetCont' onclick='updateScore(this)'>HIT ME</button>
+	</div>
+	<div id='Footer'>
+		<button id='startbtn' onclick='Initialize()'> START </button> 
+		<button id='stopbtn' onclick='stopGame()'> STOP </button> 
+	</div>
+<script>
+		var box=document.getElementById('boxId');
+		var main=document.getElementById('Maincont');
+		var targetCont=document.getElementById('targetCont');
+		var timeout=[];
+		var cnt=0;
+		var scr=0;
+		var divcnt=0;
+		var numOfbox=[];
+		var fcnt=0;
+		var timer=1600;
+		function createDiv(Name,Width,Height,Background,Margin,Padding) {
+				var b=document.getElementById('Maincont');
+				timer-=100;
+				var t=t+divcnt;
+				divcnt+=1;
+				var Name=Name+divcnt;
+				var Nameid='boxId'+divcnt;
+				Name=document.createElement('button');
+				Name.id=Nameid;
+				console.log('IN CREATEDIV :-'+ Nameid+':::'+Name+' cnt '+ cnt);
+				Name.style.width=Width;
+				Name.style.height=Height;
+				Name.style.background=Background;
+				Name.style.margin=Margin;
+				Name.style.padding=Padding;
+				Name.style.boxSizing='border-box';
+				Name.style.position='absolute';
+				Name.style.top='30px';
+				Name.style.left='10px';
+				Name.style.color='white';
+				Name.style.textAlign='center';
+				Name.style.fontSize='15px';
+				Name.style.textDecoration='none';
+				Name.style.cursor='pointer';
+				Name.disabled=true;
+				t=document.createTextNode('DONT HIT ME');
+				Name.appendChild(t);
+				Name.addEventListener('click', function() {
+					this.style.background='red';
+					this.setAttribute('disabled',false);
+					updateScore(this);
+				});
+				// FIRST HIT ME BOX IS READY NOW....
+				b.appendChild(Name);
+				// Array numOfbox loaded with all the Box id's.
+				numOfbox.push(Name.id);
+
+				console.log('PUSHING DIV:-'+ Name.id + " IN ARRAY :=" +numOfbox);
+				// creatediv is called when score is scr%30==0. 
+				if (numOfbox.length > 1) {
+					return numOfbox;
+				}
+		}
+
+		function updateScore(x) {
+
+				id=x.id;
+				// alert(id);
+				var mainBox=document.getElementById('targetCont');
+				var main=document.getElementById('Maincont');
+				// alert(main);
+
+				if (id=='targetCont') {
+					x.setAttribute('disabled',false);
+					scr+=10;
+					cnt+=10;
+					main.style.background="url('box-blaster-thumbsup.png') no-repeat center ";
+					main.style.backgroundSize='400px 300px';
+
+				} else {
+					main.style.background="url('box-blaster-thumbsdown.png') no-repeat center";
+					main.style.backgroundSize='400px 300px';
+
+					if (scr == 0) {
+					scr=0;
+					} else  {
+						scr-=10;
+					}
+					cnt=scr;
+				}
+				mainBox.innerHTML='SCORE:= '+String(scr);	
+
+		}
+
+		function Initialize() {
+				var targetCont=document.getElementById('targetCont');
+				if(numOfbox.indexOf(targetCont)==-1) {
+					numOfbox.push(targetCont.id);
+				}
+				// alert(numOfbox);
+				var head=document.getElementById('header');
+				head.style.visibility='hidden';
+			if (main.childNodes.length < 10) {
+					if ((cnt > 0) && (cnt %30 ==0)) {
+						var id='targetCont'+divcnt;
+						divcnt+=1;
+						numOfbox=createDiv(id,'140px','50px','red','0px','0px');
+						console.log('Inside Initialize:-'+id+' cnt '+ cnt);
+						cnt=0;
+					}
+				startGame(numOfbox);
+			}
+		}
+
+		function startGame(numOfbox) {
+			var d=new Date();
+			var t=d.getMinutes()+':'+d.getSeconds();
+			fcnt+=1;
+			console.log('TIME IS:-'+ t + "  cnt:-" +fcnt+' INSIDE STARTGAME:-'+numOfbox+':'+numOfbox.length+ ' CNT'+cnt +' TIMER VALUE '+timer);
+				if ((cnt > 0) && (cnt %30 ==0)) {
+						Initialize();
+				} else {
+						for (var i=0 ; i < numOfbox.length; i++) {
+				 			var box=document.getElementById(numOfbox[i]);
+				 			// alert('box is:-'+box);
+							console.log(box);
+							box.disabled=false;
+							var max=630;
+							var min=0;
+							var topRand=(Math.floor(Math.random() * (max-min+1) + min));
+							var max=1200;
+							var min=0;
+							var leftRand=(Math.floor(Math.random() * (max-min+1) + min));
+							// box.style.background='red';
+							box.style.top=topRand+'px';
+							box.style.left=leftRand+'px';
+							console.log('CNT:='+cnt);
+						}
+						timeout=setTimeout(startGame,timer,numOfbox)
+			}
+		}
+		
+		
+		
+		function stopGame() {
+			clearTimeout(timeout);
+			console.log('IN STOPGAME:-'+timeout+' length '+timeout.length);
+			for (var i=0 ; i < numOfbox.length ; i++) {
+				console.log(timeout[i]);
+				// clearTimeout(timeout[i]);
+				var box=document.getElementById(numOfbox[i]);
+				box.style.background='red';
+				box.style.top='10px';
+				box.style.left='10px';
+				box.style.width='180px';
+				box.innerHTML=' FINAL SCORE:= '+String(scr);
+			}	
+
+			timeout=[];	
+		}
+</script>
+		
+</body>
+</html>

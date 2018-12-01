@@ -1,0 +1,62 @@
+<html>
+  <head>
+    <style type="text/css">
+
+    h1 {
+      background: grey;
+      text-align: center;
+      color : black;
+      padding: 30px;
+    }
+
+    #smallImg {
+      border : 2px solid black;
+      width : 50px;
+      height : 30px;
+      float: left;
+      margin: 0;
+    }
+
+    #bigImg  {
+      width : 500px;
+      height : 380px;
+      display: none;
+      clear: both;
+      box-shadow : 0px 8px 16px 0px rgba(0,0,0,0.2);
+    }
+
+    #cap {
+      width: 444px;
+      display: none;
+      text-align: center;
+      clear: both;
+      padding: 30px;
+      box-shadow : 0px 8px 16px 0px rgba(0,0,0,0.2);
+
+    }
+
+    </style>
+  </head>
+
+  <body>
+      <h1> HOVER OVER THE IMAGE </h1>
+      <img id="smallImg" src="sim.jpg" onmouseover="expand()" onmouseleave="hide()">
+
+      <img id="bigImg" src="sim.jpg" alt="CUTIEE">
+      <span id="cap"> "CUTIEE" </span>
+
+      <script type="text/javascript">
+        function expand() {
+            document.getElementById("bigImg").style.display="block";
+
+            document.getElementById("cap").style.display="block";
+        }
+        function hide() {
+            document.getElementById("bigImg").style.display="none";
+            document.getElementById("cap").style.display="none";
+
+        }
+
+      </script>
+  </body>
+</html>

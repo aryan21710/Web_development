@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<style>
+
+		body {
+			background: black;
+			width: 100%;
+			height: 100%;
+		}
+
+		#mainCont {
+			display: flex;
+			flex-direction: row;
+			justify-content: center;
+			width: 100%;
+			height: 100%;
+		}
+
+
+		#gameCont {
+			width: 40%;
+			background: #b3b3b3;
+			margin : 20px 0px;
+			overflow: auto;
+		}
+
+		#gameInfo, #gameFooter  {
+			width: 500px;
+			height: 110px;
+			margin: 10px 20px;
+			/*border : 1px solid	red;*/
+		}
+
+
+		#scr {
+			color: black;
+			text-align: center;
+			font-size: 25px;
+			font-weight: bold;
+			margin : 10px 100px;
+		}
+
+		#turn {
+			color: black;
+			text-align: center;
+			font-size: 25px;
+			font-weight: bold;
+			margin : 30px 100px;
+		}
+
+
+
+		#table {
+			margin : 20px;
+			/*border : 5px solid white;*/
+			/*width: 500px;*/
+			/*height: 400px;*/
+			table-layout: fixed;
+			visibility:  visible;
+		}
+
+		#table, td, tr, .c1 {
+			/*border : 5px solid white;*/
+			border-collapse: collapse;
+		}
+
+		td {
+			border : 5px solid white;
+			/*overflow: auto;*/
+			white-space: nowrap;
+			word-wrap: break-word;
+
+		}
+
+		.c1 {
+			/*border : 1px solid blue;*/
+			height : 120px;
+			width: 140px;
+			overflow: auto;
+			margin : 10px;
+			cursor: pointer;
+		}
+
+		#gameFooter button {
+			width: 150px;
+			height: 40px;
+			text-align: center;
+			font-size: 25px;
+			margin : 10px 175px;
+			color: red;
+			background: black;
+			outline : 0;
+		}
+
+		 #sngpl,#multpl {			
+			width: 20px;
+			height: 20px;
+			border : 0px;
+			margin : 10px;
+		}
+
+		#sngpl {
+			margin : 10px 0px 0px 70px;
+		}
+
+		#multpl {
+			margin : 10px 0px 0px 10px;
+		}
+
+		span {
+			color: black;
+			font-size: 25px;
+			font-weight: bold;
+			margin : 10px;
+		}
+	</style>
+</head>
+<body>
+	<div  id='mainCont'>
+		<div  id='gameCont'>
+			<div id='gameInfo'>
+				<p id='scr'> Score :- </p>
+				<p id='turn'> Player 1 Move </p> 
+			</div>
+			<table id='table'>
+				<tr>
+					<td><div class='c1' onclick='attachClickEvent(this)' id='tdData0'></div></td>
+					<td><div class='c1' onclick='attachClickEvent(this)' id='tdData1'></div></td>
+					<td><div class='c1' onclick='attachClickEvent(this)' id='tdData2'></div></td>
+				</tr>
+
+				<tr>
+					<td><div class='c1' onclick='attachClickEvent(this)' id='tdData3'></div></td>
+					<td><div class='c1' onclick='attachClickEvent(this)' id='tdData4'></div></td>
+					<td><div class='c1' onclick='attachClickEvent(this)' id='tdData5'></div></td>
+				</tr>
+
+				<tr>
+					<td><div class='c1' onclick='attachClickEvent(this)' id='tdData6'></div></td>
+					<td><div class='c1' onclick='attachClickEvent(this)' id='tdData7'></div></td>
+					<td><div class='c1' onclick='attachClickEvent(this)' id='tdData8'></div></td>
+				</tr>
+			</table>
+
+			<div id='gameFooter'>
+				<button id='btn' onclick='gameStart()'> START </button> 
+				<input id='sngpl' type="radio" name="radio" value="Single Player"><span>Single Player</span> </input>
+				<input id='multpl' type="radio" name="radio" value="Multi Player"><span>Multi Player</span></input>
+			</div>
+		</div>
+	</div>
+<script>
+
+
+
+
+	function gameStart() {
+		 arrWithDivObjList=new Array();
+		 table=document.getElementById('table');
+
+		 ind=0;
+		 indexArr=new Array();
+		 xIndices=new Array();
+		 mainarr=new Array();
+		 cnt=0;
+		 startGameFlag=0;
+		 winOptions=[[0,1,2],[0,4,8],[0,3,6],[1,4,7],[2,4,6],[2,5,8],[3,4,5],[6,7,8]];
+		 compWinOptions=[[0,1,2],[0,4,8],[0,3,6],[1,4,7],[2,4,6],[2,5,8],[3,4,5],[6,7,8]];
+
+		console.log('---------------------------------------------------');
+		console.log('ALL VARIABLES WHEN GAME STARTS:-');
+		console.log('arrWithDivObjList:-'+arrWithDivObjList);
+		console.log('indexArr:-'+indexArr);
+		console.log('xIndices:-'+xIndices);
+		console.log('startGameFlag:-'+startGameFlag);
+		console.log('cnt:-'+cnt);
+		console.log('mainarr:-'+mainarr);
+		console.log('ind:-'+ind);
+		console.log('tdList:-'+tdList);
+
+		// STORES ALL THE DIV NODEID IN arrWithDivObjList WHEN START IS PRESSED.
+		// INDEX ARRAY STORES INDEXES OF ALL THE DIV.
+		var tdList=document.querySelectorAll('.c1');
+
+		for (var i=0; i < tdList.length; i++) {
+			// alert('before:-'+tdList[i].nodeName);
+			// tdList[i].parentNode.removeChild(tdList[i].parentNode.firstChild);
+			mainarr.push(tdList[i].id);
+			indexArr.push(i);
+			arrWithDivObjList.push(tdList[i]);
+			tdList[i].innerHTML='';
+
+		}
+
+		if (arrWithDivObjList.length==9) {
+			// alert(arrWithDivObjList);
+			startGameFlag=1;
+		}
+		// alert(mainarr);
+		// startTimer()
+		// alert('GAME STARTED. INITIAL INDEX ARRAY:-'+indexArr);
+	}
+
+	function attachClickEvent(x) {
+		if (startGameFlag) {
+		var tdList=x
+		var tdListId=x.id;
+		// IF arrWithDivObjList LENGTH (WHICH IS 9) IS > 0 (IS NOT EMPTY) THEN ONLY X WILL 
+		// MARKED WHEN CLICK IS PRESSED. 
+		if (arrWithDivObjList.length > 0) {
+			// IF DIV ALREADY CONTAINS X OR 0 THEN X IS NOT MARKED.
+
+			if (tdList.innerHTML!='X' && tdList.innerHTML!='0') {
+				tdList.style.fontSize='70px';
+				tdList.style.textAlign='center';
+				tdList.style.color='red';
+				tdList.style.fontWeight='bold';
+				console.log('before :-'+tdList.innerHTML);
+				tdList.innerHTML='X';
+
+				// INDEX OF DIV IN arrWithDivObjList IS NEEDED TO EXCLUDE IT FOR COMPUTER TO
+				// MARK IT 0.
+				ind=arrWithDivObjList.indexOf(tdList);
+				// alert(mainarr.indexOf(tdList));
+				xIndices.push(mainarr.indexOf(tdListId));
+				// alert(xIndices);
+				// alert('NEW USER TURN. POPPED DIV FROM INDEX:-'+ind);
+				arrWithDivObjList.splice(ind,1);
+				// INDEXARR DIV CONTAINS ONLY THE INDEXES OF LEFTOVER DIV.
+				indexArr.splice(ind,1);
+
+				if (xIndices.length > 2) {
+					cnt=result();	
+					// cnt=3;
+					if (cnt==3) {
+						// alert('YOU WON. CNT:-'+cnt);	
+						alert('(..) AWESOME..YOU WON (--)')
+						// alert('BEFORE POP:-'+arrWithDivObjList+ ':'+ indexArr);
+				   		while (arrWithDivObjList.pop()!=undefined) {
+				   				indexArr.pop();
+				   				xIndices.pop();
+				   				mainarr.pop();
+				   				// tdList.pop();
+								startGameFlag=0;
+								ind=0;
+								rand=0;
+				   		}	
+					   	// alert('AFTER USER TURN AND POPPING DIV FROM INDEX:-'+ind+'THE NEW DIV OBJ ARRAY:-'+ arrWithDivObjList);
+					} 	
+				}
+				// COMP TURN AFTER 1 SEC.
+				if (cnt !=3 && tdList.innerHTML=='X') {
+					console.log('after :-'+tdList.innerHTML);
+
+					// alert('xindices:-'+xIndices);
+				// int=setInterval(compTurn,1000);
+				int=setInterval(level2, 1000);
+				}
+			} 
+		}
+	 } 
+	}
+
+
+	function compTurn() {
+
+			// alert('LENGTH OF INDEXARR AFTER USER TURN:-'+indexArr.length+ ' AND THE CHANGED INDEXARR IS:-'+ indexArr);
+			max=indexArr.length;
+			min=0;
+			// alert(indexArr.length);
+			
+			console.log('RAND WILL BE SELECTED BETWEEN:-'+indexArr);
+			// RAND INDEX IS PICKED WHICH IS BETWEEN THE RANGE OF 1 AND INDEXARR 
+			// LENGTH, WHICH CONTAINS ONLY THE INDEXES OF LEFTOVER DIV.
+			while(indexArr.length > 1) {
+				var rand=(Math.floor(Math.random () * (max-min+1) + min));
+				if (indexArr.length==2) {
+					rand=indexArr[0];
+					console.log('INDEXARR ONLY HAVE 2 OPTIONS. CHOOSE INDEX:-'+rand);
+				}
+				if (indexArr[rand]!=undefined && rand != ind) {
+					// alert('max:-'+max+':'+'rand:='+rand);
+					console.log('COMP TURN.SELECTED RAND:='+rand+' BETWEEN :-'+max+' & '+min);
+					break;
+				}  
+
+			}
+
+			if (arrWithDivObjList.length > 0 && cnt!=3) {
+					arrWithDivObjList[rand].style.fontSize='70px';
+					arrWithDivObjList[rand].style.textAlign='center';
+					arrWithDivObjList[rand].style.color='blue';
+					arrWithDivObjList[rand].style.fontWeight='bold';
+					arrWithDivObjList[rand].innerHTML='0';
+					ind=arrWithDivObjList.indexOf(arrWithDivObjList[rand]);
+					// alert('COMP TURN AT INDEX. POPPED AT INDEX:-'+ind);
+					arrWithDivObjList.splice(ind,1);
+					indexArr.splice(ind,1);
+					// alert('indexArr.length after comp turn:-'+indexArr.length+ ' index array:-'+ indexArr);
+					// alert('calling clear interval now');
+					clearInterval(int);
+			}		
+	}
+
+	function level2() {
+			// var compWinOptions=[[0,1,2],[0,4,8],[0,3,6],[1,4,7],[2,4,6],[2,5,8],[3,4,5],[6,7,8]]
+
+			max=winOptions.length;
+			min=0;
+					var loopcnt=0;
+					var count=0;
+					var userIndex=new Array();
+			var userTurn=xIndices[xIndices.length-1];
+
+			var newwinOptions=new Array();
+			
+			// RAND INDEX IS PICKED WHICH IS BETWEEN THE RANGE OF 1 AND INDEXARR 
+			// LENGTH, WHICH CONTAINS ONLY THE INDEXES OF LEFTOVER DIV.
+			while(indexArr.length > 1) {
+				// alert('USER PLAYED:-'+userTurn);
+
+				for (var i=0; i < compWinOptions.length;i++) {
+					count=0;
+					// alert('INSIDE LOOP i FOR:='+winOptions[i]);
+
+					for (var j=0; j < compWinOptions[i].length; j++) {
+						// alert('INSIDE LOOP J FOR:='+winOptions[i][j]+' OF '+winOptions[i]);
+						loopcnt+=1;
+						// alert('inside J Loop trying to match:-'+userTurn+ ' and '+ winOptions[i][j]);
+
+						if (userTurn==compWinOptions[i][j]) {
+							count+=1;
+							// userIndex.push(i);
+							// alert('INDEX OPTION REMOVED FROM ALL OPTIONS:-'+userIndex);
+							break;
+
+						} 
+
+					}
+				
+					if (count==0) {
+						newwinOptions.push(compWinOptions[i]);			
+						// alert('LOOP CNT SO FAR:-'+loopcnt);
+					}
+				}
+				// alert('INDEX OPTION REMOVED FROM ALL OPTIONS:-'+userIndex);
+
+				// for (var m=0; m < userIndex.length ;m++) {
+				// 	alert('removing index at:-'m +' which is'+ userIndex[m]+compWinOptions[userIndex[m]]);
+				// compWinOptions.splice(userIndex[m],1);
+				// }
+				// alert('NEW compWinOptions TO PLAY :-'+compWinOptions);
+				// alert('AVAILABLE ALL OPTIONS:-'+newwinOptions);
+				// alert('COMP CAN CHOOSE ONE OF THE OPTIONS:-'+newwinOptions);
+				// alert('DIV OBJECT LIST NOW:-'+arrWithDivObjList);
+
+				newmax= newwinOptions.length-1;
+			    var rand=(Math.floor(Math.random () * (newmax-min+1) + min));
+
+				// alert('RAND INDEX CHOOSEN BETWEEN:-'+newmax+' & '+min +'  IS:-'+rand);
+				// alert('COMP GOING TO PLAY OPTION:-'+newwinOptions[rand]);
+
+				// if (indexArr[rand]!=undefined && rand != ind) {
+				// 	// alert('max:-'+max+':'+'rand:='+rand);
+				// 	console.log('COMP TURN.SELECTED RAND:='+rand+' BETWEEN :-'+max+' & '+min);
+				// 	break;
+				// }  
+				var compPlayingNow=0;
+				compPlayingNow=newwinOptions[rand][0];
+				if (arrWithDivObjList.length > 0 && cnt!=3) {
+						if (arrWithDivObjList[compPlayingNow].innerHTML=='') {
+							// alert('compPlayingNow AT INDEX:-'+compPlayingNow);
+							// alert('before :-'+arrWithDivObjList[compPlayingNow].innerHTML);
+							arrWithDivObjList[compPlayingNow].style.fontSize='70px';
+							arrWithDivObjList[compPlayingNow].style.textAlign='center';
+							arrWithDivObjList[compPlayingNow].style.color='blue';
+							arrWithDivObjList[compPlayingNow].style.fontWeight='bold';
+							arrWithDivObjList[compPlayingNow].innerHTML='0';
+							// alert('after :-'+arrWithDivObjList[compPlayingNow].innerHTML);
+							ind=arrWithDivObjList.indexOf(arrWithDivObjList[compPlayingNow]);
+							// alert('POPPED DIV AT INDEX. AFTER COMP TURN:-'+ind);
+							arrWithDivObjList.splice(ind,1);
+							indexArr.splice(ind,1);
+							// alert('indexArr.length after comp turn:-'+indexArr.length+ ' index array:-'+ indexArr);
+							// alert('calling clear interval now');
+					    }
+						
+				
+				}		
+				compWinOptions=newwinOptions;
+				clearInterval(int);
+				break;
+		
+			}
+		}
+
+
+
+
+	
+
+	// xIndices:- 0,1,3,6
+	function result() {
+		// alert('INSIDE RESULT FUNCTION, xIndices:-'+xIndices);
+		// alert('calling result :-');
+		// var winOptions=[[0,1,2],[0,4,8],[0,3,6],[1,4,7],[2,4,6],[2,5,8],[3,4,5],[6,7,8]]
+		var loopcnt=0
+		for (var i=0; i < winOptions.length; i++) {
+			count=0;
+			// alert('Loop 1 inside i. count is:-'+count);
+			console.log('In Loop i.Checking winning option:- '+ winOptions[i]+ ' Player played:-'+ xIndices);
+
+			for (var j=0; j < winOptions[i].length; j++) {
+				// alert('inside j Loop 2. count is:-'+count);
+				// alert('inside j Loop Checking for winning option:- '+ winOptions[i]+ ' of ' +winOptions[i][j]);
+				for (var k=0; k < xIndices.length; k++) {
+					// alert('inside k Loop 2. count is:-'+count);
+					// alert('inside k Loop trying to match:-'+xIndices[k]+ ' and '+ winOptions[i][j]);
+					loopcnt+=1;
+					if (xIndices[k]==winOptions[i][j]) {
+						count+=1;
+						// alert('MATCHED,count:-'+count+':'+'xIndices[k]:- '+ xIndices[k]+ ':'+' winOptions[i][j]:='+winOptions[i][j]);
+					}
+				}
+				if (count == 3) {
+					// alert(' EXITED K BLOCK SINCE COUNT IS 3. count:='+count);
+					console.log('LOOP CNT  AT THE END OF THE PROGRAM IS :-'+loopcnt);
+					cnt=count;
+					return cnt
+					// break;
+				}
+			}
+		}
+		console.log('LOOP CNT  AT THE END OF THE PROGRAM IS :-'+loopcnt);
+		return cnt;
+
+
+
+	}
+
+	
+	 
+
+</script>
+</body>
+</html>

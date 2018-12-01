@@ -1,0 +1,308 @@
+{
+    "statusCode": 200,
+    "body": {
+        "info": {
+            "statuscode": 0,
+            "copyright": {
+                "text": "© 2018 MapQuest, Inc.",
+                "imageUrl": "http://api.mqcdn.com/res/mqlogo.gif",
+                "imageAltText": "© 2018 MapQuest, Inc."
+            },
+            "messages": []
+        },
+        "options": {
+            "maxResults": -1,
+            "thumbMaps": true,
+            "ignoreLatLngInput": false
+        },
+        "results": [
+            {
+                "providedLocation": {
+                    "location": "whitefield bengaluru india"
+                },
+                "locations": [
+                    {
+                        "street": "Whitefield Road",
+                        "adminArea6": "",
+                        "adminArea6Type": "Neighborhood",
+                        "adminArea5": "Bengaluru",
+                        "adminArea5Type": "City",
+                        "adminArea4": "",
+                        "adminArea4Type": "County",
+                        "adminArea3": "Karnataka",
+                        "adminArea3Type": "State",
+                        "adminArea1": "IN",
+                        "adminArea1Type": "Country",
+                        "postalCode": "560066,560067",
+                        "geocodeQualityCode": "B3CAA",
+                        "geocodeQuality": "STREET",
+                        "dragPoint": false,
+                        "sideOfStreet": "N",
+                        "linkId": "IN/STR/p0/241595",
+                        "unknownInput": "",
+                        "type": "s",
+                        "latLng": {
+                            "lat": 12.99563,
+                            "lng": 77.7581
+                        },
+                        "displayLatLng": {
+                            "lat": 12.99563,
+                            "lng": 77.7581
+                        },
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus&type=map&size=225,160&locations=12.99563,77.7581|marker-sm-50318A-1&scalebar=true&zoom=15&rand=2077086683"
+                    },
+                    {
+                        "street": "Whitefield Road",
+                        "adminArea6": "",
+                        "adminArea6Type": "Neighborhood",
+                        "adminArea5": "Bengaluru",
+                        "adminArea5Type": "City",
+                        "adminArea4": "",
+                        "adminArea4Type": "County",
+                        "adminArea3": "Karnataka",
+                        "adminArea3Type": "State",
+                        "adminArea1": "IN",
+                        "adminArea1Type": "Country",
+                        "postalCode": "560066",
+                        "geocodeQualityCode": "B3CAA",
+                        "geocodeQuality": "STREET",
+                        "dragPoint": false,
+                        "sideOfStreet": "N",
+                        "linkId": "IN/STR/p0/1491947",
+                        "unknownInput": "",
+                        "type": "s",
+                        "latLng": {
+                            "lat": 12.96296,
+                            "lng": 77.74812
+                        },
+                        "displayLatLng": {
+                            "lat": 12.96296,
+                            "lng": 77.74812
+                        },
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus&type=map&size=225,160&locations=12.96296,77.74812|marker-sm-50318A-2&scalebar=true&zoom=15&rand=715092340"
+                    },
+                    {
+                        "street": "Whitefield Road",
+                        "adminArea6": "",
+                        "adminArea6Type": "Neighborhood",
+                        "adminArea5": "Bengaluru",
+                        "adminArea5Type": "City",
+                        "adminArea4": "",
+                        "adminArea4Type": "County",
+                        "adminArea3": "Karnataka",
+                        "adminArea3Type": "State",
+                        "adminArea1": "IN",
+                        "adminArea1Type": "Country",
+                        "postalCode": "560067",
+                        "geocodeQualityCode": "B3CAA",
+                        "geocodeQuality": "STREET",
+                        "dragPoint": false,
+                        "sideOfStreet": "N",
+                        "linkId": "IN/STR/p0/1495779",
+                        "unknownInput": "",
+                        "type": "s",
+                        "latLng": {
+                            "lat": 12.9987,
+                            "lng": 77.75818
+                        },
+                        "displayLatLng": {
+                            "lat": 12.9987,
+                            "lng": 77.75818
+                        },
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus&type=map&size=225,160&locations=12.9987,77.75818|marker-sm-50318A-3&scalebar=true&zoom=15&rand=-2048635060"
+                    },
+                    {
+                        "street": "Whitefield Road",
+                        "adminArea6": "",
+                        "adminArea6Type": "Neighborhood",
+                        "adminArea5": "Bengaluru",
+                        "adminArea5Type": "City",
+                        "adminArea4": "",
+                        "adminArea4Type": "County",
+                        "adminArea3": "Karnataka",
+                        "adminArea3Type": "State",
+                        "adminArea1": "IN",
+                        "adminArea1Type": "Country",
+                        "postalCode": "560066",
+                        "geocodeQualityCode": "B3CAA",
+                        "geocodeQuality": "STREET",
+                        "dragPoint": false,
+                        "sideOfStreet": "N",
+                        "linkId": "IN/STR/p0/1504556",
+                        "unknownInput": "",
+                        "type": "s",
+                        "latLng": {
+                            "lat": 12.99546,
+                            "lng": 77.75824
+                        },
+                        "displayLatLng": {
+                            "lat": 12.99546,
+                            "lng": 77.75824
+                        },
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus&type=map&size=225,160&locations=12.99546,77.75824|marker-sm-50318A-4&scalebar=true&zoom=15&rand=1395749183"
+                    },
+                    {
+                        "street": "Whitefield Road",
+                        "adminArea6": "",
+                        "adminArea6Type": "Neighborhood",
+                        "adminArea5": "Bengaluru",
+                        "adminArea5Type": "City",
+                        "adminArea4": "",
+                        "adminArea4Type": "County",
+                        "adminArea3": "Karnataka",
+                        "adminArea3Type": "State",
+                        "adminArea1": "IN",
+                        "adminArea1Type": "Country",
+                        "postalCode": "560049,560067",
+                        "geocodeQualityCode": "B3CAA",
+                        "geocodeQuality": "STREET",
+                        "dragPoint": false,
+                        "sideOfStreet": "N",
+                        "linkId": "IN/STR/p0/1505092",
+                        "unknownInput": "",
+                        "type": "s",
+                        "latLng": {
+                            "lat": 13.05362,
+                            "lng": 77.76181
+                        },
+                        "displayLatLng": {
+                            "lat": 13.05362,
+                            "lng": 77.76181
+                        },
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus&type=map&size=225,160&locations=13.05362,77.76181|marker-sm-50318A-5&scalebar=true&zoom=15&rand=-1323898290"
+                    },
+                    {
+                        "street": "Whitefield Road",
+                        "adminArea6": "",
+                        "adminArea6Type": "Neighborhood",
+                        "adminArea5": "Bengaluru",
+                        "adminArea5Type": "City",
+                        "adminArea4": "",
+                        "adminArea4Type": "County",
+                        "adminArea3": "Karnataka",
+                        "adminArea3Type": "State",
+                        "adminArea1": "IN",
+                        "adminArea1Type": "Country",
+                        "postalCode": "560067",
+                        "geocodeQualityCode": "B3CAA",
+                        "geocodeQuality": "STREET",
+                        "dragPoint": false,
+                        "sideOfStreet": "N",
+                        "linkId": "IN/STR/p0/1505829",
+                        "unknownInput": "",
+                        "type": "s",
+                        "latLng": {
+                            "lat": 12.99869,
+                            "lng": 77.75804
+                        },
+                        "displayLatLng": {
+                            "lat": 12.99869,
+                            "lng": 77.75804
+                        },
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus&type=map&size=225,160&locations=12.99869,77.75804|marker-sm-50318A-6&scalebar=true&zoom=15&rand=992595837"
+                    },
+                    {
+                        "street": "Whitefield Main Road",
+                        "adminArea6": "",
+                        "adminArea6Type": "Neighborhood",
+                        "adminArea5": "Bengaluru",
+                        "adminArea5Type": "City",
+                        "adminArea4": "",
+                        "adminArea4Type": "County",
+                        "adminArea3": "Karnataka",
+                        "adminArea3Type": "State",
+                        "adminArea1": "IN",
+                        "adminArea1Type": "Country",
+                        "postalCode": "560048",
+                        "geocodeQualityCode": "B3CAA",
+                        "geocodeQuality": "STREET",
+                        "dragPoint": false,
+                        "sideOfStreet": "N",
+                        "linkId": "IN/STR/p0/242580",
+                        "unknownInput": "",
+                        "type": "s",
+                        "latLng": {
+                            "lat": 12.99658,
+                            "lng": 77.69232
+                        },
+                        "displayLatLng": {
+                            "lat": 12.99658,
+                            "lng": 77.69232
+                        },
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus&type=map&size=225,160&locations=12.99658,77.69232|marker-sm-50318A-7&scalebar=true&zoom=15&rand=1176223016"
+                    },
+                    {
+                        "street": "",
+                        "adminArea6": "",
+                        "adminArea6Type": "Neighborhood",
+                        "adminArea5": "Bengaluru",
+                        "adminArea5Type": "City",
+                        "adminArea4": "",
+                        "adminArea4Type": "County",
+                        "adminArea3": "Karnataka",
+                        "adminArea3Type": "State",
+                        "adminArea1": "IN",
+                        "adminArea1Type": "Country",
+                        "postalCode": "",
+                        "geocodeQualityCode": "A5XAX",
+                        "geocodeQuality": "CITY",
+                        "dragPoint": false,
+                        "sideOfStreet": "N",
+                        "linkId": "IN/GEO/p0/453368",
+                        "unknownInput": "",
+                        "type": "s",
+                        "latLng": {
+                            "lat": 12.99435,
+                            "lng": 77.75852
+                        },
+                        "displayLatLng": {
+                            "lat": 12.99435,
+                            "lng": 77.75852
+                        },
+                        "mapUrl": "http://www.mapquestapi.com/staticmap/v5/map?key=14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus&type=map&size=225,160&locations=12.99435,77.75852|marker-sm-50318A-8&scalebar=true&zoom=12&rand=-886511607"
+                    }
+                ]
+            }
+        ]
+    },
+    "headers": {
+        "access-control-allow-methods": "OPTIONS,GET,POST",
+        "access-control-allow-origin": "*",
+        "cache-control": "no-cache, must-revalidate",
+        "content-type": "application/json;charset=UTF-8",
+        "date": "Thu, 15 Nov 2018 06:08:33 GMT",
+        "expires": "Mon, 20 Dec 1998 01:00:00 GMT",
+        "geocodetransactioncount": "1",
+        "last-modified": "Thu, 15 Nov 2018 06:08:33 GMT",
+        "pragma": "no-cache",
+        "reversegeocodetransactioncount": "0",
+        "server": "Apache-Coyote/1.1",
+        "set-cookie": [
+            "JSESSIONID=26B57081E849070F0BAB9722CE2DF2B3; Path=/; HttpOnly"
+        ],
+        "status": "success",
+        "transactionweight": "1.0",
+        "content-length": "6113",
+        "connection": "Close"
+    },
+    "request": {
+        "uri": {
+            "protocol": "http:",
+            "slashes": true,
+            "auth": null,
+            "host": "www.mapquestapi.com",
+            "port": 80,
+            "hostname": "www.mapquestapi.com",
+            "hash": null,
+            "search": "?key=14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus&location=whitefield%20bengaluru%20india",
+            "query": "key=14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus&location=whitefield%20bengaluru%20india",
+            "pathname": "/geocoding/v1/address",
+            "path": "/geocoding/v1/address?key=14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus&location=whitefield%20bengaluru%20india",
+            "href": "http://www.mapquestapi.com/geocoding/v1/address?key=14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus&location=whitefield%20bengaluru%20india"
+        },
+        "method": "GET",
+        "headers": {
+            "accept": "application/json"
+        }
+    }
+}

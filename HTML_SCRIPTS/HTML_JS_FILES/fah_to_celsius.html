@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>FAHRENHEIT TO CELSIOUS CONVERSION USING JS</h2>
+
+<p>This example calls a function to convert from Fahrenheit to Celsius:</p>
+<p> Fahrenheit to Celsius:-</p><br><br>
+<input id="fah" type="text" placeholder="Fahrenheit" oninput="fah_to_cel()">*F <input type="text" placeholder="Celsius" id="cel"> *C
+
+<br><br>
+
+<p id="demo"></p>
+
+<script>
+	function fah_to_cel() {
+    	var inp=document.getElementById("fah").value;
+        
+    	output=(inp-32)*(5/9);
+        document.getElementById("cel").value=output;
+    }
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,158 @@
+
+
+<!DOCTYPE html>
+
+<html>
+<head>
+	
+	<style>
+		#mainContainer {
+			background:  #d6e0f5;
+			width: 1400px;
+			height: 800px;
+      position : relative;
+
+		}
+
+		#mainContainer h1 {
+			text-align: center;
+			margin: auto;
+			padding: 10px 100px;
+		}
+
+		#animate {
+			background : #ff4dff;
+			position: absolute;
+			width: 500px;
+			height: 300px;
+			top : 100px;
+			left : 20px;
+		}
+
+		#animate input[type=text], #animate input[type=password]{
+			width: 200px;
+			height: 30px;
+			border-width: 1px 1px 1px 5px;
+			border-color: grey;
+			border-style: solid;
+            padding : 10px;
+            
+		}
+        
+        #animate input[type=text] {
+        	margin: 50px 140px 0px 140px;
+          }
+          
+       #animate input[type=password] {
+        	margin: 10px 140px 0px 140px;
+          }
+          
+          #cont {
+           margin : 30px 140px 0px 140px;
+
+          }
+          
+          #cont input [type=checkbox] {
+            width : 200px;
+            overflow : auto;
+          }
+          
+          #cont input[type=button] {
+          
+          		float : right;
+          }
+            
+		
+	</style>
+</head>
+<body onload="f1()">
+
+	<div id="mainContainer">
+		<h1> LOGIN FORM ANIMATION </h1>
+		
+	<div id="animate">
+			<form action="xyz.php" method="post">
+				<input type="text" name="text" placeholder="Username">
+				<input type="password" name="passwd" placeholder="Password">
+                <div id="cont">
+				<input type="checkbox" checked="false"> Remember Me
+				<input  type="button" value="Submit">
+                </div>
+			</form>
+		</div>
+	</div>
+    
+    
+    <script>
+    
+    function f1() {
+    	var Id=document.getElementById("animate");
+        var inp=document.querySelector("input[type='text']");
+        var mainC=document.getElementById("mainContainer");
+        comp=window.getComputedStyle(Id);
+        var l=comp.getPropertyValue("left");
+        var t=comp.getPropertyValue("top");
+        var w=comp.getPropertyValue("width");
+        comp=window.getComputedStyle(mainC);
+        var maxL=comp.getPropertyValue("width");
+        
+        indx=l.search("px");
+        var l1=l.slice(0,indx);
+
+         indx=t.search("px");
+        var t1=t.slice(0,indx);
+        
+        indx=w.search("px");
+        w=w.slice(0,indx);
+        
+        indx=maxL.search("px");
+        maxL=maxL.slice(0,indx);
+        
+        //alert(maxL+" "+w);
+        
+        l1=parseInt(l1);
+
+        t1=parseInt(t1);
+        var finalL=l1;
+        var finalT=t1;
+        var timer=setTimeout(f1,30)
+        if (l1 < 800 && t1 == 100) {
+            l1=l1+10;
+
+        	  Id.style.left=l1+"px";
+            finalL=l1;
+            //inp.value=finalT+","+finalL;
+
+
+         }  else if (l1 == 800 && t1 < 400) {
+            t1=t1+10;
+            Id.style.top=t1+"px";
+            finalT=t1;
+            //inp.value=finalT+","+finalL;
+
+
+        } else if (t1 == 400 && l1 > 20 ) {
+
+              l1=l1-10;
+
+            Id.style.left=l1+"px";
+            finalL=l1;
+            //inp.value=finalT+","+finalL;
+
+        } else if (l1 == 20 && t1 > 100) {
+
+             t1=t1-10;
+            Id.style.top=t1+"px";
+            finalT=t1;
+            //inp.value=finalT+","+finalL;
+
+        }
+    }
+    
+
+
+
+    
+    
+    
+    </script>

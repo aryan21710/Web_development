@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+	<style>
+			body {
+				background: black;
+				font-family: 'Fjalla One', sans-serif;
+				text-shadow: 2px 2px #FF0000;
+
+			}
+
+			#header {
+				background-color: black;
+				margin: 20px;
+				height : 40px;
+				padding: 0;
+
+			}
+
+			#header p {
+				font-size: 40px;
+				text-align: center;
+				margin: 20px;
+				color: white;
+			}
+
+		
+
+			#quizQuestion {
+				height : 570px;
+				/*background-color: black;*/
+				margin: 15px 10px 0px 10px;
+				/*border: 1px solid blue;*/
+				position: relative;
+			}
+
+			@keyframes example {
+			0% {left: 10px; opacity:0;}
+			20% {left : 200px; opacity:0.8;}
+			40% {left: 400px; opacity:0.2;}
+			60% {left : 600px;opacity:0.7;}
+			80% {left : 800px;opacity:0.5;}
+			100% {left : 1100px; opacity:1;}
+			}
+
+			@keyframes example1 {
+				0% { color:#000;}
+				20% {color:transparent;}
+				40% {color:transparent;}
+				100% {color:#000;}
+			}
+
+			@keyframes winningKeyFrame {
+				0% { left:0px;}
+				100% {left:430px; background-image : url('thumbsUp.jpg'); background-repeat: no-repeat; background-size:contain;}
+
+			}
+
+			@keyframes losingKeyFrame {
+				0% { left:0px;}
+				100% {left:430px; background-image : url('thumbsDown.jpg'); background-repeat: no-repeat; background-size:contain;}
+			}
+
+			#footer {
+				margin : 50px 10px 0px 10px;
+				/*border: 1px solid red;*/
+			}
+
+			#start, #stop {
+				width: 150px;
+				height : 50px;
+	
+			}
+
+			#start {
+				margin: 0px 0px 0px 590px;
+				background: red;
+				padding : 0px;
+				font-size: 30px;
+				text-align : center;
+				text-decoration: none;
+				cursor: pointer;
+				font-family: 'Fjalla One', sans-serif;
+				text-shadow: 2px 2px #FF0000;
+
+			}
+		
+	</style>
+</head>
+
+<body>
+	<div id="header" >
+		<p> WELCOME TO MATHS GAME </p>
+	</div>
+
+	<div id='quizQuestion'>
+	</div>
+
+	<div id="footer">
+		<button id='start' onclick='startQuiz()'>START</button>
+	</div>
+  
+ 
+ <script>
+ 	var time=0;
+ 	var timeout=1;
+ 	var op=['+','/','*','-'];
+ 	var bkg=['blue','red','yellow','white','green'];
+ 	var topPos=10;
+ 	var mainCont=document.getElementById('quizQuestion');
+ 	var head=document.getElementById('header');
+ 	var ans=1;
+ 	var ansArr=new Array();
+ 	var prin=new Array();
+ 	var mathExpression=new Array();
+ 	var userPoints=0;
+
+
+
+ 	function startQuiz() {
+ 		while(mainCont.hasChildNodes()) {
+ 			mainCont.removeChild(mainCont.lastChild);
+ 		}
+ 		while(head.hasChildNodes()) {
+ 			head.removeChild(head.lastChild);
+ 		}
+ 		 if (userPoints < 0) {
+ 		 	userPoints=0;
+ 		 }
+ 		var prin=new Array();
+
+ 		time=9;
+ 		topPos=10;
+ 		ans=1;
+ 		var animIterCnt='infinite';
+ 		var animDuration=['2s','2s','6s'];
+ 		var animTimingFunction=['linear','ease-in','ease-out'];
+ 		var animDelay=['0s','1s','-1s'];
+ 		var animDirection=['alternate','reverse','normal'];
+ 		// var mathExpression=new Array();
+
+ 		while(true) {
+				for (var i=0; i < 5;i++) {
+					if (i%2==0) {
+			 			var rand=Math.floor(Math.random(1)*50+1);
+			 			mathExpression[i]=rand;
+
+					} else {
+		 				op[i]=op[Math.floor(Math.random()*op.length)];
+		 				mathExpression[i]=op[i];
+					}
+				}
+				// mathExpression=[10,'/',4,'+',3];
+				ans=calculateAns(mathExpression);
+		 		if (parseInt(ans) > 0 || !ans > 0) {
+		 			// alert('VALUE OF ANS:-'+ans);
+		 			break;	
+		 		}
+
+		}
+
+		 	ansArr=[ans,ans+10,ans+5,ans+20];
+		 	//alert('ansArr='+ansArr);
+		 	while(true) {
+		 		var a=ansArr[Math.floor(Math.random()*ansArr.length)];
+		 		// alert ('a:-'+a);
+		 		if (prin.length < ansArr.length) {
+			 		if (prin.indexOf(a)==-1) {
+			 			prin.push(a);
+			 			// alert(a+' NOT PRESENT. NEW ARRAY:-'+prin);
+			 		}
+		 		} else {
+		 			break;
+		 		}
+		 	}
+		 	// alert(prin+':::'+ans);
+
+			if (parseInt(ans) > 0) {
+			 	for (var i=0; i < 5;i++) {
+			 		var div=document.createElement('div');
+			 		if (i%2==0) {
+		 			var text=document.createTextNode(mathExpression[i]);
+
+				} else {
+	 				var text=document.createTextNode(mathExpression[i]);
+				}
+
+					div.style.pointer='cursor';
+					div.id='no'+String(i);
+					div.style.width='100px';
+					div.style.height='40px'
+					div.style.color='black';
+					div.style.background=bkg[Math.floor(Math.random()*bkg.length)];
+					div.style.textAlign='center';
+					div.style.padding='20px 10px';
+					div.style.fontSize='25px';
+					div.style.textShadow='0px 0px';
+					div.style.margin='10px';
+					div.style.fontWeight=900;
+					div.style.display='block';
+					div.style.position='absolute';
+					div.style.left='10px';
+					div.style.top=String(topPos)+'px';
+					div.style.animationName='example'
+					div.style.animationDuration=animDuration[Math.floor(Math.random()*animDuration.length)];
+					div.style.animationDirection=animDirection[Math.floor(Math.random()*animDirection.length)];
+					div.style.animationTimingFunction=animTimingFunction[Math.floor(Math.random()*animTimingFunction.length)];
+					div.style.animationDelay=animDelay[Math.floor(Math.random()*animDelay.length)];
+					div.style.animationIterationCount=animIterCnt;
+					div.style.opacity=0;
+
+					topPos=parseInt(topPos);
+					topPos+=110;
+					div.appendChild(text);
+					mainCont.appendChild(div);
+				}
+
+				var timer=document.createElement('p');
+		 		timer.style.pointer='cursor';
+				timer.id='timerId'
+				timer.style.color='white';
+				timer.style.width='350px';
+				timer.style.textAlign='right';
+				timer.style.fontSize='40px';
+				timer.style.margin='0';
+				timer.style.position='absolute';
+				timer.style.top='20px';
+				timer.style.left='470px';
+				timer.style.textShadow='2px 2px #ffffff';
+				timer.style.animation='example1 0.8s normal 11';
+				var header=document.getElementById('header');
+				header.appendChild(timer);
+				startTimer(time,prin);
+			} else {
+				startQuiz();
+			}
+		
+ 	}
+
+ 	function startTimer(time,prin) {
+
+		var timer=document.getElementById('timerId');
+		var id=document.getElementById('start');
+
+ 		if (time >= 0) {	
+ 			var timeText='TIME LEFT:-- '+'00'+':'+'0'+String(time);
+ 			timer.innerHTML=timeText;
+ 			time-=1;
+ 			timeout=setTimeout(startTimer,1000,time,prin);
+ 			id.disabled=true;
+ 		} else {
+ 			id.disabled=false;
+
+ 			stopQuiz(prin);		
+ 		}
+
+
+ 	}
+
+ 	function stopQuiz(prin) {
+ 		clearTimeout(timeout);
+ 		var timer=document.getElementById('timerId');
+ 		timer.style.left='460px'
+ 		timer.style.top='40px';
+ 		timer.style.fontSize='60px';
+ 		timer.style.color='white';
+
+
+ 		timer.innerHTML='TIME\'S UP';
+		while(mainCont.hasChildNodes()) {
+ 			mainCont.removeChild(mainCont.lastChild);
+ 		}
+ 		// alert('userPoints before showing the answer:-'+userPoints);
+ 		showanswer(ans,prin);
+ 	}
+
+
+ 	function calculateAns(expr) {
+ 		var out=0;
+ 		for (var i=2; i < expr.length; i=i+2) {
+ 			if (i==2) {
+ 				out=expr[i];
+ 				// alert(i+':'+out);
+
+ 				if (expr[i-1]=='+') {
+ 					out+=expr[i-2];
+ 				} else if (expr[i-1]=='-') {
+ 					out=expr[i-2]-out;
+ 				} else if (expr[i-1]=='*'){
+ 					out*=expr[i-2];
+ 				} else if (expr[i-1]=='/') {
+ 					// alert('inside if / block');
+ 					out=expr[i-2]/out;
+ 					// alert('out after divsions:-'+out);
+ 					if (!Number.isInteger(out)) {
+ 						out=-1;
+ 						break;
+ 					}
+
+ 				}
+ 		    } else if (i > 2) {
+ 		    	// alert('ENTERED ELSE BLOCK:-'+i+':'+out);
+ 		    	if (expr[i-1]=='+') {
+ 					out+=expr[i];
+ 				} else if (expr[i-1]=='-') {
+ 					out=out-expr[i];
+ 				} else if (expr[i-1]=='*'){
+ 					out*=expr[i];
+ 				} else if (expr[i-1]=='/') {
+ 					out=out/expr[i];
+ 					if (!Number.isInteger(out)) {
+ 						out=-1;
+ 						break;
+ 					}
+ 				}
+ 		    }
+ 		  }
+ 	 		// alert('expr:-'+expr+' AND ANSWER IS= '+out);
+ 	 		return out;
+
+ 	}
+
+
+
+ 	function showanswer(ans,prin) {
+ 			// alert('INSIDE SHOW ANSWER:-'+ans);
+ 			var userAns=0;
+ 			// alert('IN showanswer:-'+mathExpression);
+
+ 			var div=document.createElement('div');
+ 			var mainCont=document.getElementById('quizQuestion');
+			div.style.pointer='cursor';
+			div.id='ansdiv';
+			div.style.width='400px';
+			div.style.height='280px'
+			div.style.background='white';
+			div.style.display='block';
+			div.style.position='absolute';
+			div.style.left='470px';
+			div.style.top='150px';
+			
+
+			for (var i=0; i < 5;i++) {
+				var inpDiv=document.createElement('div');
+				inpDiv.id='inp';
+				inpDiv.style.height='40px';
+				inpDiv.style.cursor='pointer';
+				if (i==4) {
+					inpDiv.style.margin='15px 110px';
+					inpDiv.style.width='200px';
+					var submit=document.createElement('INPUT');
+					submit.setAttribute('type','button');
+					submit.value='SUBMIT';
+					submit.style.width='150px';
+					submit.style.cursor='pointer'
+					submit.style.height='40px';
+					submit.style.margin='0px 10px';
+					submit.style.background='black';
+					submit.style.color='red';
+					submit.style.fontSize='20px';
+					submit.style.fontSize='Fjalla One';
+					submit.addEventListener('click',function() {
+							while(div.hasChildNodes()) {
+								div.removeChild(div.lastChild);
+							}
+							var inpDiv=document.createElement('div');
+							inpDiv.id='inp';
+							inpDiv.style.height='50px';
+							var p1='QUESTION:-  '+mathExpression.join(" ");
+							var p=document.createTextNode(p1);
+							inpDiv.style.width='400px';
+							inpDiv.style.fontSize='30px';
+							inpDiv.style.margin='50px 0px';
+							inpDiv.style.textAlign='center';
+							inpDiv.style.color='black';
+							inpDiv.style.fontFamily= 'Fjalla One';
+							inpDiv.style.textShadow= "2px 2px #FF0000";
+							inpDiv.appendChild(p);
+							var resdiv=document.createElement('div');
+							resdiv.style.pointer='cursor';
+							resdiv.id='resdiv';
+							resdiv.style.width='400px';
+							resdiv.style.height='50px'
+							// resdiv.style.background='black';
+							resdiv.style.display='block';
+							resdiv.style.margin='0px';
+							// resdiv.style.border='1px solid blue';
+							resdiv.style.fontSize='30px';
+							resdiv.style.textAlign='center';
+							resdiv.style.textShadow= "2px 2px #FF0000";
+							resdiv.style.color='black';
+
+							
+							if (userAns==ans) {
+								ans='CORRECT...IT\'s '+'"'+String(ans)+'"';
+								userPoints+=10;
+								 		// alert('userPoints increased:-'+userPoints);
+
+							} else {
+								ans='WRONG ANSWER';
+								userPoints-=10;
+								 		// alert('userPoints decreased:-'+userPoints);
+
+
+							}
+							var t=document.createTextNode(ans);
+							resdiv.appendChild(t);
+							div.appendChild(inpDiv);
+							div.appendChild(resdiv);;
+							xyz=setTimeout(function() {
+								score()},1000);
+					});
+
+					inpDiv.appendChild(submit);
+				} else {
+					inpDiv.style.margin='10px 150px';
+					inpDiv.style.width='100px';
+					var rdo=document.createElement('INPUT');
+					rdo.setAttribute('type','radio');
+					rdo.setAttribute('name','ansRadio');
+					rdo.style.float='left';
+					rdo.style.width='20px';
+					rdo.style.height='20px';
+					rdo.style.margin='8px 0px 0px 10px';
+					rdo.addEventListener('click',function() {
+						userAns=this.nextSibling.innerHTML;
+						userAns.style.color='black';
+					});
+					var inp=document.createElement('p');
+					inp.innerHTML=prin[i];
+					inp.style.float='left';
+					inp.style.margin='5px 20px 0px 5px';
+					inp.style.color='black';
+					inp.style.fontSize='20px';
+					inpDiv.appendChild(rdo);
+					inpDiv.appendChild(inp);
+				}
+				
+				div.appendChild(inpDiv);
+			}
+
+			mainCont.appendChild(div);
+
+ 	}
+ 	// 0 (correct answer) --> still showing 0.
+ 	function score() {
+ 		var mainCont=document.getElementById('quizQuestion');
+		var scrDiv=document.createElement('div');
+		scrDiv.id='scoreDiv';
+		scrDiv.style.height='400px';
+		scrDiv.style.width='500px';
+		scrDiv.style.boxSizing='border-box';
+		scrDiv.style.fontSize='50px';
+		scrDiv.style.margin='50px 0px';
+		scrDiv.style.padding='120px 70px';
+		scrDiv.style.textAlign='center';
+		scrDiv.style.color='black';
+		scrDiv.style.fontFamily= 'Fjalla One';
+		scrDiv.style.background='white';
+		scrDiv.style.position='absolute';
+		scrDiv.style.top='50px';
+		var finalScr='';
+		// scrDiv.style.left='330px';
+		if (userPoints < 10) { 
+			scrDiv.style.animation='losingKeyFrame 0.2s normal linear 1 forwards';
+			finalScr='YOUR SCORE:- '+ '0';
+		} else {
+			scrDiv.style.animation='winningKeyFrame 0.2s normal linear 1 forwards';
+			finalScr='YOUR SCORE:- '+ String(userPoints);
+		}
+		var scrp=document.createTextNode(finalScr);
+		// scrp.style.padding='80px';
+		scrDiv.appendChild(scrp);
+		mainCont.appendChild(scrDiv);
+		clearTimeout(xyz);
+ 	}
+
+ </script>
+  
+</body>
+
+
+
+
+</html>

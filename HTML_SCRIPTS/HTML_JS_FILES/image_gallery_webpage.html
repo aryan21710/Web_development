@@ -1,0 +1,353 @@
+<html>
+  <head>
+    <meta name="viewport" content="max-width=device-max-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Yatra+One" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Aguafina+Script">
+
+    <style type="text/css">
+
+    * {
+      box-sizing: border-box;
+    }
+
+      #header {
+        display:block;
+        background: #fff280;
+        padding: 5px;
+        margin : 10px 0px;
+        width: 99%;
+
+      }
+
+
+      #header h1 {
+        line-height: 1.5px;
+        letter-spacing: 5px;
+        text-shadow: -2px 2px 2px;
+        font-family: "Aguafina Script"; 
+        font-size: 35px; 
+        font-style: normal; 
+        font-variant: normal; 
+        font-weight: 700; 
+        line-height: 26.4px; 
+        text-align: center;
+      }
+
+     #header p {
+        color : #333333;
+        font-size: 20px;
+
+      }
+
+      #leftContainer {
+        display: block;
+        padding: 10px;
+        margin: 0px 5px;
+        max-width: 40%;
+        position: relative;
+        float: left;
+        height: 100%;
+        background: #ffe500;
+
+      }
+
+
+
+      #id1 {
+        margin: auto;
+        background: #f2f2f2;
+        display: block;
+      }
+
+      #id1 img{
+        width: 20%;
+        height: 10%;
+        box-shadow: 0px 8px 16px 0px;
+        padding: 0px;
+        float: left;
+        border : 1px solid black;
+        opacity: 1;
+        margin: 20px 30px;
+        object-fit: contain;
+
+
+      }
+   
+ 
+
+      #rightContainer {
+        display: block;
+        width: 58%;
+        float: left;
+        height: 100%;
+        position: relative;
+        background: #7f7200;
+
+      }
+
+
+
+
+
+      #rightContainer ul {
+    
+        list-style-type: none;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+
+      }
+
+      #rightContainer ul li {
+        color : #333333;
+        font-size: 35px;
+        padding: 15px;
+        opacity: 0;
+        position: absolute;
+        left : 600px;
+        /*font-family: 'Yatra One', cursive;*/
+        font-family: 'Spring';
+
+
+
+      }
+
+      #rightContainer ul li:nth-child(1) {
+        top : 70px;
+        color: white;
+
+      }
+
+    #rightContainer ul li:nth-child(2) {
+        top : 140px;
+        color: white;
+
+
+      }
+
+       #rightContainer ul li:nth-child(3) {
+        top : 210px;
+        color: white;
+
+
+      }
+       #rightContainer ul li:nth-child(4) {
+        top : 280px;
+        color: white;
+
+
+      }
+       #rightContainer ul li:nth-child(5) {
+        top : 350px;
+        color: white;
+
+
+      }
+       #rightContainer ul li:nth-child(6) {
+        top : 420px;
+        color: white;
+
+
+      }
+
+     span {
+      
+        margin: 140px;
+
+
+      }
+
+    span a {
+        text-transform: capitalize;
+        text-align: center;
+
+        font-size: 35px;
+        font-family: "Aguafina Script"; 
+
+        color : black;
+        padding: 20px;
+        text-decoration: none;
+
+      }
+
+
+
+
+
+       /*#rightContainer img {
+        width: 90%;
+        height: 80%;
+        box-shadow: 0px 8px 16px 0px;
+        box-sizing: border-box;
+        opacity: 1;
+        position: sticky; 
+        top : 0px;
+        left: 10px;
+        border : 5px solid black;
+        margin: 30px 20px;
+      }*/
+        
+
+      @media  only screen and (max-width: 600px) {
+        .leftContainer , .rightContainer {
+          max-width: 100%;
+          display: block;
+          float: none;
+          position: relative;
+        }
+      }
+
+
+    </style>
+  </head>
+
+  <body onload="setInterval(animate,500)";">
+
+    <div id="header">
+        <h1> "IMAGE GALLERIA" </h1>
+        
+    </div>
+
+    <div id="leftContainer">
+
+        <div id="id1">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch0.jpg">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch20.jpg">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch2.jpg">
+       </div>
+
+        <div id="id1">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch3.jpg">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch4.jpg">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch5.jpg">
+        </div>
+
+
+        <div id="id1">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch6.jpg">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch7.jpg">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch8.jpg">
+        </div>
+
+        <div id="id1">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch9.jpg">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch18.jpg">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch11.jpg">
+        </div>
+
+        <div id="id1">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch12.jpg">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch13.jpg">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch14.jpg">
+        </div>
+
+        <div id="id1">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch19.jpg">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch16.jpg">
+          <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch17.jpg">
+        </div>
+
+        <p> <span><strong><i><a href="#"> Next-Page >></a> </i> </strong> </span> </p>
+
+    </div>
+
+    <div id="rightContainer">
+      <ul id="ulDummy"> 
+        <li>MOVE</li>
+        <li>MOUSE</li>
+        <li>OVER</li>
+        <li>IMAGE</li>
+        <li>TO</li>
+        <li>ZOOM</li>
+      </ul> 
+
+      
+    </div>
+
+    <script  type="text/javascript">
+       function animate() {
+          var ul = document.getElementById("ulDummy");
+          var listItems = ul.getElementsByTagName("li");
+
+          for (var i = 0; i <listItems.length; ++i) {
+                    comp=window.getComputedStyle(listItems[i]);
+                    var l=comp.getPropertyValue("left");
+                    var indx=l.search("px");
+                    liLeftCordinates=l.slice(0,indx);
+                    if (i%2==0) {
+                      listItems[i].style.transition="1s";
+
+                       if (liLeftCordinates  > 100) {
+                            listItems[i].style.opacity=1;
+                            listItems[i].style.left=liLeftCordinates-100+"px";
+                        } else {
+                          listItems[i].style.opacity=0;
+                          listItems[i].style.left=600;
+                        }
+
+                   } else {
+
+                        if (liLeftCordinates  > 100) {
+                            listItems[i].style.opacity=1;
+                            listItems[i].style.left=liLeftCordinates-100+"px";
+                        } else {
+                          listItems[i].style.opacity=0;
+                          listItems[i].style.left=600;
+                        }
+                        listItems[i].style.transition="0.5s";
+
+                  }
+          }
+      }
+
+       
+        function expand(imgloc,imgName) {
+          var im=document.createElement("IMG");
+          im.setAttribute("src",imgName);
+          im.style.width="100%";
+          im.style.boxShadow="0px 8px 16px 0px";
+          im.style.height="100%";
+          // OVERFLOW IN OTHER CONTAINERS SHOULD BE AVOIDED WHEN STICKY USED.
+          im.style.position="sticky";
+          im.style.margin="0px";
+          im.style.border="5px solid black";
+          im.style.top="50px";
+          im.style.left="10px";
+          imgloc.style.opacity=0.3;
+
+          var node=document.getElementById("rightContainer");
+          node.appendChild(im);
+          document.getElementById("rightContainer").style.display="block";
+          var ul = document.getElementById("ulDummy");
+          var listItems = ul.getElementsByTagName("li");
+           // BELOW LOOP WILL STOP THE "MOVE THE MOUSE OVER" ANIMATION WHEN MOUSE IS HOVERED 
+          // OVER THE SMALL THUMBNAIL IMAGE.
+          while(ul.firstChild) {
+              ul.removeChild(ul.firstChild);
+          }
+
+          // BELOW SECTION WILL CHANGE THE BOX-BORDER OF THUMBNAIL IMAGES TO RED DURING HOVER.
+          var leftCntId=document.querySelectorAll('#id1');
+
+           for(var i=0; i < leftCntId.length; i++) {
+              var imgId=leftCntId[i].getElementsByTagName("img");
+              for(var j=0; j < imgId.length; j++) {
+                  imgId[j].style.borderColor="white";
+
+              }
+
+           }
+          
+
+        }
+
+        function shrink() {
+          var node=document.getElementById("rightContainer");
+          node.removeChild(node.lastChild);
+          
+        }
+
+    </script>
+  </body>
+</html>

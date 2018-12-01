@@ -1,0 +1,10 @@
+../../../Playground/app-pl1.js:// #KEYWORDS:- [module exports, callback to callback, process.argv]
+../../../Playground/app.js:// #KEYWORDS :- [yargs Notes, yargs.command, .demandOption]
+../../../Playground/new_weather_app/app.js://#KEYWORD [callback to a class method, callback-to-callback, implementation using class and not functions, promises chaining]
+../../../Playground/new_weather_app/geocode.js:// #KEYWORDS:- [super, yargs.option, encodeURI, demandOption, request module, module.exports, class, static function, ternery operator, ?:, try/catch]
+../../../Playground/new_weather_app/geocode_promises.js:// #KEYWORDS:- [promises chaining, super, yargs.option, encodeURI, demandOption, request module, module.exports, class, static function, ternery operator, ?:, try/catch]
+../../../Playground/node-web-server/node-test/server/server.test.js:// #KEYWORD:- [ TESTING EXPRESS APP USING MOCHA, SUPERTEST,]
+../../../Playground/node-web-server/node-test/utils/utils.js:// #KEYWORDS:- {Object.prototype.toString, Object toString method modified, object literals}
+../../../Playground/node-web-server/node-test/utils/utils.test.js:// #KEYWORDS :- [mocha function syntax.EXPECT package, DESCRIBE BLOCK FOR MOCHA TESTING, TEST CASE SEPARATION]
+../../../Playground/node-web-server/server.js:// #KEYWORDS:- [hbs partials, hbs registerhelper, explanation of hbs and handlebars, res.render, template-engines, explanation of app.get,middleware, app.use, express, app.listen, sending json/html data as a response back to the client]
+../../../Playground/notes.js:// #KEYWORDS:- [Object.prototype.toString, arr.forEach, JSON.parse, arr.filter]

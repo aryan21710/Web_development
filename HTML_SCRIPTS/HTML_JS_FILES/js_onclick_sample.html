@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+
+#xyz {
+  background : yellow;
+    float : left;
+    display : none;
+    width : 250px;
+
+}
+
+#xyz p {
+
+  padding : 10px;
+    text-align : center;
+}
+
+
+
+
+</style>
+</head>
+
+<body>
+  <p onclick="expand()"> Hover over me to show the p element </p>
+    <div id="xyz">
+      <p> Tada. Here I am </p>
+    </div>
+
+    <script>
+        function expand() {
+          document.getElementById("xyz").style.display="block";
+        }
+
+    </script>
+
+</body>
+</html>

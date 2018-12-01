@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style>
+	#Maincont {
+		margin : 0px;
+		position: relative;
+		width: 1350px;
+		height : 680px;
+		background: black;
+		position: relative;
+		cursor : pointer;
+	}
+
+	#Maincont p {
+		color: white;
+		text-align: center;
+		font-size: 30px;
+		margin: 10px;
+	}
+
+	#Footer {
+		margin: 10px 0px;
+		background: black;
+		width: 100%;
+		height: 80px;
+	}
+
+	#startbtn {
+		width: 150px;
+		height: 40px;
+		background: red;
+		color: white;
+		text-align: center;
+		font-size: 20px;
+		outline :0;
+		margin :10px 0px 0px 500px;
+	}
+
+	#stopbtn {
+		width: 150px;
+		height: 40px;
+		background: red;
+		color: white;
+		text-align: center;
+		font-size: 20px;
+		outline :0;
+		margin :10px 10px;
+	}
+	</style>
+</head>
+<body onload="createDiv('targetCont','130px','50px','red','0px','0px')">
+	<div id='Maincont'>
+				<p id='header'> CLICK ON THE BOX TO SCORE POINTS </p>
+	</div>
+	<div id='Footer'>
+		<button id='startbtn' onclick='Initialize()'> START </button> 
+		<button id='stopbtn' onclick='stopGame()'> STOP </button> 
+	</div>
+<script>
+		var box=document.getElementById('boxId');
+		var main=document.getElementById('Maincont');
+		var timeout=[];
+		var cnt=0;
+		var scr=0;
+		var levelCnt=30;
+		var divcnt=0;
+		var numOfbox=[];
+		var fcnt=0;
+		var timer=2000;
+		function createDiv(Name,Width,Height,Background,Margin,Padding) {
+				var b=document.getElementById('Maincont');
+				timer-=100;
+				var t=t+divcnt;
+				divcnt+=1;
+				var Name=Name+divcnt;
+				var Nameid='boxId'+divcnt;
+				Name=document.createElement('button');
+				Name.id=Nameid;
+				console.log('IN CREATEDIV :-'+ Nameid+':::'+Name+' cnt '+ cnt);
+				Name.style.width=Width;
+				Name.style.height=Height;
+				Name.style.background=Background;
+				Name.style.margin=Margin;
+				Name.style.padding=Padding;
+				Name.style.boxSizing='border-box';
+				Name.style.position='absolute';
+				Name.style.top='30px';
+				Name.style.left='10px';
+				Name.style.color='white';
+				Name.style.textAlign='center';
+				Name.style.fontSize='15px';
+				Name.style.textDecoration='none';
+				Name.style.cursor='pointer';
+				Name.disabled=true;
+				t=document.createTextNode('HIT ME');
+				Name.appendChild(t);
+				Name.addEventListener('click', function() {
+					this.style.background='black';
+					scr+=10;
+					this.setAttribute('disabled',false);
+					cnt+=10;
+					updateScore(scr);
+				});
+				// FIRST HIT ME BOX IS READY NOW....
+				b.appendChild(Name);
+				// Array numOfbox loaded with all the Box id's.
+				numOfbox.push(Name.id);
+
+				console.log('PUSHING DIV:-'+ Name.id + " IN ARRAY :=" +numOfbox);
+				// creatediv is called when score is scr%30==0. 
+				if (numOfbox.length > 1) {
+					return numOfbox;
+				}
+		}
+
+		function updateScore(scr) {
+					for (var i=0; i < numOfbox.length; i++) {
+					var id=document.getElementById(numOfbox[i]);
+					id.innerHTML= 'SCORE = ' +String(scr);
+					}
+		}
+
+		function Initialize() {
+				var head=document.getElementById('header');
+				head.style.visibility='hidden';
+			if (main.childNodes.length < 10) {
+					if ((cnt > 0) && (cnt %30 ==0)) {
+						var id='targetCont'+divcnt;
+						divcnt+=1;
+						numOfbox=createDiv(id,'130px','50px','black','0px','0px');
+						console.log('Inside Initialize:-'+id+' cnt '+ cnt);
+						cnt=0;
+					}
+				startGame(numOfbox);
+			}
+		}
+		
+
+		function startGame(numOfbox) {
+			var d=new Date();
+			var t=d.getMinutes()+':'+d.getSeconds();
+			fcnt+=1;
+			console.log('TIME IS:-'+ t + "  cnt:-" +fcnt+' INSIDE STARTGAME:-'+numOfbox+':'+numOfbox.length+ ' CNT'+cnt +' TIMER VALUE '+timer);
+				if ((cnt > 0) && (cnt %30 ==0)) {
+						Initialize();
+				} else {
+						for (var i=0 ; i < numOfbox.length; i++) {
+				 			var box=document.getElementById(numOfbox[i]);
+							console.log(box);
+							box.disabled=false;
+							var max=630;
+							var min=0;
+							var topRand=(Math.floor(Math.random() * (max-min+1) + min));
+							var max=1200;
+							var min=0;
+							var leftRand=(Math.floor(Math.random() * (max-min+1) + min));
+							box.style.background='red';
+							box.style.top=topRand+'px';
+							box.style.left=leftRand+'px';
+							console.log('CNT:='+cnt);
+						}
+						timeout=setTimeout(startGame,timer,numOfbox);				
+			}
+		}
+		
+		
+		
+		function stopGame() {
+			clearTimeout(timeout);
+			console.log('IN STOPGAME:-'+timeout+' length '+timeout.length);
+			for (var i=0 ; i < numOfbox.length ; i++) {
+				console.log(timeout[i]);
+				clearTimeout(timeout[i]);
+				var box=document.getElementById(numOfbox[i]);
+				box.style.background='red';
+				box.style.top='10px';
+				box.style.left='10px';
+			}	
+
+			timeout=[];	
+		}
+</script>
+		
+</body>
+</html>

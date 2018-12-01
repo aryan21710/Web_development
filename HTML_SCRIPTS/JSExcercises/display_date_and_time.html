@@ -1,0 +1,12 @@
+<!DOCTYPE HTML5>
+<html>
+	<body>
+	<p id="demo"> CURRENT DATE AND TIME IS:- </p>
+	<script> 
+		var d=new Date();
+		var oup=document.getElementById("demo");
+		oup.innerHTML=oup.innerHTML + ' DATE IS:- ' + d.toDateString() +
+		' AND TIME IS :- '+ d.getHours()+':'+d.getMinutes()+':'+d.getSeconds() ;
+	</script>
+	</body>;
+</html>

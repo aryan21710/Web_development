@@ -1,0 +1,10 @@
+/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/HTML_JS_FILES/json_sample.html:	//#KEYWORDS:- [JSON TO OBJECT]
+/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/JSExcercises/Objects/Classes_ES6/getters_setters_static_func_in_classes.js://#KEYWORDS :- [static, get,set]
+/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/JSExcercises/Objects/Classes_ES6/inheritance_classes.js://#KEYWORDS:- [super, extends, class]
+/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/JSExcercises/Objects/how_to_inherit_from_another_object_using_superConstructor.js:// #KEYWORDS:- [call]
+/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/JSExcercises/Objects/inheritance_exercise.js:// #KEYWORDS:- get, prototype.constructor, Object.defineProperty
+/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/Nodejs/Playground/app-pl1.js:// #KEYWORDS:- [module exports, callback to callback, process.argv]
+/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/Nodejs/Playground/app.js:// #KEYWORDS :- [yargs Notes, yargs.command, .demandOption]
+/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/Nodejs/Playground/new_weather_app/app.js://#KEYWORD [callback to a class method, callback-to-callback, implementation using class and not functions]
+/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/Nodejs/Playground/new_weather_app/geocode.js:// #KEYWORDS:- [super, yargs.option, encodeURI, demandOption, request module, module.exports, class, static function, ternery operator, ?:, try/catch]
+/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/Nodejs/Playground/notes.js:// #KEYWORDS:- [Object.prototype.toString, arr.forEach, JSON.parse, arr.filter]

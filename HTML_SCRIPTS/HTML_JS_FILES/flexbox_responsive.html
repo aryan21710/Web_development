@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+
+	<style type="text/css">
+		* {
+			box-sizing: border-box;
+		}
+
+		#MainCont {
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			width: 100%;
+			justify-content: flex-start;
+			position: relative;
+		}
+		 #leftCont {
+			/*background: #d9d9d9;*/
+			max-width: 10%;
+			padding: 0 10px;
+			position: relative;
+			/*border : 1px solid black;*/
+		}
+
+		 #leftCont  img {
+		 	margin-top: 20px;
+			width: 100%;
+			box-shadow: 0px 8px 16px 0px;
+
+		}
+
+		 #rightCont {
+			background: #d9d9d9;
+			width: 60%;
+			padding: 50px;
+			position: relative;
+			display: flex;
+			flex-wrap: wrap;
+		}
+
+
+      #rightCont ul {
+    
+        list-style-type: none;
+        display: inline-block;
+        margin: 0;
+        padding: 0;
+        position: absolute;
+      }
+
+      #rightCont ul li {
+        color : #333333;
+        font-size: 35px;
+        padding: 15px;
+        opacity: 0;
+  		 position: absolute;
+        left : 600px;
+        /*font-family: 'Yatra One', cursive;*/
+        font-family: 'Spring';
+      }
+
+
+/*       #rightCont img {
+        width: 80%;
+        height: 80%;
+        box-shadow: 0px 8px 16px 0px;
+        box-sizing: border-box;
+        opacity: 1;
+        position: sticky; 
+        top : 0px;
+        left: 10px;
+        border : 5px solid black;
+        margin: auto;
+      }
+        */
+
+
+      #rightCont ul li:nth-child(1) {
+        top : 70px;
+        color: black;
+
+      }
+
+    #rightCont ul li:nth-child(2) {
+        top : 140px;
+        color: black;
+
+
+      }
+
+       #rightCont ul li:nth-child(3) {
+        top : 210px;
+        color: black;
+
+
+      }
+       #rightCont ul li:nth-child(4) {
+        top : 280px;
+        color: black;
+
+
+      }
+       #rightCont ul li:nth-child(5) {
+        top : 350px;
+        color: black;
+
+
+      }
+       #rightCont ul li:nth-child(6) {
+        top : 420px;
+        color: black;
+
+
+      }
+
+	@media only screen and (max-width: 600px) {
+		#leftCont {
+			max-width: 25%;
+		}
+
+		#leftCont img {
+			width: 30%;
+		}
+
+	
+	    #rightCont {
+	    	width: 100%;
+	    	margin: auto;
+	    }
+	}
+
+	</style>
+</head>
+<body onload="setInterval(animate,500)";">
+	<div id="MainCont">
+		<div id="leftCont">
+			<img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch0.jpg">
+			<img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch1.jpg">
+		    <img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch2.jpg">
+		   	<img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch3.jpg">
+		    <img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch4.jpg">    
+		</div>
+
+		<div id="leftCont">
+			<img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch5.jpg">
+			<img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch6.jpg">
+			<img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch7.jpg" >
+		    <img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch8.jpg" >
+		    <img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch9.jpg" >
+		</div>
+
+		<div id="leftCont">
+			<img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch11.jpg" >
+		    <img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch12.jpg" >
+		    <img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch13.jpg" >
+		    <img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch14.jpg" >
+		     <img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch16.jpg" >
+		</div>
+
+
+		<div id="leftCont">
+			<img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch17.jpg" >
+		    <img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch18.jpg" >
+		    <img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch19.jpg" >
+		    <img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch20.jpg" >
+		     <img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch22.jpg" >
+		</div>
+
+
+
+		<div id="rightCont">
+			 <ul id="ulDummy"> 
+		        <li>CLICK</li>
+		        <li>OVER</li>
+		        <li>THE</li>
+		        <li>IMAGE</li>
+		        <li>TO</li>
+		        <li>ZOOM</li>
+      		</ul> 
+
+      	<!-- 	<img onclick="expand(this,src)"  src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\sketches\final\sketch22.jpg" > -->
+		</div>
+	</div>
+
+
+	<script  type="text/javascript">
+       function animate() {
+          var ul = document.getElementById("ulDummy");
+          var listItems = ul.getElementsByTagName("li");
+
+          for (var i = 0; i <listItems.length; ++i) {
+                    comp=window.getComputedStyle(listItems[i]);
+                    var l=comp.getPropertyValue("left");
+                    var indx=l.search("px");
+                    liLeftCordinates=l.slice(0,indx);
+                    if (i%2==0) {
+                      listItems[i].style.transition="1s";
+
+                       if (liLeftCordinates  > 100) {
+                            listItems[i].style.opacity=1;
+                            listItems[i].style.left=liLeftCordinates-100+"px";
+                        } else {
+                          listItems[i].style.opacity=0;
+                          listItems[i].style.left=600;
+                        }
+
+                   } else {
+
+                        if (liLeftCordinates  > 100) {
+                            listItems[i].style.opacity=1;
+                            listItems[i].style.left=liLeftCordinates-100+"px";
+                        } else {
+                          listItems[i].style.opacity=0;
+                          listItems[i].style.left=600;
+                        }
+
+                        listItems[i].style.transition="0.5s";
+
+                  }
+          }
+      }
+
+
+      	function expand(imgloc,imgName) {
+      	  var node=document.getElementById("rightCont");
+      	  while(node.firstChild) {
+          	node.removeChild(node.firstChild);
+      	  }
+          var im=document.createElement("IMG");
+          im.setAttribute("src",imgName);
+   
+        
+          im.style.width="70%";
+          im.style.height="70%";
+          // OVERFLOW IN OTHER CONTAINERS SHOULD BE AVOIDED WHEN STICKY USED.
+          im.style.position="sticky";
+          im.style.margin="0px";
+          im.style.top="10px";
+          imgloc.style.opacity=0.5;
+          im.style.objectFit="contain";
+          im.style.boxSizing="border-box";
+          im.style.border="2px solid black";
+          var node=document.getElementById("rightCont");
+          node.appendChild(im);
+
+           // BELOW LOOP WILL STOP THE "MOVE THE MOUSE OVER" ANIMATION WHEN MOUSE IS HOVERED OVER THE SMALL THUMBNAIL IMAGE.
+          var ul = document.getElementById("ulDummy");
+          var listItems = ul.getElementsByTagName("li");
+          while(ul.firstChild) {
+              ul.removeChild(ul.firstChild);
+          }
+
+        }
+
+    </script>
+</body>
+</html>

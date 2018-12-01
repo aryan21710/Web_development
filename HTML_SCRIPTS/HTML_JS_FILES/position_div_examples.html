@@ -1,0 +1,87 @@
+<html>
+<head>
+  <style type="text/css">
+    *{
+      margin: 20px;
+      border: 2px solid rgba(100,100,100,0.8);
+      border-radius: 10px;
+      font : 20px solid courier;
+      text-shadow: 1px 1px 1px black;
+      text-align: center;
+    }
+
+    h1 {
+      background: black;
+      color : red;
+      width: 80%;
+      height: 50px;
+
+    }
+
+    .bodyClass {
+      background: grey;
+      width: 80%;
+      height: 1000px;
+      position: relative;
+    }
+
+    .abs {
+      background: lightblue;
+      width: 300px;
+      height: 200px;
+      position: absolute;
+      top:90px;
+      left: 90px;
+
+    }
+
+    .sticky {
+      position: sticky;
+      top: 100px;
+      left: 500px;
+      width: 200px;
+      height: 200px;
+      background: pink;
+
+    }
+
+    .fixed {
+      position: fixed;
+      bottom: 10px;
+      left: 100px;
+      background: magenta;
+      width : auto;
+      height: 100px;
+
+    }
+
+    p {
+      padding: 20px 20px;
+      word-spacing: 5px;
+      border-radius: 0px;
+      border: 0px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1> SCROLL TO SEE THE EFFECT </h1>
+  <div class="bodyClass">
+      <p> I AM RELATIVE POSITIONING </p>
+      <div class="abs">
+          <p> I AM ABSOLUTE POSITIONING </p>
+      </div>
+
+      <div class="sticky">
+          <p> I AM STICKY CLASS </p>
+      </div>
+
+      <div class="fixed">
+          <p> I AM FIXED CLASS </p>
+      </div>
+
+
+  </div>
+</body>
+</html>
+

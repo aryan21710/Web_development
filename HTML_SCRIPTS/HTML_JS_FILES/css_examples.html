@@ -1,0 +1,135 @@
+<head>
+  <style type="text/css">
+
+    @font-face {
+     font-family: "Dejaweb";
+     src: url("DejaWeb-Bol.eot") format('embedded-opentype'), /* EDIT correction on this line */
+     url('DejaWeb-Bol.woff') format('woff'),
+     url('DejaWeb-Bol.ttf') format('truetype'),
+     url('DejaWeb-Bolsvg#') format('svg');
+     font-weight:bold;
+    font-style:normal;
+  }
+
+  @font-face {
+        font-family: "myFirstFont";
+        src: url("sansation_light.woff")  format('woff');
+      }
+
+
+
+     .maindiv {
+      width: 100%;
+      background: grey;
+      height: 100%;
+      margin: 10px;
+      border: 5px groove black;
+      border-radius: 20px;
+     }
+
+    .div1 {
+      background: red;
+      width:  300px;
+      height: 90%;
+      margin: 5px;
+      position: absolute;
+      top: 25px;
+      left: 25px;
+    }
+
+    .div2 {
+      background: hsla(36, 100%, 50%, 0.7);
+      width:  800px;
+      height: 90%;
+      margin: 5px;
+      position: absolute;
+      top: 25px;
+      left: 325px;
+    }
+
+    .navlink {
+      background: black;
+      border: 5px solid blue;
+      width: 90%;
+      height: 10%;
+      position: absolute;
+      top: 35px;
+      left: 5px;
+    }
+
+    .navlink a {
+      font: 10 arial bold;
+      color: white;
+      padding: 15px 8px;
+      float: left;
+      text-align: left;
+    }
+
+    .div1 a, .div2 a, .maindiv h1 {
+      text-decoration: underline;
+      font-family: "myFirstFont";
+      font-size: 20;
+      padding: 5px;
+      text-align: center;
+
+
+    }
+
+
+    .div1 p:first-letter, .div2 p:first-letter {
+      font-size: 30;
+      font-style: italic;
+      font-weight: bold;
+      font-family: arial;
+    }
+
+    .div2 input {
+      color : red;
+      position: absolute;
+      font-family: "myFirstFont";
+      width: 200px;
+      height: 50px;
+      padding: 5px 5px;
+      top: 200px;
+      left: 5px;
+    }
+
+    @media screen and (max-width:400px) {
+       .navlink, .div1 {
+         background: blue;
+      }
+    }
+
+  </style>
+</head>
+<body>
+    <div class="maindiv">
+      <h1> AM I VISIBLE </h1>
+      <div class="div1">
+         <div class="navlink">
+              <a href=".maindiv">LINK1 </a>
+              <a href=".maindiv">LINK2 </a>
+              <a href=".maindiv">LINK3 </a>
+          </div>
+      </div>
+      <div class="div2">
+           <div class="navlink">
+              <a href=".maindiv">LINK1 </a>
+              <a href=".maindiv">LINK2 </a>
+              <a href=".maindiv">LINK3 </a>
+          </div>
+
+
+          <form action="post.php" method="post">
+            <input type="button" value="MY BTN" name="">
+          </form>
+
+      </div>
+
+
+
+
+
+      </div>
+    </div>
+</body>

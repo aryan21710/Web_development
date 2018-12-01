@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>
+		
+	</title>
+	<style type="text/css">
+
+
+	body {
+		font-family: "Lucida Sans";
+		box-sizing: border-box;
+	}
+
+	h1, h2 , h3 {
+		font-weight: bold;
+
+	}
+	p {
+		font-size: 20px;
+	}
+	#PreHeader {
+		background: yellow;
+		color: black;
+		text-align: center;
+		font-size: 15px;
+		padding: 15px;
+		margin: 0;
+	}
+
+	.header {
+		background: #1a53ff;
+		padding: 40px;
+		max-width: 100%;
+	}
+
+	.header h1, .header p {
+		text-align: center;
+		color: white;
+	}
+	.header h1 {
+		font-size: 25px;
+		margin-bottom: 20px;
+	}
+
+	.header p {
+		font-size: 15px;
+	}
+
+	.navbar {
+		background: black;
+		max-width: 100%;
+		overflow: hidden;
+	}
+
+
+
+	.navbar a {
+		color : white;
+		float: left;
+		display: block;
+		padding:15px;
+		text-decoration: none;
+		font-size: 20px;
+	}
+
+	.mainContainer {
+		
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		display: flex;
+		flex-wrap: nowrap;
+	}
+
+	.left {
+		max-width: 34%;
+		margin: 0;
+		float: left;
+		background: #f2f2f2;
+
+	}
+
+	.left h3, .left p, .left h2 {
+		padding: 10px;
+	}
+
+	#ProfilePic, #img1 {
+		margin: 5px;
+		background: #808080;
+	}
+
+	#ProfilePic {
+		width: 95%;
+	}
+
+	#ProfilePic img {
+		width: 400px;
+		height: 300px;
+		object-fit: contain;
+	}
+	
+	#img p, #ProfilePic p {
+		padding: 10px;
+	}
+
+	.right {
+		max-width: 65%;
+		margin: 0;
+		float: left;
+	}
+
+	#ProfilePic_right {
+		width: 95%;
+		margin: 5px;
+		background: #808080;
+	}
+
+	#ProfilePic_right img {
+		width: 400px;
+		height: 300px;
+		object-fit: contain;
+	}
+	
+	 #ProfilePic_right p {
+		padding: 10px;
+	}
+
+ 	.right p, .right h2 {
+		padding: 10px;
+	}
+
+	.footer {
+		background: #808080;
+		max-width: 100%;
+		clear: both;
+		margin: 0;
+	}
+
+	.footer p {
+		padding: 30px;
+		font-size : 25px;
+		text-align: center;
+		color: white;
+	}
+
+	@media only screen and (max-width: 768px) {
+		/* For Mobile phone */
+		.right, .left {
+			float: none;
+			max-width: 100%;
+		}
+
+		.navbar a {
+			float: none;
+			text-align: center;
+		}
+
+		.mainContainer {
+			display: block;
+
+		}
+
+	}
+	</style>
+	
+</head>
+<body>
+	<p id="PreHeader"> Resize the browser window to see the responsive effect. </p>
+	<div class="header">
+		<h1> My Website </h1>
+		<p> With a flexible layout. </p>
+	</div>
+
+	<div class="navbar">
+			<a href="file:///C:/Users/aryan/Desktop/CODING/HTML_SCRIPTS/form_list_dropdwn.html">Link1</a>
+			<a href="#">Link2</a>
+			<a href="#">Link3</a>
+			<a href="#">Link4</a>
+	</div>
+	<div class="mainContainer">
+
+		<div class="left">
+			<h2> About me </h2>
+			<p> Photo of me: </p>
+			<div id="ProfilePic">
+				<img  src="sim.jpg">
+			</div>		
+			<p> Some text about me in culpa qui officia deserunt mollit anim.. </p>
+			<h3> More Text </h3>
+			<p> Lorem ipsum dolor sit ame. </p>
+			<div id="img1">
+				<p> Image </p>
+			</div>
+
+			<div id="img1">
+				<p> Image </p>
+			</div>
+			<div id="img1">
+				<p> Image </p>
+			</div>
+		</div>
+
+		<div class="right">
+			<h2> Title Heading </h2>
+			<p> Title Description, Dec 7, 2017 </p>
+			<div id="ProfilePic_right">
+				<img src="sim.jpg">
+			</div>
+				<p> Some text..</p>
+				<p> Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+				<h2> Title Heading </h2>
+				<p> Title Description, Sep 7, 2018 </p>
+			<div id="ProfilePic_right">
+				<img src="sim.jpg">
+			</div>
+				<p> Some text..</p>
+				<p> Sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.</p>
+		</div>
+	</div>
+
+	<div class="footer">
+		<p><strong> Footer<strong></p>
+	</div>
+
+</body>
+</html>

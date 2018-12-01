@@ -1,0 +1,8 @@
+*.jpeg
+*.png
+*_modules
+*.jpg
+*.lib
+*.libc
+*.pyc
+*.jpg

@@ -1,0 +1,149 @@
+      body {
+        background: #808080;
+        margin: 0;
+        padding: 0;
+      }
+
+      #header {
+        margin: auto;
+        display: block;
+        padding: 50px 100px;
+
+      }
+
+      #header h1, #header p {
+        text-align: center;
+        word-spacing: 2px;
+        color : white;
+        margin: 0;
+        line-height: 22px;
+        /*text-shadow: -2px 0px 1px;*/
+
+      }
+
+      #container {
+        background: white;
+        padding: 20px;
+        display: block;
+        height: 400px;
+        width: 700px;
+        margin: auto;
+        box-shadow: 0px 8px 16px 0px;
+
+      }
+
+      #container input[type=text], #container input[type=password] {
+        width: 400px;
+        height: 50px;
+        border-left: 5px solid #808080;
+        border-top : 2px solid #808080;
+        border-bottom : 2px solid #808080;
+        border-right : 2px solid #808080;
+        color : #808080;
+        font-size : 15px;
+        padding: 0px 10px;
+        cursor : pointer;
+
+      }
+
+        #container input[type=text] {
+          margin: 0px 150px 0px 150px;
+        }
+
+        #container input[type=password] {
+          margin: 20px 150px 20px 150px;
+        }
+
+        #container input[type=checkbox] {
+              margin: 15px 0px 15px 150px;
+              cursor : pointer;
+
+
+        }
+
+        #container span {
+            color: #808080;
+            font-size : 15px;
+        }
+
+        #container p {
+          font: 20px solid;
+          color : #808080;
+          padding: 0px 150px;
+        }
+
+        #container input[type=button] {
+          height: 30px;
+          margin-left: 200px;
+          background: #808080;
+          color : white;
+          cursor : pointer;
+
+        }
+
+        #container #id1 {
+            color : #808080;
+            width: 400px;
+            margin: 20px 150px;
+        }
+
+        #container #id1 a:nth-child(1) {
+          float: left;
+          color : #808080;
+          text-decoration: none;
+          cursor : pointer;
+
+        }
+
+          #container #id1 a:nth-child(2) {
+          float: right;
+          color : #808080;
+          text-decoration: none;
+          cursor : pointer;
+
+        }
+
+        #container input[type=text]:hover, #container input[type=password]:hover, #container #id1 a:hover{
+            background:#e6e6e6;
+        }
+
+        #container #imgId {
+
+          width:400px;
+          margin: auto;
+          overflow: auto;
+          padding: 10px 10px;
+        }
+
+        #container #imgId img:nth-child(1) {
+          width: 43px;
+          height: 43px;
+          float: left;
+          margin: 30px 0px;
+          cursor : pointer;
+
+        }
+
+        #container #imgId img:nth-child(2) {
+          width: 40px;
+          height: 40px;
+          float: left;
+          margin: 30px 20px;
+          cursor : pointer;
+
+        }
+
+        #container #imgId img:nth-child(3) {
+          width: 40px;
+          height: 40px;
+          float: left;
+          margin: 30px 20px;
+          cursor : pointer;
+
+        }
+
+        #container input[type=button]:hover {
+              background:#e6e6e6;
+              color :#808080;
+
+        }

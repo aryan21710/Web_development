@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+	body {
+		cursor: url(http://www.rw-designer.com/cursor-extern.php?id=54423);
+	}
+
+	#Maincont {
+		margin : 0px;
+		position: relative;
+		width: 1350px;
+		height : 680px;
+		background: white;
+		position: relative;
+		/*cursor : pointer;*/
+		/*border : 1px solid blue;*/
+	}
+
+
+
+	#Maincont p {
+		color: red;
+		font-weight: 900;
+		position: absolute;
+		top : 10px;
+		left : 400px;
+		text-align: center;
+		font-size: 30px;
+		margin: 10px;
+		animation : example 4s linear normal infinite;
+	}
+
+	#time {
+		width : 1350px;
+		height: 0px;
+		background : black;
+	}
+
+	#targetCont {
+		width: 130px;
+		height : 50px;
+		text-align: center;
+		background: red;
+		font-size: 15px;
+		position: absolute;
+		top: 60px;
+		left : 10px;
+		color: white;
+	}
+
+	#Footer {
+		margin: 10px 0px;
+		background: white;
+		width: 100%;
+		height: 80px;
+	}
+
+	#startbtn {
+		width: 150px;
+		height: 40px;
+		background: red;
+		color: white;
+		text-align: center;
+		font-size: 20px;
+		outline :0;
+		margin :10px 0px 0px 500px;
+	}
+
+	#stopbtn {
+		width: 150px;
+		height: 40px;
+		background: red;
+		color: white;
+		text-align: center;
+		font-size: 20px;
+		outline :0;
+		margin :10px 10px;
+	}
+
+	@keyframes example {
+		from { left : 10px;}
+		to {left : 750px;}
+	}
+
+	@keyframes example1 {
+		from { width : 10px; height: 15px;}
+		to {width : 1350px; height : 15px;}
+	}
+	</style>
+</head>
+<body>
+	
+
+	<div id='Maincont'>
+				<p id='header'> CLICK ON THE BOX TO SCORE POINTS </p>
+				<div id='time'></div>
+				<button id='targetCont' onclick='updateScore(this)'>HIT ME</button>
+	</div>
+	<div id='Footer'>
+		<button id='startbtn' onclick='Initialize()'> START </button> 
+		<button id='stopbtn' onclick='stopGame()'> STOP </button> 
+	</div>
+<script>
+		var box=document.getElementById('boxId');
+		var main=document.getElementById('Maincont');
+		var targetCont=document.getElementById('targetCont');
+		var timeout=[];
+		var cnt=0;
+		var divcnt=0;
+		var numOfbox=[];
+		var numOfbox1=[];
+		var fcnt=0;
+		var timer=2600;
+		var time=30;
+		var scr=0;
+
+		function createDiv(Name,Width,Height,Background,Margin,Padding) {
+				console.log('INSIDE CREATEDIV');
+				var b=document.getElementById('Maincont');			
+				timer-=100;
+				var t=t+divcnt;
+				divcnt+=1;
+				var Name=Name+divcnt;
+				var Nameid='boxId'+divcnt;
+				Name=document.createElement('button');
+				Name.id=Nameid;
+				console.log('IN CREATEDIV :-'+ Nameid+':::'+Name+' cnt '+ cnt);
+				Name.style.width=Width;
+				Name.style.height=Height;
+				Name.style.background=Background;
+				Name.style.margin=Margin;
+				Name.style.padding=Padding;
+				Name.style.boxSizing='border-box';
+				Name.style.position='absolute';
+				Name.style.top='30px';
+				Name.style.left='10px';
+				Name.style.color='white';
+				Name.style.textAlign='center';
+				Name.style.fontSize='15px';
+				Name.style.textDecoration='none';
+				// Name.style.cursor='pointer';
+				Name.disabled=true;
+				t=document.createTextNode('DONT HIT ME');
+				Name.appendChild(t);
+				Name.addEventListener('click', function() {
+					console.log('***a'+ Name.id+' IS CLICKED NOW');
+					this.style.background='red';
+					this.setAttribute('disabled',false);
+					updateScore(this);
+				});
+				// FIRST HIT ME BOX IS READY NOW....
+				b.appendChild(Name);
+				// Array numOfbox loaded with all the Box id's.
+				numOfbox.push(Name.id);
+
+				console.log('PUSHING DIV:-'+ Name.id + " IN ARRAY :=" +numOfbox);
+				// creatediv is called when score is scr%30==0. 
+				if (numOfbox.length > 1) {
+					return numOfbox;
+				}
+		}
+
+		function updateScore(x) {
+				console.log('***b] INSIDE UPDATE SCORE');
+				id=x.id;
+				var mainBox=document.getElementById('targetCont');
+				var main=document.getElementById('Maincont');
+				if (id=='targetCont') {
+					console.log('***c] VERIFYING ITS CLICKED ON targetCont. UPDATING SCORE:-');
+					x.setAttribute('disabled',false);
+					scr+=10;
+					cnt+=10;
+					console.log('***d] INCREMENTING SCORE AND CNT VALUE:-'+scr+':'+cnt);
+					main.style.background="url('box-blaster-thumbsup.png') no-repeat center ";
+					main.style.backgroundSize='400px 300px';
+				} else {
+					console.log('***e] CLICKED ON WRONG DIV. DECREMENTING SCORE:-');
+					main.style.background="url('box-blaster-thumbsdown.png') no-repeat center";
+					main.style.backgroundSize='400px 300px';
+					if (scr == 0) {
+						scr=0;
+					} else  {
+						scr-=10;
+					}
+					console.log('***f] DECREASED SCORE AND CNT VALUE:-'+scr+':'+cnt);
+					cnt=scr;
+				}
+				mainBox.innerHTML='SCORE:= '+String(scr);	
+		}
+
+		function Initialize() {
+			console.log('1] INSIDE Initialize');
+			var targetCont=document.getElementById('targetCont');
+			var boxstr=targetCont.innerHTML;
+			if (boxstr.match(/Final/ig)) {
+				targetCont.innerHTML='HIT ME';
+				targetCont.disabled=false;
+				scr=0;
+			} 
+			targetCont.disabled=true;
+			if (numOfbox.length==0) {
+				console.log('2] NO OF ELEMENTS INSIDE NUMBOX IS 0:-'+numOfbox.length);
+				scr=0;
+				time=30;
+			}
+
+			if(numOfbox.indexOf(targetCont)==-1) {
+				console.log('3a] NUMBOX DOESNT CONTAINS TARGETCONT. NUMOFBOX IS:- '+numOfbox);
+				numOfbox.push(targetCont.id);
+				console.log('3b] PUSHED TARGETCONT IN NUMOFBOX. numOfbox IS:-'+numOfbox);
+			}
+			var head=document.getElementById('header');
+			head.style.visibility='hidden';
+			if (main.childNodes.length < 20) {
+				console.log('4] MAIN CONTAINS FOLLOWING CHILDNODES:-'+main.childNodes+' ITS LENGTH IS:-'+ main.childNodes.length);
+					if ((cnt > 0) && (cnt %30 ==0)) {
+						console.log('5] GOING TO SPAWN A NEW DIV SINCE CNT IS DIVISBLE BY 30 AND ALSO ITS GREATER THAN 0:-'+cnt);
+						// alert(' i m called');
+						var id='targetCont'+divcnt;
+						divcnt+=1;
+						numOfbox=createDiv(id,'140px','50px','red','0px','0px');
+						console.log('Inside Initialize:-'+id+' cnt '+ cnt);
+						console.log('6] NEW DIV CREATED AND RETURNED THE NEW DIV/BOX WHICH IS:-'+numOfbox);
+						cnt=0;
+					}
+				// alert(numOfbox);
+				startGame(numOfbox);
+			}
+		}
+
+		function startGame(numOfbox) {
+			console.log('7] INSIDE STARTGAME NUMOFBOX CONTAINS :-'+numOfbox);
+			var timeDiv=document.getElementById('time');
+			time-=1;
+			timeDiv.style.fontSize='25px';
+			timeDiv.style.textAlign='center';
+			timeDiv.style.fontWeight='900';
+			fcnt+=1;
+			time-=1;
+			if (time==0) {
+				var aa='...GAME OVERRRR...';
+				timeDiv.innerHTML=aa;
+				stopGame();
+			} else {
+				console.log('8] TIME IS GEATER THAN 0:-');
+				var aa='TIME LEFT:-'+String(time);				
+			}
+			timeDiv.innerHTML=aa;
+
+			var boxIncline=['rotate(90deg)','scale(0.5)','rotate(180deg)','rotate(-30deg)','none','rotate(-90deg)'];
+			// console.log('TIME IS:-'+ t + "  cnt:-" +fcnt+' INSIDE STARTGAME:-'+numOfbox+':'+numOfbox.length+ ' CNT'+cnt +' TIMER VALUE '+timer);
+			if ((cnt > 0) && (cnt %30 ==0)) {
+				console.log('9] CALLING INITIALIZE SINCE CNT >0 AND CNT IS DIVISIBLE BY 30');
+					Initialize();
+			} else {
+					for (var i=0 ; i < numOfbox.length; i++) {
+						console.log('10] SINCE CNT IS NOT >0 AND NOT DIVISBLE BY 30. ENTERING LOOP ON NUMBOXES:-'+numOfbox);
+			 			var box=document.getElementById(numOfbox[i]);
+						console.log('11] iterating over BOX no:-'+ i +' which is:-'+box.id+' AND CNT VALUE :-'+cnt );
+						box.disabled=false;
+						var max=630;
+						var min=30;
+						var topRand=(Math.floor(Math.random() * (max-min+1) + min));
+						var max=1200;
+						var min=0;
+						var leftRand=(Math.floor(Math.random() * (max-min+1) + min));
+						box.style.top=topRand+'px';
+						box.style.left=leftRand+'px';
+						var rand=(Math.floor(Math.random () * ((boxIncline.length-1)-1+1) + 1));
+						// alert(boxIncline[rand]);
+						box.style.transform=boxIncline[rand];
+					}
+					console.log('12] EXITED FOR LOOP. SET TIMEOUT LOOP STARTING AND CALLING STARTGAME NOW:-');
+					timeout=setTimeout(startGame,timer,numOfbox)
+		}
+	}
+		
+		
+		
+		function stopGame() {
+			console.log('13] INSIDE STOPGAME NUMOFBOX:-'+numOfbox);
+			var timeDiv=document.getElementById('time');
+			timeDiv.style.animation='none';
+			clearTimeout(timeout);
+			console.log('15] STARTING FOR LOOP TO DEINTIALIZE ALL BOXES:- ');
+			for (var i=0 ; i < numOfbox.length ; i++) {
+				// clearTimeout(timeout[i]);
+				var box=document.getElementById(numOfbox[i]);
+				console.log('16] ITERATING NOW FOR BOX no:-'+i+ ' WHICH IS:-'+box.id);
+
+				// alert('box will be deleted:-'+box.id);
+				if (box.id=='targetCont' ) {
+					console.log('17] SETTING FINAL SCORE AND DISABLING THE CLICK EVENT ON BOX:-'+box.id);
+					box.style.background='black';
+					box.style.top='40px';
+					box.style.left='10px';
+					box.style.width='180px';
+					box.innerHTML=' FINAL SCORE:= '+String(scr);
+					box.style.transform='rotate(0deg)';
+					box.setAttribute('disabled',true);
+				} else {
+					console.log('18] DELETING BOX :-'+box.id);
+					box.parentNode.removeChild(box);
+				}
+	
+			}
+
+			numOfbox=[];
+			console.log('19] ENDING THE PROGRAM . NUMOFBOX SHOULD BE EMPTY:-'+numOfbox);
+						// alert('numOfbox in stopGame:-'+numOfbox);
+
+			timeout=[];	
+		}
+		
+</script>
+		
+</body>
+</html>

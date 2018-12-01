@@ -1,0 +1,222 @@
+<html>
+  <head>
+    <style type="text/css">
+
+      #header {
+        display:block;
+        background: #f2f2f2;
+        padding: 30px;
+        margin : 20px;
+
+      }
+
+      #header h1, #header p, #mainContainer p {
+          text-align: center;
+      }
+
+      #header h1 {
+        line-height: 1.5px;
+        word-spacing: 5px;
+        text-shadow: -2px 2px 2px;
+      }
+
+
+
+      #mainContainer {
+        display: block;
+        background: #f2f2f2;
+        padding:10px;
+        overflow-y : scroll;
+        margin: 0px 20px;
+
+      }
+
+      #header p, #mainContainer p {
+        color : #333333;
+        font-size: 20px;
+
+      }
+
+      #id1,#id2 {
+        overflow: auto;
+        margin: auto;
+        background: #f2f2f2;
+        display: block;
+      }
+
+      img {
+        width: 10%;
+        height: 10%;
+        box-shadow: 0px 8px 16px 0px;
+        padding: 10px;
+        float: left;
+        box-sizing: border-box;
+        opacity: 1;
+        margin: 20px 30px;
+
+      }
+
+
+
+    </style>
+  </head>
+
+  <body>
+
+    <div id="header">
+        <h1> "IMAGE GALLERIA" </h1>
+        <p> ThumbNail View. Hover Over the Image to See the Enlarged View </p>
+    </div>
+
+    <div id="mainContainer">
+
+      <div id="id1">
+        <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\online_wallpapers\wallpaper0.jpeg">
+        <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\online_wallpapers\wallpaper1.jpeg">
+        <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\online_wallpapers\wallpaper2.jpeg">
+        <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\online_wallpapers\wallpaper3.jpeg">
+     </div>
+
+      <div id="id2">
+        <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\online_wallpapers\wallpaper4.jpeg">
+        <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\online_wallpapers\wallpaper5.jpeg">
+        <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\online_wallpapers\wallpaper6.jpeg">
+        <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\online_wallpapers\wallpaper7.jpeg">
+      </div>
+
+
+      <div id="id3">
+        <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\online_wallpapers\wallpaper8.jpeg">
+        <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\online_wallpapers\wallpaper9.jpeg">
+        <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\online_wallpapers\wallpaper10.jpeg">
+        <img  onmouseover="expand(this,src)" onmouseleave="shrink()" src="C:\Users\aryan\Desktop\CODING\HTML_SCRIPTS\online_wallpapers\wallpaper11.jpeg">
+      </div>
+
+    </div>
+
+    <p></p>
+
+    <p id="dummy"> </p>
+
+    <script type="text/javascript">
+
+          var node=document.getElementById("mainContainer");
+
+        function expand(imgloc,imgName) {
+          parent=imgloc.parentNode;
+
+          //alert(parent+ parent.lastChild);
+          if (parent.nextElementSibling) {
+            nextSib=parent.nextElementSibling;
+          
+          } else {
+             nextSib="";
+          }
+          //parentId=parent.id; nextSibId= nextSib.id;
+          var x = createHiddenDiv(parent,nextSib);
+          var im=document.createElement("IMG");
+          im.setAttribute("src",imgName);
+          im.style.padding="20px 30px";
+          im.style.width="50%";
+          im.style.height="50%";
+          var node=document.getElementById("hidden");
+          node.appendChild(im);
+          document.getElementById("hidden").style.display="block";
+
+        }
+
+        function shrink() {
+          var node=document.getElementById("hidden");
+          var im=document.getElementById("id1");
+          while (node.firstChild) {
+            node.removeChild(node.firstChild);
+          }
+
+          //document.getElementById("hidden").style.display="none";
+          node.parentNode.removeChild(node);
+
+        }
+
+        function createHiddenDiv(parent,nextSib) {
+
+          var elem=document.createElement("div");
+          elem.setAttribute("id","hidden");
+          elem.style.display="inline-block";
+          elem.style.overflow="auto";
+
+          elem.style.clear="both";
+          elem.style.width="100%";
+          // document.getElementById("hidden").onmouseover=function() {
+          //     elem.style.display="inline-block";
+
+          // };
+          var node=document.getElementById("id1");
+          //var nextSib1=document.getElementById("id2");
+          //node.appendChild(elem);
+          //alert(node+elem+nextSib1);
+          if (nextSib!="") {
+
+                nextSib.parentNode.insertBefore(elem,nextSib);
+          } else {
+                parent.appendChild(elem);
+
+          }
+
+        }
+
+
+
+          // if (node.hasChildNodes()) {
+          //     //var i = 0;
+          //     cleanNode1(node);
+          //     //traverse(node);
+
+
+          //   function cleanNode(node) {
+          //           var child;
+
+          //          for (var i = node.childNodes.length; i--;) {
+
+          //               child = node.childNodes[i];
+          //               //alert ('cleaning now for:-'+ child + 'BELONGING TO:-'+child.parentNode);
+          //               // If commentt/textNode and has no non-whitespace character in it, delete it.
+          //               if (child.nodeType === 3 || child.nodeType === 8) {
+          //                   //alert("removing node:-"+child+ 'BELONGING TO:-'+child.parentNode + 'since its nodevalue is:-'+child.nodeValue);
+          //                  node.removeChild(child);
+                         
+          //               } else {
+          //                     if (child.id != "undefined" || child.id || child.id!=null) {
+          //                      //alert('NODENAME :-'+ '"' +child.nodeName +'"'+'OF NODE:-'+ '"'+child+'"'+ ' HAS NODE VALUE:-'+'"'+child.nodeValue +'"'+ 'AND ID NAME:-'+ child.id );
+          //                     }                         
+          //                  cleanNode(child);
+          //               } 
+          //           }
+          //   }
+          // }
+
+            // function traverse(node){
+            //   if (node.firstChild) {
+            //       //alert('node:-'+ node.firstChild + ' attribute :-' + node.firstChild.nodeValue);
+            //       traverse(node.firstChild);
+            //   }
+
+            //   if (node.nodeType === 3) {
+            //       alert("text node " + ++i + ": " + node.nodeValue);
+            //       if (node.nodeValue !== '') {
+            //           alert('node:-'+ node + ' attribute :-' + node.nodeValue);
+
+            //           alert("text node " + i + " is not null");
+            //       }
+            //       if (node.nodeValue.match(/(\r\n|\r|\n)+/g)) {
+            //           alert("nonsense node");
+            //       }
+            //   }
+
+            //   if (node.nextSibling) {
+            //       traverse(node.nextSibling);
+            //   }
+            // }
+
+    </script>
+  </body>
+</html>

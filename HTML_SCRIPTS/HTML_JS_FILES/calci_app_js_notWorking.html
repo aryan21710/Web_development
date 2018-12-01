@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="https://fonts.googleapis.com/css?family=Fjalla+One" rel="stylesheet">
+	<title>
+		
+	</title>
+
+	<style>
+		body {
+			background-image: url('red-black-spiderman.jpg');
+			background-size: 1400px 800px;
+			background-repeat: no-repeat;
+			font-family: 'Fjalla One', sans-serif;
+
+		}
+
+		#navbar {
+			margin-top : 30px;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+		}
+
+
+
+		#navbar a {
+			color: #bfbfbf;
+			width: 150px;
+			height: 40px;
+			text-decoration: none;
+			font-size: 25px;
+			text-shadow: 2px 2px #FF0000;
+			/*border : 1px solid red;*/
+		}
+
+		#navbar a:nth-child(1) {
+			margin-left: 270px;
+		}
+
+		#navbar a:nth-child(2) {
+			margin-left: 550px;
+		}
+
+		
+
+		#AppsCont {
+			margin-top: 20px;
+			margin-left: 10px;
+			display: flex;
+			flex-wrap: wrap;
+			flex-direction: row;
+			justify-content: space-between;
+		}
+
+		#Calci {width: 30%; height: 380px; margin-right: 120px;}
+		#ToDo {width: 40%; height: 600px;}
+
+		#Calci, #ToDo {
+			display: block;
+		}
+
+	</style>
+</head>
+<body>
+		<div id="navbar">
+			<a id="navbarToDo" href="#" onclick="expand(this)"> To-Do  </a>
+			<a id="navbarCalci" href="#" onclick="expand(this)"> Calculator </a>
+		</div>
+
+		<div id="AppsCont">
+			<div id="ToDo">
+			</div>
+			<div id="Calci">
+			</div>
+		</div>
+
+<script type="text/javascript">
+
+		function toDoLayout() {
+			var todo= document.getElementById('ToDo');
+			var addDelCont=document.createElement('div');
+			addDelCont.style.pointer='cursor';
+			addDelCont.id='addDelContToDo';
+			addDelCont.style.width='100%';
+			addDelCont.style.height='50px'
+			addDelCont.style.background='white';
+			var addBtn=document.createElement('BUTTON');
+			var btnText=document.createTextNode('Add Task');
+			addBtn.style.color='red';
+			addBtn.style.width='268px';
+			addBtn.style.height='50px';
+			addBtn.style.marginLeft='0px';
+			addBtn.style.fontSize='20px';
+			addBtn.style.fontWeight='900';
+			addBtn.style.fontFamily='Fjalla One';
+			addBtn.style.border='4px solid black';
+			addBtn.style.textAlign='center';
+			addBtn.appendChild(btnText);
+			addBtn.addEventListener('click',function addTodo() {
+
+				var div1=document.createElement('div');
+				div1.id='div1';
+				div1.style.background='white';
+				div1.style.width='530px';
+				div1.style.height='55px';
+				div1.style.margin='0px';
+				div1.style.border='4px solid black';
+				// div1.style.overflow='auto';
+				// div1.style.wordWrap='break-word';
+				// div1.style.wordBreak='break-word';
+
+
+
+				var addChkBox=document.createElement('INPUT');
+				addChkBox.setAttribute('type','checkbox');
+				addChkBox.style.height='45px';
+				addChkBox.style.width='25px';
+				addChkBox.style.display='inline-block';
+				addChkBox.style.float="left";
+
+				addChkBox.style.margin='5px 0px 0px 10px';
+				addChkBox.addEventListener('click',function addDelToDo(cnt) {
+
+					var textid=this.nextSibling;
+					if(textid.style.opacity=='0.7')  {
+						textid.style.opacity='1';
+					textid.style.background='black';
+										textid.style.color='red';
+
+				} else {
+						textid.style.opacity='0.7';
+					textid.style.background='red';
+					textid.style.color='black';
+				}
+
+
+				});
+
+
+				// var addDiv=document.createElement('INPUT');
+				// addDiv.setAttribute('type','text');
+				var addDiv=document.createElement('TEXTAREA');
+				addDiv.setAttribute('placeholder','ENTER YOUR TASK');
+				addDiv.setAttribute('id','textBox');
+				addDiv.setAttribute('name','textBox');
+				addDiv.style.background='white';
+				addDiv.style.width='475px';
+				addDiv.style.height='33px';
+				addDiv.style.background='black';
+				addDiv.style.color='red';
+				addDiv.style.textAlign='center';
+				addDiv.style.margin='0px';
+				addDiv.style.padding='10px 0px';
+				addDiv.style.fontSize='20px';
+				addDiv.style.fontWeight='900';
+				addDiv.style.fontFamily='Fjalla One';
+				addDiv.style.marginLeft='10px';
+				addDiv.style.display='inline-block';
+				addDiv.style.float="left";
+				// addDiv.style.lineHeight='50px';
+				div1.appendChild(addChkBox);
+				div1.appendChild(addDiv);
+				todo.appendChild(div1);
+
+
+			});
+
+
+
+			var delBtn=document.createElement('BUTTON');
+			var btnText1=document.createTextNode('Delete All');
+			delBtn.style.color='red';
+			delBtn.style.width='267px';
+			delBtn.style.height='50px';
+			delBtn.style.marginLeft='0px';
+			delBtn.style.fontSize='20px';
+			delBtn.style.fontWeight='900';
+			delBtn.style.fontFamily='Fjalla One';
+
+			delBtn.style.border='3px solid black';
+			delBtn.style.textAlignCenter='center';
+			delBtn.addEventListener('click',function deleteall() {
+				let inp=confirm('THIS WILL DELETE ALL THE TASKS FROM YOUR TO DO LIST');
+				if (inp==true) {
+					let inp=confirm('Are You Sure You Want to Proceed Ahead???');
+					if (inp==true) {
+						alert('DELETING IT ALL NOW....');
+						var todo=document.querySelectorAll('#div1');
+						for (var i=0; i < todo.length; i++) {
+							todo[i].parentNode.removeChild(todo[i]);
+						}
+
+						
+					}
+				}
+			});
+			delBtn.appendChild(btnText1);
+
+			// var displayBtn=document.createElement('BUTTON');
+			// var btnText2=document.createTextNode('Display');
+			// displayBtn.style.color='red';
+			// displayBtn.style.width='156px';
+			// displayBtn.style.height='50px';
+			// displayBtn.style.marginLeft='0px';
+			// displayBtn.style.fontSize='20px';
+			// displayBtn.style.fontWeight='900';
+			// displayBtn.style.fontFamily='Fjalla One';
+			// displayBtn.style.border='3px solid black';
+			// displayBtn.style.textAlignCenter='center';
+			// displayBtn.appendChild(btnText2);
+			addDelCont.appendChild(addBtn);
+			addDelCont.appendChild(delBtn);
+			// addDelCont.appendChild(displayBtn);
+			todo.appendChild(addDelCont);
+		}
+
+
+		
+		
+
+	function expand(x) {
+		var mathOperation=[];
+		var calci=document.getElementById("Calci");
+		var todo=document.getElementById("ToDo");
+		// alert(todo.childNodes.length+':'+calci.childNodes.length);
+
+		if (calci.childNodes.length == 1) {
+			if (x.id=="navbarCalci") {
+				calciLayout(mathOperation);
+				calci.style.display="block";
+			} 
+		}
+
+		if (todo.childNodes.length == 1) {
+			if (x.id=="navbarToDo") {
+				toDoLayout();
+				todo.style.display="block";
+			}
+		}
+	}
+
+	
+
+
+
+	function calciLayout(mathOperation) {
+	
+		var operator=['C','()','%','\/',7,8,9,'*',4,5,6,'-',1,2,3,'+','+\/-',0,'\.','\='];
+		var calci=document.getElementById("Calci")
+		var textInput=document.createElement('INPUT');
+		textInput.id='textArea';
+		textInput.setAttribute('type','text');
+		textInput.style.width="378px";
+		textInput.style.height="130px";
+		textInput.style.background="black";
+		textInput.style.padding="10px";
+
+
+		calci.appendChild(textInput);
+		for (var i=0; i < 5; i++) {
+				var cnt=0;
+				var divBtn=document.createElement('div');
+				divBtn.style.display="flex";
+				divBtn.style.flexDirection="row";
+				divBtn.style.justifyContent="flex-start";
+				for (var j=0; j < 4; j++) {
+					var btn=document.createElement('button');
+					btn.id='btn'+String(i)+String(j);
+					btn.style.width="101px";
+					btn.style.height="45px";
+					btn.style.fontWeight="bold";
+					btn.style.fontSize="20px";
+					var textElm=document.createTextNode(operator[j]);
+					if (operator[j] != '=') {
+						btn.style.background="black";
+						btn.style.color="red";
+					} else {
+						btn.style.background="red";
+						btn.style.color="white";
+					}
+					btn.appendChild(textElm);
+					btn.addEventListener('click', function() {
+						calciBtnInput(this);
+					});
+					//KEYBOARD CALCI OPERATION NOT WORKING.
+					textInput.addEventListener('keypress', function() {
+						calciKeyPressInput(this);
+					});
+					divBtn.appendChild(btn);
+					cnt+=1;
+				}
+				operator.splice(0,cnt);
+				calci.appendChild(divBtn);
+
+		}
+	}
+
+	function calciBtnInput(x) {
+
+		var btntext=x.textContent;
+		var textInput=document.getElementById('textArea');
+		textInput.style.color="white";
+		textInput.style.fontSize="30px";
+
+		switch(btntext) {
+			case '=':
+				if (textInput.value) {
+					var inp=textInput.value;
+					textInput.value=eval(inp);
+				} else {
+					textInput.value="";
+				}
+				break;
+			case 'C':
+				textInput.value="";
+				break;
+			case '+': case '/': case '-': case'*': case'+/-': case '()': case'%': case'.':	
+				if (Number(textInput.value[0])) {
+					textInput.value+=btntext;
+				} else {
+					textInput.value="";
+				}
+				break;
+			default:
+				textInput.value+=btntext;
+			 	break;
+		}
+		
+	}
+
+
+	function calciKeyPressInput(x) {
+
+	
+		var btntext=x.textContent;
+		var textInput=document.getElementById('textArea');
+		textInput.style.color="white";
+		textInput.style.fontSize="30px";
+		if (isNaN(btntext)) {
+			switch(btntext) {
+				case '=':
+					if (textInput.value) {
+						var inp=textInput.value;
+						textInput.value=eval(inp);
+					} else {
+						textInput.value="";
+					}
+					break;
+				case 'C':
+					textInput.value="";
+					break;
+				case '+': case '/': case '-': case'*': case'+/-': case '()': case'%': case'.':	
+					if (Number(textInput.value[0])) {
+						textInput.value+=btntext;
+					} else {
+						textInput.value="";
+					}
+					break;
+				default:
+					textInput.value+=btntext;
+				 	break;
+			}
+		} else {
+			alert('PLEASE ENTER A VALID NO');
+		
+		}
+	}
+
+</script>
+</body>
+</html>

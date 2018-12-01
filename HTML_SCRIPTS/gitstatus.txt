@@ -1,0 +1,296 @@
+On branch master
+Your branch is up-to-date with 'origin/master'.
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+	new file:   .manisha_acc.txt.swp
+	renamed:    LoginForm.css -> HTML_JS_FILES/LoginForm.css
+	renamed:    LoginForm.js -> HTML_JS_FILES/LoginForm.js
+	renamed:    Spring.ttf -> HTML_JS_FILES/Spring.ttf
+	renamed:    Website_samples/YehudadevirDotCom/home.css -> HTML_JS_FILES/Website_samples/YehudadevirDotCom/home.css
+	renamed:    Website_samples/YehudadevirDotCom/home.html -> HTML_JS_FILES/Website_samples/YehudadevirDotCom/home.html
+	renamed:    Website_samples/YehudadevirDotCom/home.js -> HTML_JS_FILES/Website_samples/YehudadevirDotCom/home.js
+	renamed:    Website_samples/YehudadevirDotCom/home_bkp.html -> HTML_JS_FILES/Website_samples/YehudadevirDotCom/home_bkp.html
+	renamed:    Website_samples/YehudadevirDotCom/images/fb_icon.png -> HTML_JS_FILES/Website_samples/YehudadevirDotCom/images/fb_icon.png
+	renamed:    Website_samples/YehudadevirDotCom/images/homeImg.webp -> HTML_JS_FILES/Website_samples/YehudadevirDotCom/images/homeImg.webp
+	renamed:    Website_samples/YehudadevirDotCom/images/insta_icon.png -> HTML_JS_FILES/Website_samples/YehudadevirDotCom/images/insta_icon.png
+	renamed:    Website_samples/YehudadevirDotCom/images/pinterest_icon.png -> HTML_JS_FILES/Website_samples/YehudadevirDotCom/images/pinterest_icon.png
+	renamed:    Website_samples/YehudadevirDotCom/images/tumblr_icon.png -> HTML_JS_FILES/Website_samples/YehudadevirDotCom/images/tumblr_icon.png
+	renamed:    Website_samples/YehudadevirDotCom/images/youtube_icon.png -> HTML_JS_FILES/Website_samples/YehudadevirDotCom/images/youtube_icon.png
+	renamed:    Website_samples/YehudadevirDotCom/page2.css -> HTML_JS_FILES/Website_samples/YehudadevirDotCom/page2.css
+	renamed:    Website_samples/YehudadevirDotCom/page2.html -> HTML_JS_FILES/Website_samples/YehudadevirDotCom/page2.html
+	renamed:    Website_samples/YehudadevirDotCom/page2.js -> HTML_JS_FILES/Website_samples/YehudadevirDotCom/page2.js
+	renamed:    advance_transition_effects.html -> HTML_JS_FILES/advance_transition_effects.html
+	renamed:    advance_transition_effects_original.html -> HTML_JS_FILES/advance_transition_effects_original.html
+	renamed:    bkp_form_list_dropdwn.html -> HTML_JS_FILES/bkp_form_list_dropdwn.html
+	renamed:    black_hand_wallpaper.jpg -> HTML_JS_FILES/black_hand_wallpaper.jpg
+	renamed:    booty.jpg -> HTML_JS_FILES/booty.jpg
+	new file:   HTML_JS_FILES/box-blaster-thumbsdown.png
+	new file:   HTML_JS_FILES/box-blaster-thumbsup.png
+	new file:   HTML_JS_FILES/box-blaster.html
+	new file:   HTML_JS_FILES/box-blaster_new.html
+	new file:   HTML_JS_FILES/box-blaster_old.html
+	renamed:    bulboff.gif -> HTML_JS_FILES/bulboff.gif
+	renamed:    bulbon.gif -> HTML_JS_FILES/bulbon.gif
+	renamed:    calci_app.html -> HTML_JS_FILES/calci_app.html
+	renamed:    calci_app_js_notWorking.html -> HTML_JS_FILES/calci_app_js_notWorking.html
+	new file:   HTML_JS_FILES/calci_todo_game.html
+	renamed:    calci_todo_game_anim.html -> HTML_JS_FILES/calci_todo_game_anim.html
+	new file:   HTML_JS_FILES/client_accessing_server_node.js
+	new file:   HTML_JS_FILES/create_read_del_file_together_node.js
+	new file:   HTML_JS_FILES/css-tricks1.html
+	renamed:    css_examples.html -> HTML_JS_FILES/css_examples.html
+	renamed:    display_date_and_time.html -> HTML_JS_FILES/display_date_and_time.html
+	renamed:    dropdown_hover.html -> HTML_JS_FILES/dropdown_hover.html
+	new file:   HTML_JS_FILES/dummy.html
+	new file:   HTML_JS_FILES/event_trigger_node.js
+	renamed:    fah_to_celsius.html -> HTML_JS_FILES/fah_to_celsius.html
+	renamed:    fb_icon.png -> HTML_JS_FILES/fb_icon.png
+	new file:   HTML_JS_FILES/file1.js
+	new file:   HTML_JS_FILES/file2.js
+	new file:   HTML_JS_FILES/file_change_event_node.js
+	new file:   HTML_JS_FILES/file_server.js
+	renamed:    flexbox_responsive.html -> HTML_JS_FILES/flexbox_responsive.html
+	new file:   HTML_JS_FILES/form_for_express.html
+	renamed:    form_list_dropdwn.html -> HTML_JS_FILES/form_list_dropdwn.html
+	new file:   HTML_JS_FILES/fs.readDir.node.js
+	renamed:    header_footer_webpage.css -> HTML_JS_FILES/header_footer_webpage.css
+	renamed:    header_footer_webpage.html -> HTML_JS_FILES/header_footer_webpage.html
+	renamed:    hori_navbar_hovering_dropdown.html -> HTML_JS_FILES/hori_navbar_hovering_dropdown.html
+	renamed:    hori_navbar_responsive.html -> HTML_JS_FILES/hori_navbar_responsive.html
+	renamed:    hover_img_to_show_big_image.html -> HTML_JS_FILES/hover_img_to_show_big_image.html
+	renamed:    image_gallery_webpage.html -> HTML_JS_FILES/image_gallery_webpage.html
+	renamed:    image_gallery_webpage_bkp.html -> HTML_JS_FILES/image_gallery_webpage_bkp.html
+	renamed:    image_gallery_webpage_flex.html -> HTML_JS_FILES/image_gallery_webpage_flex.html
+	renamed:    image_gallery_webpage_working.html -> HTML_JS_FILES/image_gallery_webpage_working.html
+	renamed:    javascript_dom_examples.html -> HTML_JS_FILES/javascript_dom_examples.html
+	renamed:    javascript_sample_examples.html -> HTML_JS_FILES/javascript_sample_examples.html
+	renamed:    js_animation.html -> HTML_JS_FILES/js_animation.html
+	new file:   HTML_JS_FILES/js_exe.html
+	new file:   HTML_JS_FILES/js_exercises.html
+	new file:   HTML_JS_FILES/js_exercises.js
+	new file:   HTML_JS_FILES/js_exercises1.html
+	renamed:    js_onclick_sample.html -> HTML_JS_FILES/js_onclick_sample.html
+	renamed:    js_timing_event.html -> HTML_JS_FILES/js_timing_event.html
+	new file:   HTML_JS_FILES/json_sample.html
+	renamed:    mainbg.jpg -> HTML_JS_FILES/mainbg.jpg
+	renamed:    maths_game.html -> HTML_JS_FILES/maths_game.html
+	new file:   HTML_JS_FILES/noteApp.js/app.html
+	new file:   HTML_JS_FILES/noteApp.js/arrow_func.js
+	new file:   HTML_JS_FILES/noteApp.js/async_func_example.js
+	new file:   HTML_JS_FILES/noteApp.js/file1.js
+	new file:   HTML_JS_FILES/noteApp.js/function_file_node.js
+	new file:   HTML_JS_FILES/noteApp.js/mainFile_node.js
+	new file:   HTML_JS_FILES/noteApp.js/notes_app_data.txt
+	new file:   HTML_JS_FILES/noteApp.js/package-lock.json
+	new file:   HTML_JS_FILES/noteApp.js/package.json
+	renamed:    number_picker.html -> HTML_JS_FILES/number_picker.html
+	new file:   HTML_JS_FILES/open_file_returns_its_content.js
+	renamed:    position_div_examples.html -> HTML_JS_FILES/position_div_examples.html
+	new file:   HTML_JS_FILES/quiz_app.html
+	renamed:    red-black-spiderman.jpg -> HTML_JS_FILES/red-black-spiderman.jpg
+	renamed:    responsive_fourColumn_layout.html -> HTML_JS_FILES/responsive_fourColumn_layout.html
+	renamed:    responsive_navigation_menu.html -> HTML_JS_FILES/responsive_navigation_menu.html
+	renamed:    responsive_weblayout.html -> HTML_JS_FILES/responsive_weblayout.html
+	renamed:    responsive_webpage.html -> HTML_JS_FILES/responsive_webpage.html
+	new file:   HTML_JS_FILES/routing_functionality_express.js
+	new file:   HTML_JS_FILES/sample.js
+	renamed:    sample_examples.js -> HTML_JS_FILES/sample_examples.js
+	new file:   HTML_JS_FILES/sample_modulefile.js
+	renamed:    sample_webpage.html -> HTML_JS_FILES/sample_webpage.html
+	renamed:    sim.jpg -> HTML_JS_FILES/sim.jpg
+	renamed:    sketches/delete_later/sk1.jpg -> HTML_JS_FILES/sketches/delete_later/sk1.jpg
+	renamed:    sketches/delete_later/sk2.jpg -> HTML_JS_FILES/sketches/delete_later/sk2.jpg
+	renamed:    sketches/delete_later/sk3.jpg -> HTML_JS_FILES/sketches/delete_later/sk3.jpg
+	renamed:    sketches/final/calci.py -> HTML_JS_FILES/sketches/final/calci.py
+	renamed:    sketches/final/change_sketch_name.py -> HTML_JS_FILES/sketches/final/change_sketch_name.py
+	renamed:    sketches/final/sketch0.jpg -> HTML_JS_FILES/sketches/final/sketch0.jpg
+	renamed:    sketches/final/sketch1.jpg -> HTML_JS_FILES/sketches/final/sketch1.jpg
+	renamed:    sketches/final/sketch10.jpg -> HTML_JS_FILES/sketches/final/sketch10.jpg
+	renamed:    sketches/final/sketch11.jpg -> HTML_JS_FILES/sketches/final/sketch11.jpg
+	renamed:    sketches/final/sketch12.jpg -> HTML_JS_FILES/sketches/final/sketch12.jpg
+	renamed:    sketches/final/sketch13.jpg -> HTML_JS_FILES/sketches/final/sketch13.jpg
+	renamed:    sketches/final/sketch14.jpg -> HTML_JS_FILES/sketches/final/sketch14.jpg
+	renamed:    sketches/final/sketch15.jpg -> HTML_JS_FILES/sketches/final/sketch15.jpg
+	renamed:    sketches/final/sketch16.jpg -> HTML_JS_FILES/sketches/final/sketch16.jpg
+	renamed:    sketches/final/sketch17.jpg -> HTML_JS_FILES/sketches/final/sketch17.jpg
+	renamed:    sketches/final/sketch18.jpg -> HTML_JS_FILES/sketches/final/sketch18.jpg
+	renamed:    sketches/final/sketch19.jpg -> HTML_JS_FILES/sketches/final/sketch19.jpg
+	renamed:    sketches/final/sketch2.jpg -> HTML_JS_FILES/sketches/final/sketch2.jpg
+	renamed:    sketches/final/sketch20.jpg -> HTML_JS_FILES/sketches/final/sketch20.jpg
+	renamed:    sketches/final/sketch21.jpg -> HTML_JS_FILES/sketches/final/sketch21.jpg
+	renamed:    sketches/final/sketch22.jpg -> HTML_JS_FILES/sketches/final/sketch22.jpg
+	renamed:    sketches/final/sketch23.jpg -> HTML_JS_FILES/sketches/final/sketch23.jpg
+	renamed:    sketches/final/sketch24.jpg -> HTML_JS_FILES/sketches/final/sketch24.jpg
+	renamed:    sketches/final/sketch25.jpg -> HTML_JS_FILES/sketches/final/sketch25.jpg
+	renamed:    sketches/final/sketch26.jpg -> HTML_JS_FILES/sketches/final/sketch26.jpg
+	renamed:    sketches/final/sketch27.jpg -> HTML_JS_FILES/sketches/final/sketch27.jpg
+	renamed:    sketches/final/sketch3.jpg -> HTML_JS_FILES/sketches/final/sketch3.jpg
+	renamed:    sketches/final/sketch4.jpg -> HTML_JS_FILES/sketches/final/sketch4.jpg
+	renamed:    sketches/final/sketch5.jpg -> HTML_JS_FILES/sketches/final/sketch5.jpg
+	renamed:    sketches/final/sketch6.jpg -> HTML_JS_FILES/sketches/final/sketch6.jpg
+	renamed:    sketches/final/sketch7.jpg -> HTML_JS_FILES/sketches/final/sketch7.jpg
+	renamed:    sketches/final/sketch8.jpg -> HTML_JS_FILES/sketches/final/sketch8.jpg
+	renamed:    sketches/final/sketch9.jpg -> HTML_JS_FILES/sketches/final/sketch9.jpg
+	renamed:    sketches/final/untitled -> HTML_JS_FILES/sketches/final/untitled
+	renamed:    tennis-copy.jpg -> HTML_JS_FILES/tennis-copy.jpg
+	renamed:    tennis_2.jpeg -> HTML_JS_FILES/tennis_2.jpeg
+	renamed:    test.html -> HTML_JS_FILES/test.html
+	renamed:    thumbsDown.jpg -> HTML_JS_FILES/thumbsDown.jpg
+	renamed:    thumbsUp.jpg -> HTML_JS_FILES/thumbsUp.jpg
+	new file:   HTML_JS_FILES/tic-tac-toe-latest.html
+	new file:   HTML_JS_FILES/tic-tac-toe-logenabled.html
+	new file:   HTML_JS_FILES/tic-tac-toe-simple.html
+	new file:   HTML_JS_FILES/tic-tac-toe.html
+	renamed:    transition_affects.html -> HTML_JS_FILES/transition_affects.html
+	renamed:    try_again.html -> HTML_JS_FILES/try_again.html
+	renamed:    twitter_icon.png -> HTML_JS_FILES/twitter_icon.png
+	renamed:    whatsapp_icon.png -> HTML_JS_FILES/whatsapp_icon.png
+	new file:   JSExcercises/Objects/Classes_ES6/getters_setters_static_func_in_classes.html
+	new file:   JSExcercises/Objects/Classes_ES6/getters_setters_static_func_in_classes.js
+	new file:   JSExcercises/Objects/Classes_ES6/inheritance_classes.html
+	new file:   JSExcercises/Objects/Classes_ES6/inheritance_classes.js
+	new file:   JSExcercises/Objects/Classes_ES6/stack_implementation_classes.html
+	new file:   JSExcercises/Objects/Classes_ES6/stack_implementation_classes.js
+	new file:   JSExcercises/Objects/Classes_ES6/staticmethod_inclasses.html
+	new file:   JSExcercises/Objects/Classes_ES6/staticmethod_inclasses.js
+	new file:   JSExcercises/Objects/ES6_tooling/package-lock.json
+	new file:   JSExcercises/Objects/ES6_tooling/package.json
+	new file:   JSExcercises/Objects/abstraction_in_objects_using_get_set.js
+	new file:   JSExcercises/Objects/call_and_apply_objects.js
+	new file:   JSExcercises/Objects/composition_mixins.html
+	new file:   JSExcercises/Objects/composition_mixins.js
+	new file:   JSExcercises/Objects/getter_example.js
+	new file:   JSExcercises/Objects/how_to_inherit_from_another_object.html
+	new file:   JSExcercises/Objects/how_to_inherit_from_another_object.js
+	new file:   JSExcercises/Objects/how_to_inherit_from_another_object_using_superConstructor.js
+	new file:   JSExcercises/Objects/inheritance_exercise.html
+	new file:   JSExcercises/Objects/inheritance_exercise.js
+	new file:   JSExcercises/Objects/inherited_method_overridden_in_child.html
+	new file:   JSExcercises/Objects/inherited_method_overridden_in_child.js
+	new file:   JSExcercises/Objects/modules_in_js/dummyClass.html
+	new file:   JSExcercises/Objects/modules_in_js/dummyClass.js
+	new file:   JSExcercises/Objects/modules_in_js/inheritance_classes.html
+	new file:   JSExcercises/Objects/modules_in_js/inheritance_classes.js
+	new file:   JSExcercises/Objects/modules_in_js/module_class.js
+	new file:   JSExcercises/Objects/modules_in_js/module_in_class.js
+	new file:   JSExcercises/Objects/modules_in_js/modules/module_class.js
+	new file:   JSExcercises/Objects/polymorphism.exercise.html
+	new file:   JSExcercises/Objects/polymorphism.exercise.js
+	new file:   JSExcercises/Objects/polymorphism.html
+	new file:   JSExcercises/Objects/polymorphism.js
+	new file:   JSExcercises/Objects/prototypical_inheritance_exercise.html
+	new file:   JSExcercises/Objects/prototypical_inheritance_exercise.js
+	new file:   JSExcercises/Objects/red-black-spiderman.jpg
+	new file:   JSExcercises/Objects/setter_getter_example.html
+	new file:   JSExcercises/Objects/setter_getter_example.js
+	new file:   JSExcercises/Objects/stopwatch.html
+	new file:   JSExcercises/Objects/stopwatch.js
+	new file:   JSExcercises/Objects/stopwatch_prototype.html
+	new file:   JSExcercises/Objects/stopwatch_prototype.js
+	new file:   JSExcercises/code-wars-exercises/basic_oops_exercises
+	new file:   JSExcercises/code-wars-exercises/basic_oops_exercises.js
+	new file:   JSExcercises/code-wars-exercises/digPower.js
+	new file:   JSExcercises/code-wars-exercises/printer_error.js
+	new file:   JSExcercises/code-wars-exercises/roman_number_class.js
+	new file:   JSExcercises/code-wars-exercises/tribonacci.js
+	modified:   JSExcercises/display_date_and_time.html
+	new file:   JSExcercises/ecma_sample_script.js
+	new file:   JSExcercises/promises_chaining.js
+	new file:   Nodejs/.json_sample.html.swp
+	renamed:    1001fonts-spring-eula.txt -> Nodejs/1001fonts-spring-eula.txt
+	new file:   Nodejs/Playground/Notesdata.json
+	new file:   Nodejs/Playground/app-pl1.js
+	new file:   Nodejs/Playground/app.js
+	new file:   Nodejs/Playground/async_call_basics.js
+	new file:   Nodejs/Playground/dummy.txt
+	new file:   Nodejs/Playground/maths_game.html
+	new file:   Nodejs/Playground/new_weather_app/SEEMA.HTML
+	new file:   Nodejs/Playground/new_weather_app/app.html
+	new file:   Nodejs/Playground/new_weather_app/app.js
+	new file:   Nodejs/Playground/new_weather_app/geocode.js
+	new file:   Nodejs/Playground/new_weather_app/geocode_promises.js
+	new file:   Nodejs/Playground/new_weather_app/request_to_google.txt
+	new file:   Nodejs/Playground/new_weather_app/sim.html
+	new file:   Nodejs/Playground/new_weather_app/temp.js
+	new file:   Nodejs/Playground/node-web-server/help.html
+	new file:   Nodejs/Playground/node-web-server/log.txt
+	new file:   Nodejs/Playground/node-web-server/package-lock.json
+	new file:   Nodejs/Playground/node-web-server/package.json
+	new file:   Nodejs/Playground/node-web-server/public/help.html
+	new file:   Nodejs/Playground/node-web-server/server.js
+	new file:   Nodejs/Playground/node-web-server/views/about.hbs
+	new file:   Nodejs/Playground/node-web-server/views/about1.hbs
+	new file:   Nodejs/Playground/node-web-server/views/home.hbs
+	new file:   Nodejs/Playground/node-web-server/views/home1.hbs
+	new file:   Nodejs/Playground/node-web-server/views/maintenance.hbs
+	new file:   Nodejs/Playground/node-web-server/views/partials/about.hbs
+	new file:   Nodejs/Playground/node-web-server/views/partials/footer.hbs
+	new file:   Nodejs/Playground/node-web-server/views/partials/header.hbs
+	new file:   Nodejs/Playground/notes.js
+	new file:   Nodejs/Playground/package-lock.json
+	new file:   Nodejs/Playground/package.json
+	new file:   Nodejs/Playground/pl1.js
+	new file:   Nodejs/Playground/server.js
+	new file:   Nodejs/express-demo/package.json
+	new file:   Nodejs/node-web-server
+	new file:   Nodejs/npm-debug.log
+	new file:   Nodejs/package-lock.json
+	new file:   Nodejs/public/black_hand_wallpaper.jpg
+	new file:   Nodejs/public/booty.jpg
+	new file:   Nodejs/public/box-blaster-thumbsdown.png
+	new file:   Nodejs/public/box-blaster-thumbsup.png
+	new file:   Nodejs/public/fb_icon.png
+	new file:   Nodejs/public/mainbg.jpg
+	new file:   Nodejs/public/red-black-spiderman.jpg
+	new file:   Nodejs/public/sim.jpg
+	new file:   Nodejs/public/tennis-copy.jpg
+	new file:   Nodejs/public/tennis_2.jpeg
+	new file:   Nodejs/public/thumbsDown.jpg
+	new file:   Nodejs/public/thumbsUp.jpg
+	new file:   Nodejs/public/twitter_icon.png
+	new file:   Nodejs/public/whatsapp_icon.png
+	new file:   Nodejs/test.txt
+	new file:   Nodejs/testdir/a.txt
+	new file:   Nodejs/testdir/response_object.txt
+	renamed:    time.pih -> Nodejs/time.pih
+	new file:   Nodejs/weather-app/app-axios.js
+	new file:   Nodejs/weather-app/app.js
+	new file:   Nodejs/weather-app/error_weather.txt
+	new file:   Nodejs/weather-app/geocode/callback_chaining.js
+	new file:   Nodejs/weather-app/geocode/callback_vs_promises_chaining.js
+	new file:   Nodejs/weather-app/geocode/geocode.js
+	new file:   Nodejs/weather-app/geocode/geocode_promises.js
+	new file:   Nodejs/weather-app/package-lock.json
+	new file:   Nodejs/weather-app/package.json
+	new file:   Nodejs/weather-app/weather/package-lock.json
+	new file:   Nodejs/weather-app/weather/package.json
+	new file:   Nodejs/weather-app/weather/weather.js
+	new file:   Nodejs/weather-app/weather/weather_promises.js
+	new file:   Nodejs/weather-app/weather_app_data.txt
+	deleted:    app.py
+	modified:   calci_todo_game.html
+	deleted:    final-20180723T072739Z-001.zip
+	deleted:    final-20180723T075930Z-001.zip
+	new file:   ip_add
+	deleted:    javascript_array_exercises.html
+	deleted:    js_exercises.js
+	new file:   keywords.txt
+	modified:   nmap_wifi
+	modified:   online_wallpapers/wallpapertemp.txt
+	modified:   quiz_app.html
+	deleted:    urls.py
+	deleted:    views.py
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+  (commit or discard the untracked or modified content in submodules)
+
+	modified:   Nodejs/node-web-server (modified content)
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+	gitstatus.txt
+

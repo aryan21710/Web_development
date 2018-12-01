@@ -1,0 +1,33 @@
+{ info: 
+   { statuscode: 0,
+     copyright: 
+      { text: '© 2018 MapQuest, Inc.',
+        imageUrl: 'http://api.mqcdn.com/res/mqlogo.gif',
+        imageAltText: '© 2018 MapQuest, Inc.' },
+     messages: [] },
+  options: { maxResults: -1, thumbMaps: true, ignoreLatLngInput: false },
+  results: 
+   [ { providedLocation: { postalCode: '560049' },
+       locations: 
+        [ { street: '',
+            adminArea6: '',
+            adminArea6Type: 'Neighborhood',
+            adminArea5: 'Bhattarahalli',
+            adminArea5Type: 'City',
+            adminArea4: '',
+            adminArea4Type: 'County',
+            adminArea3: 'KARNATAKA',
+            adminArea3Type: 'State',
+            adminArea1: 'IN',
+            adminArea1Type: 'Country',
+            postalCode: '560049',
+            geocodeQualityCode: 'Z1XAA',
+            geocodeQuality: 'ZIP',
+            dragPoint: false,
+            sideOfStreet: 'N',
+            linkId: '348342881',
+            unknownInput: '',
+            type: 's',
+            latLng: [Object],
+            displayLatLng: [Object],
+            mapUrl: 'http://www.mapquestapi.com/staticmap/v5/map?key=14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus&type=map&size=225,160&locations=13.035232,77.716593|marker-sm-50318A-1&scalebar=true&zoom=15&rand=605318962' } ] } ] }
