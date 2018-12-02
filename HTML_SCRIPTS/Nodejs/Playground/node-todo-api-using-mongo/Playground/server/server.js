@@ -26,7 +26,7 @@ const app=express();
 app.use(bodyparser.json())
 
 // FOR SENDING A RESOURCE OR CREATING ONE , WE USE POST HTTP METHOD. IN REST WE HAVE CRUD OPERATIONS, CREATE, READ,
-// UPDATE , DELETE. FOR CREATING A RESOURCE WE USE POST.
+// UPDATE , DELETE. FOR CREATING A RESOURCE WE USE POST. To retrieve data, you use GET.
 // HERE WE WILL BE SENDING AN OBJECT TO THE SERVER, AND SERVER WILL BE CREATING A NEW MONGO MODEL WITH
 // ID , DESCRIPTION AND OTHER PARAMETERS AND SEND IT BACK AS PART OF HTTP RESPONSE.
 
@@ -35,6 +35,7 @@ app.use(bodyparser.json())
 // IN POSTMAN THE CONTENT-TYPE GETS SET TO APPLICATION/JSON.
 
 // THE MONGODB SERVER SHOULD BE UP AND RUNNING IN DOS PROMPT
+// IN POSTMAN WHILE SELECTING THE POST REQUEST, SELECT BODY-->RAW-->TYPE-->JSON/APP
 
 app.post('/todos',(req,res)=>{
 
@@ -58,11 +59,58 @@ app.post('/todos',(req,res)=>{
 		})
 })
 
+// FOLLOWING CODE WILL RETRIEVE DATA FROM THE SERVER.ONLY WHEN REQUEST COMES FROM 
+// CLIENT USING HTTP GET METHOD.
+// IN POSTMAN WHILE SENDING THE GET REQUEST SELECT BODY-->NONE
+app.get('/todos',(req,res)=> {
+	// todo.find() is mongodb native driver method which will return all the todos
+	// in an array.INSTEAD OF USING CONSOLE.LOG WE ARE USING RES.SEND AS WE WANT TO
+	// DISPLAY THE SAME ON THE CLIENT. 
+	todo.find().then((mytodos)=>{
+		return res.send({mytodos})
+	}).catch((err)=> {
+		return res.status(400).send(err);
+	})
+
+})
+
+
+
+// SAMPLE OUTPUT OF GET:-
+// {
+//     "mytodos": [
+//         {
+//             "completed": false,
+//             "completedAt": null,
+//             "_id": "5c024063cab227029e991422",
+//             "text": "rent",
+//             "description": "RENT XFER TO NEETA",
+//             "__v": 0
+//         },
+//         {
+//             "completed": false,
+//             "completedAt": null,
+//             "_id": "5c026b5ef39cc8065d865d01",
+//             "text": "rukmini aunty",
+//             "description": "RENTAL AGREEMENT",
+//             "__v": 0
+//         },
+//         {
+//             "completed": false,
+//             "completedAt": null,
+//             "_id": "5c033d2d62366206f5674373",
+//             "text": "INTERCEPTOR TEST TIDE",
+//             "description": "CALL ROYAL ENFIELD INDIRANAGAR",
+//             "__v": 0
+//         }
+//     ]
+// }
+
 app.listen(3000,()=>{
 	console.log('SERVER STARTED LISTENING AT PORT:-3000');
 })
 
-// SAMPLE JSON RESPONSE SENT BY OUR SERVER TO POSTMAN IS AS FOLLOWS:-
+// SAMPLE JSON RESPONSE SENT BY OUR SERVER FROM CLIENT/POSTMAN IS AS FOLLOWS:-
 // {
 //     "completed": false,
 //     "completedAt": null,
