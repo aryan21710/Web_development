@@ -9,7 +9,7 @@
     *:hover, p:hover, a:hover {
       color: hsl(36,100%,50%);
       font-style: italic;
-      font-size : 1.5em;
+      font-size : 20px;
     }
 
 
@@ -115,7 +115,7 @@
 
     nav p,  article h1{
       text-align: left;
-      font-size: 25;
+      font-size: 20;
       font-weight: bold;
       text-decoration: underline;
       font-family: "myFirstFont";
@@ -123,7 +123,7 @@
     }
 
     nav p:first-letter, header h1:first-letter {
-      font-size: 40;
+      font-size: 30;
       font-weight: bold;
     }
 

@@ -2,6 +2,8 @@
 const express = require('express');
 const bodyparser = require('body-parser')
 
+const {ObjectID}=require('mongodb');
+
 // HERE OBJ DESTRUCTURING IS NEEDED AS WE NEED THE mongoose and todo constructors
 // let mongoose=require('./db/mongoose_config')
 // mongoose=mongoose.mongoose
@@ -12,6 +14,23 @@ const {mongoose}=require('./db/mongoose_config')
 // todo=todo.todo
 // OR
 const {todo}=require('./models/todo_config')
+
+// #KEYWORD:- [heroku deploy config, package.json configs]
+// TO DEPLOY THE APP IN HEROKU, U NEED TO SPECIFY THE PORT NO THAT WILL BE PICKED
+// FROM UR ENV VARIABLE. process.env.PORT will pick up a random PORT ON WHICH
+// THE SERVER WILL BE LISTENING.
+// NOW HEROKU SHOULD KNOW HOW TO RUN UR SCRIPT THATS WHY IN PACKAGE.JSON, 
+// UNDER SCRIPT SECTION, DEFINE "start":"node server.js"
+// ALSO u need to specify what version of node to use for running this script in pacakge.json
+// use engine parameter 
+  // "engines" : {
+  //   "node" : "11.2.0"
+  // },
+
+// THEN U NEED TO HOST UR MONGODB ON THE HEROKU WHICH HAS AN ADD ON SERVICE CALLED 
+// MLAB MONGODB. THIS WILL LET U HOST UR DB ON THE CLOUD.
+// TO CONFIGURE HEROKU IN THE CURRENT DIR , DO heroku create.
+const PORT=process.env.PORT || 3000;
 
 
 
@@ -58,6 +77,17 @@ app.post('/todos',(req,res)=>{
 			res.status(400).send(err);
 		})
 })
+
+
+// SAMPLE JSON RESPONSE SENT BY OUR SERVER FROM CLIENT/POSTMAN IS AS FOLLOWS:-
+// {
+//     "completed": false,
+//     "completedAt": null,
+//     "_id": "5c023a6a0ba1d302703d750b",
+//     "text": "rent",
+//     "description": "RENT XFER TO NEETA",
+//     "__v": 0
+// }
 
 // FOLLOWING CODE WILL RETRIEVE DATA FROM THE SERVER.ONLY WHEN REQUEST COMES FROM 
 // CLIENT USING HTTP GET METHOD.
@@ -106,16 +136,26 @@ app.get('/todos',(req,res)=> {
 //     ]
 // }
 
-app.listen(3000,()=>{
-	console.log('SERVER STARTED LISTENING AT PORT:-3000');
+// U HAVE TO SEND FOLLOWING URL FROM POSTMAN USING GET METHOD
+// localhost:3000/todos/5c0350ea6e8db10721279326
+
+
+app.get('/todos/:id',(req,res)=>{
+	const id=req.params.id;
+	if (!ObjectID.isValid(id)) res.status(404).send('NOT A VALID OBJECTID');
+	todo.findById(id).then((doc)=>{
+		if (!doc) res.send('DOCUMENT NOT FOUND')
+		res.send({doc})
+
+	}).catch((err)=>{
+		console.log('ERROR WHILE USING GETID METHOD:='+err)
+		res.status(404).send(err)
+	})
 })
 
-// SAMPLE JSON RESPONSE SENT BY OUR SERVER FROM CLIENT/POSTMAN IS AS FOLLOWS:-
-// {
-//     "completed": false,
-//     "completedAt": null,
-//     "_id": "5c023a6a0ba1d302703d750b",
-//     "text": "rent",
-//     "description": "RENT XFER TO NEETA",
-//     "__v": 0
-// }
+
+
+app.listen(PORT,()=>{
+	console.log('SERVER STARTED LISTENING AT PORT:-'+PORT);
+})
+
