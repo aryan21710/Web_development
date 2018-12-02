@@ -1,4 +1,4 @@
-// #KEYWORDS:- [bodyparser middleware, app.post, OBJECT DESTRUCTURING, POSTMAN, HTTP ENDPOINT SETUP]
+// #KEYWORDS:- [bodyparser middleware, app.post, app.get, OBJECT DESTRUCTURING, POSTMAN, HTTP ENDPOINT SETUP]
 const express = require('express');
 const bodyparser = require('body-parser')
 
@@ -63,9 +63,11 @@ app.post('/todos',(req,res)=>{
 // CLIENT USING HTTP GET METHOD.
 // IN POSTMAN WHILE SENDING THE GET REQUEST SELECT BODY-->NONE
 app.get('/todos',(req,res)=> {
-	// todo.find() is mongodb native driver method which will return all the todos
+	// todo.find() is MONGOOSE WAY OF find().toArray() method in mongodb native driver 
+	// which will return all the todos
 	// in an array.INSTEAD OF USING CONSOLE.LOG WE ARE USING RES.SEND AS WE WANT TO
 	// DISPLAY THE SAME ON THE CLIENT. 
+	// SYNTAX IS MODEL.find()
 	todo.find().then((mytodos)=>{
 		return res.send({mytodos})
 	}).catch((err)=> {
@@ -73,8 +75,6 @@ app.get('/todos',(req,res)=> {
 	})
 
 })
-
-
 
 // SAMPLE OUTPUT OF GET:-
 // {
