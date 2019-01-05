@@ -1,6 +1,6 @@
 
 const mongoose=require('mongoose');
-const todo=mongoose.model('todo',{
+const todo=mongoose.model('arytodo',{
 	text : {
 		type : String,
 		required : true,

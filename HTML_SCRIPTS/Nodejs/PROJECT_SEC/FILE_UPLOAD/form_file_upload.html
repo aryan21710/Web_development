@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Simple Upload Example</title>
+    <link rel="stylesheet" type="text/css" href="form_file_upload.css">
+</head>
+	
+<body>
+
+	<!-- <h1 id='demo'> THIS IS UPLOAD TEST PAGE </h1> -->
+	<div id="formId"> 
+		<h1 id="demo"> 'WELCOME TO THE GALLERY' </h1>
+		 <form enctype="multipart/form-data" action="http://localhost:3000/fileUpload" method="post">
+        <input  id="fileInput" type="file" name="imgUploader" multiple> 
+		<input id="submitInput" type='submit' value='Submit' name='submit'>
+		</form>
+	</div>
+	<div id='Gallery'> 
+		<div id="d1"><img src="../public/shivImage.jpg"></div>
+		<div id="d1"><img src="../public/shivImage2.jpg"></div>
+		<div id="d1">3</div>
+		<div id="d1">4</div>
+		<div id="d1">5</div>
+	<div id="d1">1</div>
+		<div id="d1">2</div>
+		<div id="d1">3</div>
+		<div id="d1">4</div>
+		<div id="d1">5</div>
+			<div id="d1"></div>
+		<div id="d1">2</div>
+		<div id="d1">3</div>
+		<div id="d1">4</div>
+		<div id="d1">5</div>
+	<div id="d1">1</div>
+		<div id="d1">2</div>
+		<div id="d1">3</div>
+		<div id="d1">4</div>
+		<div id="d1">5</div>
+	</div>
+  
+
+	<script src="../JS/imgUpload.js">
+	</script>
+
+</body>
+
+</html>

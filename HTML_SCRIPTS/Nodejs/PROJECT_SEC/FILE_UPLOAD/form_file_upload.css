@@ -1,0 +1,47 @@
+/*body {
+	background: pink;
+}*/
+
+#formId {
+	background: grey;
+	width: 100%;
+	height: 200px;
+	margin: auto;
+}
+
+
+
+#fileInput {
+	/*background: black;*/
+	width: 200px;
+	height: 50px;
+	margin: 35px 0px 0px 500px;
+
+} 
+
+img {
+	width : 100%;
+	height: 100%;
+}
+
+#submitInput {
+	/*background: black;*/
+	width: 100px;
+	height: 30px;
+} 
+
+#Gallery {
+	margin-top: 10px;
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	background: grey;
+	justify-content: center;
+}
+
+#d1,#d2,#d3,#d4,#d5,#d6 {
+	background: black;
+	width: 300px;
+	height: 300px;
+	margin: 10px;
+}

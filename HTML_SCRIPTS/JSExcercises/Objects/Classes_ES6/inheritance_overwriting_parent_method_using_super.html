@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+	<p id='demo'> SEE THE CONSOLE.LOG TO UNDERSTAND THE JAVASCRIPT CODE </p>
+
+
+    <script type="text/javascript">
+
+            class header {
+                constructor(background,width,height,margin, color, paddingTop="35px",paddingLeft="600px") {
+                    this.background=background,
+                    this.width=width,
+                    this.height=height,
+                    this.margin=margin,
+                    this.color=color,
+                    this.paddingtop=paddingTop,
+                    this.paddingleft=paddingLeft                 
+                }
+            
+                makeDiv() {
+                    let text='PARENT DIV';                   
+                    let b=document.body;
+                    b.innerHTML+= `
+                    <div id="demo1" style="width : ${this.width}; height : ${this.height}; background : ${this.background};
+                    margin : ${this.margin}; color : ${this.color}; padding-top : ${this.paddingtop}; 
+                    padding-left : ${this.paddingleft}; box-sizing: border-box; text-align: "center">${text}</div>
+                    `;
+
+                }
+            
+            }
+
+            class footer extends header {
+                constructor(background,width,height,margin, color, id, paddingTop="35px",paddingLeft="600px") {
+                    super(background,width,height,margin, color, paddingTop="35px",paddingLeft="600px");
+                    this.id=id;
+
+                }
+
+                makeDiv() {
+                    let makeDiv2=super.makeDiv();
+                    let childDiv=document.getElementsByTagName('div');
+                    childDiv[1].id=this.id;
+                    childDiv[1].innerHTML="TEXT CHANGED BY INHERITANCE CLASS";
+                }
+                
+
+            }
+
+            console.log(footer);
+            const Header=new header("skyblue","100%","100px","0px","red");
+            Header.makeDiv();
+            const Footer=new footer("pink","100%","100px","10px","red","demo2");
+            Footer.makeDiv();
+    
+    </script>
+
+</body>
+</html>
+
+

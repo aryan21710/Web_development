@@ -1,4 +1,5 @@
 
+//#KEYWORDS:- [axios, encodeURIComponent, promise-chaining]
 const axios=require('axios');
 const geoKey='14IVr5AIZlbKTr2C9Ax5GWiFgGZ6srus';
 const yargs=require('yargs');
@@ -15,7 +16,8 @@ const argv=yargs.options({
 })
 .help()
 .argv;
-
+// encodeURIComponent will add %20 in argv.address wherever it encounters space. That will be compatible witj
+// th e url syntax.
 const address=encodeURIComponent(argv.address);
 // console.log('argv:-'+JSON.stringify(address,undefined,4));
 

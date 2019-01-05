@@ -15,6 +15,11 @@ mongoose.connect('mongodb://localhost:27017/TodoApp', { useNewUrlParser: true })
 // be in form of key:value pair. These objects will be our parameters what we want to set
 // in the app.
 
+// TO PERFORM ANY UPDATE OPERATION ON DB IN MOONGOOSE PACKAGE OR MONGDB NATIVE DRIVER THERE
+// ARE SETS OF OPERATORS. U JUST CANT GO AHEAD AND UPDATE THE DB. U CAN ADD/READ/DELETE THE 
+// DB BUT FOR UPDATING THE DB U NEED TO USE SPECIAL OPERATOR LIKE set, inc, min, max,unset etc
+// https://docs.mongodb.com/manual/reference/operator/update/
+
 
 // Here todo is a constructor from which we can create a real object.
 const todo=mongoose.model('ToDo', {

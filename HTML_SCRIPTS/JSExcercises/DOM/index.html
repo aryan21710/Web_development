@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+    <body>
+        <h1>WELCOME TO THE DOM MAINPULATION WEBPAGE</h1>
+        <h2> CHECK THE CONSOLE.LOG FOR THE CHANGES</h2>
+        <p> DUMMY PARAGRAPY1 TEXT TO PRACTICE</p>
+        <p> DUMMY PARAGRAPY2 TEXT TO PRACTICE</p>
+        <p></p>
+        <p>SECOND LAST PARAGRAPH TAG</p>
+        <p> LAST PARAGRAPH TAG</p>
+
+
+        <script>
+            const p=document.querySelectorAll('p');
+            console.log(`EXPAND ${p} IN DEV TOOLS TO SEE ALL THE DOM METHODS AND PROPERTIES`);
+            // FOLLOWING WILL REMOVE THE FIRST P ELEMENT ENCOUNTERED ON THE WEBPAGE.
+            // p.remove();
+
+            p.forEach((item)=>{
+                console.log('MATCHING TO NOW:-'+item.innerHTML.match(/TO/g));
+                item.innerHTML.match(/TO/g) ? item.remove() : ''
+                // console.log('PARAGRAPH CONTENTS:-'+item.innerHTML);
+                // FOLLOWING WILL REMOVE ALL THE PARAGRAPH TAGS FROM THE WEBPAGE;
+                //item.remove()
+            })
+        
+        </script>
+
+    </body>
+
+</html>
+

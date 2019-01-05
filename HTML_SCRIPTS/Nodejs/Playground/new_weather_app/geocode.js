@@ -29,8 +29,8 @@ class geocodeCl {
 	// JSON-view to fetch the desired property out of body/err/response objects. THIS WILL SET THE
 	// accept header to application/json inside request header (sent by client to the server.)
 
-	// body is part of the response object returned by the server. You can also access the body
-	// object via response object.
+	// body is part of the both request and response object returned by the server. You can access the body
+	// object via response  or request object.
 
 	// statuscode is very important and sent in response header. Only if its 200 which stands for ok
 	// then you should go ahead and code rest of the api call.

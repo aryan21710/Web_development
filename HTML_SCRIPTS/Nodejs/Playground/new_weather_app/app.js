@@ -1,7 +1,10 @@
 
 //#KEYWORD [callback to a class method, callback-to-callback, implementation using class and not functions, promises chaining]
 const geocode=require('./geocode_promises.js');
-OR 
+
+console.log(typeof(geocode))
+console.log(Object.keys(geocode));
+// OR 
 // const geocode=require('./geocode.js');
 
 // const weather=require('./weather.js');

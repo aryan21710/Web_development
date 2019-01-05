@@ -1,4 +1,4 @@
-//#KEYWORDS:- [super, extends, class]
+//#KEYWORDS:- [super, extends, class, super, accessing method of parent class  inside the child class ]
 class Parent {
 	constructor(text,color,bg) {
 		this.text=text;
@@ -32,8 +32,12 @@ class Child extends Parent {
 		super(text,color,bg);
 	}
 
-	// FOLLOWING CODE WILL OVERWRITE THE INHERITED METHOD MAKEDIV. METHOD-OVERRIDING.
 	makeDiv() {
+		// If you want to access the Parent method makeDiv here inside the child class then you can do
+		// following.
+		let makeDivCode=super.makeDiv();
+		
+		// FOLLOWING CODE WILL OVERWRITE THE INHERITED METHOD MAKEDIV. METHOD-OVERRIDING.
 		let p=`<p id="xyz" style="font-size : 20px; color : red; margin : 20px 
 		       "> I WILL OVERWRITE THE EXISTING DIV </p>`
 		 Child.applyHTMLconfig(p);
@@ -41,7 +45,7 @@ class Child extends Parent {
 }
 
 const pdiv=new Parent('PARENTDIV USING CLASS','red','black');
-const cdiv=new Child('ChildDiv USING INHERITANCE CLASS','yellow','blue');
+const cdiv=new Child('ChildDiv USING INHERITANCE CLASS','blue','skyblue');
 const div=[pdiv,cdiv];
 for (let divs of div) {
 	divs.makeDiv();

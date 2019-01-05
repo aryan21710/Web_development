@@ -1,5 +1,5 @@
 
-//#KEYWORDS:- [update, insertmany, findOneAndDelete documents, how to fetch the id value, update operators lile $set or $inc]
+//#KEYWORDS:- [update, insertmany, findOneAndDelete documents, how to fetch the id value, update operators $set or $inc]
 // ALL THE MONGODB OPERATIONS ARE PERFORMED USING MONGODB NATIVE DRIVER OR ANOTHER BETTER OPTION
 // WOULD BE TO INSTALL THE NPM FOR MONGOOSE ORM
 const {MongoClient,ObjectId}=require('mongodb');

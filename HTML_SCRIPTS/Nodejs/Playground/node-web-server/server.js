@@ -1,5 +1,5 @@
 
-// #KEYWORDS:- [hbs partials, hbs registerhelper, explanation of hbs and handlebars, res.render, template-engines, explanation of app.get,middleware, app.use, express, app.listen, sending json/html data as a response back to the client]
+// #KEYWORDS:- [EXPRESS SERVER, hbs partials, hbs registerhelper, explanation of hbs and handlebars, res.render, template-engines, explanation of app.get,middleware, app.use, express, app.listen, sending json/html data as a response back to the client]
 // #DESCRIPTION
 const express=require('express');
 const hbs=require('hbs');
@@ -14,10 +14,12 @@ const app=express();
 app.use(express.static(__dirname+'/public'));
 
 
-// app.use which a middleware will let you do some coding by calling a function. Here you can
-// write any program specific code also which will be executed. But you have to call next()
+// app.use which is a middleware will let you do some program specific coding by calling a function. Here you can
+// write any program specific code which will be executed. But you have to call next()
 // otherwise the execution wont be passed to next line of code.
 
+// demonstration of using our own function using app.use as a route-handler instead of using app.get which is 
+// always used for setting route-handler.
 app.use((req,res,next)=>{
 	userinfo={
 		user : process.env.USER,
@@ -77,7 +79,7 @@ hbs.registerHelper('getYear',()=> {
 app.set('view engine','hbs');
 
 
-// app.get calls the function when the request comes to the url '/'. app,get is a route 
+// app.get calls the function when the client request comes to the url endpoint '/'. app.get is a route 
 // handler for / url. every callback function is called with 2 arguments req and res only
 // app.get serves the url ('/'). 
 app.get('/',(req,res)=>{

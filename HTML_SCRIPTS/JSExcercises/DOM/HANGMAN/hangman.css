@@ -1,0 +1,176 @@
+
+        body {
+            background : #FC4A1A;
+            box-sizing: border-box;
+            color : black;
+            
+            
+        }
+
+        #MainContainer {
+            display: flex;
+            justify-content: space-between;
+            align-content: center;
+            flex-direction: row;
+        }
+
+        #AnimationArea {
+            background: #4ABDAC;
+            width : 200px;
+            height : 600px;
+            margin-top: 80px;
+            border-radius: 20px;
+        }
+
+        #myCanvas {
+            /* border : 1px solid pink; */
+            margin: 10px;
+        }
+
+        #PlayArea {
+            background: #4ABDAC;
+            width : 1100px;
+            height : 600px;
+            margin-top: 80px;
+            display: flex;   
+            flex-direction: column;
+            justify-content: space-between;   
+            align-content: center;     
+            border-radius: 20px;
+
+        }
+
+        #ScoreArea {
+            height: 100px;
+            width: 90%;
+            /* border: 1px solid pink; */
+            margin-left: 50px;
+            font-size: 60px;
+            font-weight: bold;
+            text-align: center;
+            color: rgb(252, 71, 26);
+            margin-top: 30px;
+            font-family: gabriola;
+            /* border: 1px solid pink; */
+        }
+
+        #QuizArea {
+            height :300px;
+            width : 90%;
+            /* border: 1px solid pink; */
+            margin-left: 50px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid pink; */
+        }
+
+      #btnArea {
+            width : 90%;
+            /* border: 1px solid pink; */
+            height : 100px;
+            margin-left: 50px;
+            /* border: 1px solid pink; */
+        }
+
+        #btnArea button {
+            width : 200px;
+            height : 40px;
+            margin : 30px 40%;
+            border-radius: 20px;
+            font-size: 30px;
+            background: #F7B733;
+            cursor: pointer;
+            text-decoration: none;
+            border : none;
+            outline: none;
+            /* box-shadow: none !important */
+        }
+
+        #ol {
+            list-style-type: none;
+            /* border: 1px solid pink; */
+            margin: 0;
+            padding : 0;
+        }
+
+        li {
+            font-size: 50px;
+            display: inline-block;
+        }
+
+        #btnArea button:hover {
+            background: rgb(247,183,51,0.5)
+
+        }
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+
+	@media only screen and (min-width: 300px) and (max-width: 700px) {
+
+        #MainContainer {
+            display: flex;
+            flex-direction: row;
+        }
+
+        #AnimationArea {
+            width : 200px;
+            height : 600px;
+            margin: 0px 10px;
+        }
+
+        #PlayArea {
+            width : 100%;
+            height : 600px;
+            margin: 0px;
+            justify-content: space-between;   
+            align-content: center;     
+            border-radius: 20px;
+        }
+
+        #ScoreArea {
+            height: 100px;
+            width: 100%;
+            margin: 10px 0px;
+            font: 25px bolder; 
+            text-align: center;           
+        }
+
+        #QuizArea {
+            height :300px;
+            width : 100%;
+            /* border: 1px solid pink; */
+            margin: 10px 0px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #btnArea {
+            width : 100%;
+            /* border: 1px solid pink; */
+            height : 100px;
+            margin-left: 10px;
+        }
+
+        
+        #btnArea button {
+            width : 80px;
+            height : 20px;
+            margin : 30px 40%;
+            font-size: 15px;
+            cursor: pointer;
+            text-decoration: none;
+            border : none;
+            outline: none;
+            /* box-shadow: none !important */
+        }
+
+        li {
+            font: 30px bold;
+        }
+
+
+    }

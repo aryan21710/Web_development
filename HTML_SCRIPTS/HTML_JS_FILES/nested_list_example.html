@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<style type="text/css">
+  #navbar {
+
+        /*list-style-type: none;*/
+        background:black;
+       
+      }
+
+       #navbar2 {
+
+        /*list-style-type: none;*/
+        background:red;
+       
+      }
+
+      #navbar3 {
+      	background: pink;
+      }
+
+      #navbar li, #navbar2 li, #navbar3 li{
+      	display: block;
+      }
+
+      #navbar #navbar2 li a {
+      	color: blue;
+      }
+
+     
+       #navbar li a {
+        padding : 20px 45px;
+        color : white;
+        text-decoration: none;
+        font : 20px bold;
+        text-align: center;
+      }
+
+   
+
+       #navbar #navbar2 #navbar3 li a {
+      	color: black;
+      }
+	</style>
+</head>
+<body>
+
+   <ul id="navbar">
+   	     <li><a  onmouseover="expand1()" href="#Home">Home</a></li>
+
+          	<ul id="navbar2">
+          		<li><a onmouseover="expand2()" href="#News1">News1</a></li>
+          		  <ul id="navbar3"> 
+          		  	          <li><a  onmouseover="expand1()" href="#Home">Home_navbar3</a></li>
+          		  </ul>
+          		<li><a onmouseover="expand1()" href="#Contact">Contact1</a></li>
+          		<li><a onmouseover="DrpDwn()" href="#DropDown">DropDown1</a></li>
+          	</ul>
+
+          <li><a onmouseover="expand2()" href="#News">News</a></li>
+          <li><a onmouseover="expand1()" href="#Contact">Contact</a></li>
+          <li><a onmouseover="DrpDwn()" href="#DropDown">DropDown</a></li>
+        </ul>
+
+
+
+</body>
+</html>

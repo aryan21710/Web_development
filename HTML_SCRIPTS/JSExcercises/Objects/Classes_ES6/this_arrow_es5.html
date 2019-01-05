@@ -1,0 +1,81 @@
+<html>
+<head>
+</head>
+    <body>
+    <h1> SEE CONSOLE.LOG FOR OUTPUT </h1>
+        <br>
+    <p> IN ES5 FUNCTIONS AND ARROW FUNCTIONS RELATING TO THIS KEYWORD</p>
+        <script>
+        // #KEYWORD :- [EXPLANATION OF THIS IN ARROW AND ES5 FUNCTION, THIS INSIDE OBJECT, THIS INSIDE PLAIN VANILLA FUNCTION]
+        // IN NORMAL FUNCTION THIS HAS NO ACCESS AND THATS THE REASON THIS SHOULDNT BE CALLED INSIDE A NORMAL
+        // PLAIN VANILLA FUNCTION . 
+        var thisUsage=function(x) {
+            return this.x
+        }
+        
+        console.log('output of return this.x in a function:-'+thisUsage(3))
+        console.log('*'.padEnd(60,'*'));
+        
+        var thisUsage=function(x) {
+            return x
+        }
+        console.log('output of return x in a function:-'+thisUsage(3))
+        console.log('*'.padEnd(60,'*'));
+        
+        // Below Code has thisUsage is an object with properties and methods.  printOPUsingEs5Func is a method and
+        // its not a plain vanilla function. While creating a method inside an object you should always use
+        // es5 function syntax and not arrow function ever. es5 function when used as a method inside an object
+        // has access to this keyword and it binds it to the context or the object inside which the method is 
+        // created. so this.name will work inside printOPUsingEs5Func method.
+        var thisUsage= {
+            name : 'ary',
+            age : 39,
+            location : 'bengaluru',
+            skills: ['javascript', 'html', 'css', 'nodejs', 'expressjs', 'mongodb', 'react'],
+            printOPUsingEs5Func : function() {
+                console.log('OUTPUT OF THIS.NAME INSIDE thisUsage.printOPUsingEs5Func is:-'+this.name);
+                // here function(myskill is a plain vanilla function )and its also not used here as a 
+                // method inside an object thats why it wont have access to this keyword and this.name
+                // will be printed as undefined.
+                this.skills.forEach(function(myskill) {
+                    console.log(`${this.name} IS PROFICIENT IN FOLLOWING:-' ${myskill}`);
+                })
+            },
+
+
+            printOPUsingEs5Func2: function() {
+                // the ES6 SYNTAX FOR OBJECTS WILL LET U DEFINE, THE SAME ABOVE METHOD AS
+                // printOPUsingEs5Func2 () {...}
+                console.log('OUTPUT OF THIS.NAME INSIDE thisUsage.printOPUsingEs5Func2 is:-'+this.name);
+                // HERE WE ARE USING AN ARROW FUNCTION INSIDE THE FOREACH, THIS KEYWORD INSIDE AN ARROW FUNCTION
+                // WILL BIND TO PARENT SCOPE WHICH MEANS ONE LEVEL UP. ONE LEVEL UP IS OUTISDE printOPUsingEs5Func2 
+                // WHICH IS WHERE NAME IS DEFINED THATS WHY IT HAS ACCESS TO this.name. AND THIS.NAME WILL PASS
+                this.skills.forEach((myskill)=>{
+                    console.log(`${this.name} IS PROFICIENT IN FOLLOWING:-' ${myskill}`);
+                })
+            },
+
+            // HERE AS EXPLAINED IN THE ABOVE EXAMPLE, printOPUsingArrowFunc METHOD IS DEFINED USING ARROW
+            // FUNCTION WHICH YOU SHOULD NEVER DO AND ALWAYS USE ES5 FUNCTION FOR METHOD. REASON BEING, 
+            // HERE inside arrow function (printOPUsingArrowFunc) this will be bound to one level up scope
+            // which is global scope and not scope of this object. name is defined in same scope as the 
+            // arrow function and since this wont have access in this scope, this.name wont be printed and 
+            // will result in an error.
+            printOPUsingArrowFunc: ()=>{
+                console.log('OUTPUT OF THIS.NAME INSIDE thisUsage.printOPUsingArrowFunc is:-'+this.name);
+                this.skills.forEach((myskill)=>{
+                    console.log(`${this.name} IS PROFICIENT IN FOLLOWING:-' ${myskill}`);
+                })
+            }
+        }
+        
+        thisUsage.printOPUsingEs5Func();
+        console.log('*'.padEnd(60,'*'));       
+        thisUsage.printOPUsingEs5Func2();   
+        console.log('*'.padEnd(60,'*'));  
+        thisUsage.printOPUsingArrowFunc();   
+     
+     
+        </script>
+    </body>
+</html>
