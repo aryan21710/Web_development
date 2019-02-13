@@ -1,10 +1,43 @@
-/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/HTML_JS_FILES/json_sample.html:	//#KEYWORDS:- [JSON TO OBJECT]
-/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/JSExcercises/Objects/Classes_ES6/getters_setters_static_func_in_classes.js://#KEYWORDS :- [static, get,set]
-/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/JSExcercises/Objects/Classes_ES6/inheritance_classes.js://#KEYWORDS:- [super, extends, class]
-/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/JSExcercises/Objects/how_to_inherit_from_another_object_using_superConstructor.js:// #KEYWORDS:- [call]
-/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/JSExcercises/Objects/inheritance_exercise.js:// #KEYWORDS:- get, prototype.constructor, Object.defineProperty
-/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/Nodejs/Playground/app-pl1.js:// #KEYWORDS:- [module exports, callback to callback, process.argv]
-/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/Nodejs/Playground/app.js:// #KEYWORDS :- [yargs Notes, yargs.command, .demandOption]
-/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/Nodejs/Playground/new_weather_app/app.js://#KEYWORD [callback to a class method, callback-to-callback, implementation using class and not functions]
-/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/Nodejs/Playground/new_weather_app/geocode.js:// #KEYWORDS:- [super, yargs.option, encodeURI, demandOption, request module, module.exports, class, static function, ternery operator, ?:, try/catch]
-/mnt/c/Users/aryan/Desktop/CODING/HTML_SCRIPTS/Nodejs/Playground/notes.js:// #KEYWORDS:- [Object.prototype.toString, arr.forEach, JSON.parse, arr.filter]
+./HTML_JS_FILES/json_sample.html:	//#KEYWORDS:- [JSON TO OBJECT]
+./JSExcercises/MapDataType.js:// #KEYWORDS:- [MAP DATATYPE USAGE, SORTING AN ARRAY OF OBJECTS USING MAP DATA-STRUCTURE];
+./JSExcercises/MapDataType.js:// #KEYWORD:- [converting an array of objects into map];
+./JSExcercises/Objects/Classes_ES6/getters_setters_static_func_in_classes.js://#KEYWORDS :- [static, get,set]
+./JSExcercises/Objects/Classes_ES6/inheritance_classes.js://#KEYWORDS:- [super, extends, class, super, accessing method of parent class  inside the child class ]
+./JSExcercises/Objects/Classes_ES6/this_arrow_es5.html:        // #KEYWORD :- [EXPLANATION OF THIS IN ARROW AND ES5 FUNCTION, THIS INSIDE OBJECT, THIS INSIDE PLAIN VANILLA FUNCTION]
+./JSExcercises/Objects/how_to_inherit_from_another_object_using_superConstructor.js:// #KEYWORDS:- [call]
+./JSExcercises/Objects/inheritance_exercise.js:// #KEYWORDS:- get, prototype.constructor, Object.defineProperty
+./JSExcercises/Objects/weakmap.js:// #KEYWORDS:- [weakmap,HIDING CLASS DETAILS USING WEAKMAP, ABSTRACTION];
+./JSExcercises/es6_sample_script.js://#KEYWORDS:-[destructuring objects, destructuring array, default parameters, spread, rest, template literals on different lines, for of loop, array.includes(), ]
+./JSExcercises/map_arrays.js:// #KEYWORDS:- [USAGE OF MAP IN AN ARRAY];
+./JSExcercises/map_filter_reduce.js://#KEYWORDS:- [array reduce and array map methods against array forEach]
+./JSExcercises/map_filter_reduce.js:// #KEYWORDS:- [arguments]
+./JSExcercises/promises_chaining.js://#KEYWORDS:- [Promise explanation, promises chaining, reduce, resolve, reject, catch, promises-->promises-->promises ]
+./JSExcercises/weakmap.js:// #KEYWORDS:- [weakmap,HIDING CLASS DETAILS USING WEAKMAP, ABSTRACTION];
+./Nodejs/Playground/app-pl1.js:// #KEYWORDS:- [module exports, callback to callback, process.argv]
+./Nodejs/Playground/app.js:// #KEYWORDS :- [yargs Notes, yargs.command, .demandOption]
+./Nodejs/Playground/new_weather_app/app.js://#KEYWORD [callback to a class method, callback-to-callback, implementation using class and not functions, promises chaining]
+./Nodejs/Playground/new_weather_app/geocode.js:// #KEYWORDS:- [super, yargs.option, encodeURI, demandOption, request module, module.exports, class, static function, ternery operator, ?:, try/catch]
+./Nodejs/Playground/new_weather_app/geocode_promises.js:// #KEYWORDS:- [promises chaining, super, yargs.option, encodeURI, demandOption, request module, module.exports, class, static function, ternery operator, ?:, try/catch]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/keywords.txt:../../../Playground/app-pl1.js:// #KEYWORDS:- [module exports, callback to callback, process.argv]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/keywords.txt:../../../Playground/app.js:// #KEYWORDS :- [yargs Notes, yargs.command, .demandOption]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/keywords.txt:../../../Playground/new_weather_app/app.js://#KEYWORD [callback to a class method, callback-to-callback, implementation using class and not functions, promises chaining]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/keywords.txt:../../../Playground/new_weather_app/geocode.js:// #KEYWORDS:- [super, yargs.option, encodeURI, demandOption, request module, module.exports, class, static function, ternery operator, ?:, try/catch]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/keywords.txt:../../../Playground/new_weather_app/geocode_promises.js:// #KEYWORDS:- [promises chaining, super, yargs.option, encodeURI, demandOption, request module, module.exports, class, static function, ternery operator, ?:, try/catch]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/keywords.txt:../../../Playground/node-web-server/node-test/server/server.test.js:// #KEYWORD:- [ TESTING EXPRESS APP USING MOCHA, SUPERTEST,]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/keywords.txt:../../../Playground/node-web-server/node-test/utils/utils.js:// #KEYWORDS:- {Object.prototype.toString, Object toString method modified, object literals}
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/keywords.txt:../../../Playground/node-web-server/node-test/utils/utils.test.js:// #KEYWORDS :- [mocha function syntax.EXPECT package, DESCRIBE BLOCK FOR MOCHA TESTING, TEST CASE SEPARATION]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/keywords.txt:../../../Playground/node-web-server/server.js:// #KEYWORDS:- [hbs partials, hbs registerhelper, explanation of hbs and handlebars, res.render, template-engines, explanation of app.get,middleware, app.use, express, app.listen, sending json/html data as a response back to the client]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/keywords.txt:../../../Playground/notes.js:// #KEYWORDS:- [Object.prototype.toString, arr.forEach, JSON.parse, arr.filter]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/mongodb-fetch-using-count.js://#KEYWORDS:- [update, insertmany, findOneAndDelete documents, how to fetch the id value, update operators $set or $inc]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/mongodb-fetch.js://#KEYWORD:- [FETCHING DATA FROM MONGODB, find.toArray, Object destructuring, new ObjectId to fetch the value of _id, Fetching a Particular document]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/server/mongoose_queries.js://#KEYWORDS:- [QUERY DB USING MONGOOSE METHODS LIKE:- find, findOne, findById, ObjectID.isValid]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/server/server.js:// #KEYWORDS:- [lodash, loadash._pick, findByIdAndUpdate, $set,new Mongoose update operator, app.patch, bodyparser middleware, app.post, app.get, OBJECT DESTRUCTURING, POSTMAN, HTTP ENDPOINT SETUP, OBJECTID.ISVALID, apt.delete]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/server/server.js:// #KEYWORD:- [heroku deploy config, package.json configs]
+./Nodejs/Playground/node-todo-api-using-mongo/Playground/server/server_using_mongoose.js://#KEYWORD:- [MONGOOSE USAGE,VALIDATORS]
+./Nodejs/Playground/node-web-server/node-test/server/server.test.js:// #KEYWORD:- [ TESTING EXPRESS APP USING MOCHA, SUPERTEST,]
+./Nodejs/Playground/node-web-server/node-test/utils/utils.js:// #KEYWORDS:- {Object.prototype.toString, Object toString method modified, object destructuring}
+./Nodejs/Playground/node-web-server/node-test/utils/utils.test.js:// #KEYWORDS :- [mocha function syntax.EXPECT package, DESCRIBE BLOCK FOR MOCHA TESTING, TEST CASE SEPARATION]
+./Nodejs/Playground/node-web-server/server.js:// #KEYWORDS:- [EXPRESS SERVER, hbs partials, hbs registerhelper, explanation of hbs and handlebars, res.render, template-engines, explanation of app.get,middleware, app.use, express, app.listen, sending json/html data as a response back to the client]
+./Nodejs/Playground/notes.js:// #KEYWORDS:- [Object.prototype.toString, arr.forEach, JSON.parse, arr.filter]
+./Nodejs/Playground/server.js://#KEYWORD:- [http.createserver, util.inspect]
+./Nodejs/weather-app/app-axios.js://#KEYWORDS:- [axios, encodeURIComponent, promise-chaining]
