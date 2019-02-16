@@ -57,3 +57,7 @@ Details.prototype.getInfo = function () {
 let wm = new WeakMap();
 const person = new Details('aryan', 'sharma', 39, 'ryan');
 person.getInfo();
+
+
+
+
