@@ -3,7 +3,7 @@ function wife(n,a,mood) {
          this.name = n;
          this.age = a;
          this.mood=mood;
-         // profession is a private member which is not seen from outside not variable nor
+         // profession is a private member which is not seen from outside neither the variable name nor
          // its value;
          let profession='designer'
          

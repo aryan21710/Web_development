@@ -160,7 +160,7 @@ console.log('unique colors are using reduce:-' + colors);
 console.log('---------------------------NEXT PROGRAM------------------------');
 
 // #KEYWORDS:- [arguments]
-// arguments is an array object it doesnt work with es6 function and also
+// arguments is an array object it doesnt work with es6 arrow functions and also
 // not all array methods like forEach works with it. Length works with arguments. 
 
 let divList=function() {

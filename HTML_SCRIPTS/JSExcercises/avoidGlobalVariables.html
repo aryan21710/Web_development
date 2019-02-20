@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            background: grey;
+        }
+        #main {
+            margin: 350px;
+            display: grid;
+            grid-template-columns: 200px 50px 200px 200px;
+            grid-column-gap: 10px;
+        }
+
+        #main > div {
+            border: 2px solid black;
+        }
+
+        input[type='number'], input[type='text'] {
+            width: 100%;
+            height: 40px;
+            font-size: 30px;
+            text-align: center;
+        }
+
+        input[type='radio'] {
+            font-size: 30px;
+        }
+    </style>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+</head>
+
+<body /*onload='setup1()'*/>
+        <script src="avoidGlobalVar.js"></script>
+
+</body>
+</html>
