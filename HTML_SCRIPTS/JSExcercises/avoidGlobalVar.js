@@ -128,7 +128,7 @@
 // }())
 
 // TECHNIQUE 3:- window.setup. Call the Setup function using Global Window object.
-// since all global variables "setup" here is accessible via window, no need to call
+// like all global variables "setup" here is accessible via window, no need to call
 // onload="setup" in body.
 // Problem:- setup is accessible and not hidden.
 

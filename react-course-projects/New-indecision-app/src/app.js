@@ -1,41 +1,107 @@
-const info= {
-    title: 'COMPONENT LESS INDECISION APP',
-    subtitle: 'FIRST REACT APP',
-    options : []
+class IndecisionApp extends React.Component {
+
+    render() {
+        const title = "Indecision App";
+        const subtitle ='Put your life in the hands of Computer';
+        const o=[];
+
+        return (
+            <div>
+                <Header title={title} subtitle={subtitle}/>
+                <Action />
+                <Options optionsArr={o}/>
+                <AddOption optionsArr={o}/>
+            </div>
+        )
+    }
 }
 
-const checkOptions=()=>{    
-     return info.options.map((o)=><li>{o}</li>)
+class Header extends React.Component {
+    render() {
+        return (
+            <div>
+                <h1> {this.props.title} </h1>
+                <h2> {this.props.subtitle}</h2>
+            </div>
+        )
+    }
+    
 }
 
-const populateOptions=(e)=>{
-    e.preventDefault();
-    let value = e.target.elements.options.value;
-    info.options.push(value);
-    console.log(info.options);
-    e.target.value='';
-    renderMe();
+class Action extends React.Component {
+    render() {
+        return (
+            <div>
+                <button> What should i Do??</button>
+            </div>
+          
+        )
+    }
 }
 
-// #KEYWORDS:- [Form Submission using form Onsubmit and fetching the value submitted by using e.target.elements]
+class Options extends React.Component {
+    render() {
+        return (
+            <div>    
+                Option Component here:-{
+                this.props.optionsArr.length}   
+                <Option newoptionArr={this.props.optionsArr}/>
+            </div>
+        )
+    }
+}
 
-const renderMe=()=>{
-    const template = (
-        <div>
-            {info.title && <h1>{info.title}</h1>}
-            {info.subtitle ? <p>{info.subtitle}</p> : 'undefined'}
+class Option extends React.Component {
+
+    printOptionArr(newoptionArr) {
+        return newoptionArr.map((v)=><li>{v}</li>)
+    }
+
+    removeAll() {
+
+        console.log('removeAll is called:-');
+    }
+
+    render() {
+        return (
+            <div>
             <ol>
-                {(info.options.length > 0) && (checkOptions())}
+                    {this.props.newoptionArr.length > 0 && this.printOptionArr(this.props.newoptionArr)}
             </ol>
-            <form onSubmit={populateOptions}>
-                <input name='options'></input>
-                <button>Submit</button>
-            </form>
-        </div>
-    )
-
-    ReactDOM.render(template, document.getElementById('app'));
-
+            <button onClick={this.removeAll}>RemoveAllOptions</button>
+            </div>
+        )
+    }
 }
 
-renderMe();
+
+class AddOption extends React.Component {
+    constructor(props) {
+        super(props);
+        this.addOption=this.addOption.bind(this);
+    }
+    addOption(e) {
+        e.preventDefault();
+        let v=e.target.elements.inputOption.value.trim();
+        if (v.length > 0) {
+            e.target.elements.inputOption.value = '';
+            console.log('INSERT FOLLOWING INTO THE ARRAY:-' + v);
+            this.props.optionsArr.push(v);
+        }
+
+        console.log('New array:-' + this.props.optionsArr);
+      
+    }
+    render() {
+        return (
+            <div>
+                <form onSubmit={this.addOption}>                
+                    <input name='inputOption'></input>
+                    <button>Add an Option!!</button>
+                </form>          
+            </div>
+        )
+    }
+}
+
+ReactDOM.render(<IndecisionApp/>,document.getElementById('app'));

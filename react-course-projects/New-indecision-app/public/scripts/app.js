@@ -1,62 +1,68 @@
-'use strict';
+"use strict";
 
-var info = {
-    title: 'COMPONENT LESS INDECISION APP',
-    subtitle: 'FIRST REACT APP',
-    options: []
-};
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var checkOptions = function checkOptions() {
-    return info.options.map(function (o) {
-        return React.createElement(
-            'li',
-            null,
-            o
-        );
-    });
-};
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-var populateOptions = function populateOptions(e) {
-    e.preventDefault();
-    var value = e.target.elements.options.value;
-    info.options.push(value);
-    console.log(info.options);
-    e.target.value = '';
-    renderMe();
-};
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
-var renderMe = function renderMe() {
-    var template = React.createElement(
-        'div',
-        null,
-        info.title && React.createElement(
-            'h1',
-            null,
-            info.title
-        ),
-        info.subtitle ? React.createElement(
-            'p',
-            null,
-            info.subtitle
-        ) : 'undefined',
-        React.createElement(
-            'ol',
-            null,
-            info.options.length > 0 && checkOptions()
-        ),
-        React.createElement(
-            'form',
-            { onSubmit: populateOptions },
-            React.createElement('input', { name: 'options' }),
-            React.createElement(
-                'button',
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Visible = function (_React$Component) {
+    _inherits(Visible, _React$Component);
+
+    function Visible(props) {
+        _classCallCheck(this, Visible);
+
+        var _this = _possibleConstructorReturn(this, (Visible.__proto__ || Object.getPrototypeOf(Visible)).call(this, props));
+
+        _this.toggle = _this.toggle.bind(_this);
+        _this.state = {
+            visiibility: 1
+
+        };
+        return _this;
+    }
+
+    _createClass(Visible, [{
+        key: "toggle",
+        value: function toggle() {
+            console.log('TOGGLE IS CALLED');
+            this.setState(function (prevState) {
+                return {
+                    visiibility: !prevState.visiibility
+                };
+            });
+        }
+    }, {
+        key: "render",
+        value: function render() {
+            return React.createElement(
+                "div",
                 null,
-                'Submit'
-            )
-        )
-    );
+                React.createElement(
+                    "h1",
+                    null,
+                    "Visibility Toggle"
+                ),
+                React.createElement(
+                    "button",
+                    { onClick: this.toggle },
+                    "Click to ",
+                    this.state.visiibility == 1 ? "SHOW" : "HIDE",
+                    " Details"
+                ),
+                React.createElement(
+                    "p",
+                    null,
+                    " ",
+                    this.state.visiibility == 1 ? "HERE I AM " : undefined
+                )
+            );
+        }
+    }]);
 
-    ReactDOM.render(template, document.getElementById('app'));
-};
+    return Visible;
+}(React.Component);
 
-renderMe();
+ReactDOM.render(React.createElement(Visible, null), document.getElementById('app'));

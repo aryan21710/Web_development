@@ -12,13 +12,19 @@
 var obj= {
     name : 'aryan',
     lname: 'sharma',
-    age: 39
+    age: 39,
+    options:['a', 'b', 'c']
+
 
 }
 
 const info=()=>{
     return  `${obj.name}  ${obj.lname}  WHO IS 
      ${obj.age} ,Its his First's React Page`
+}
+
+const iterateOptions=()=>{
+     return obj.options.map((v) => <p>{v}</p>)
 }
 
 var template=(
@@ -29,6 +35,8 @@ var template=(
             <li>ITEM ONE</li>
             <li> ITEM TWO</li>
         </ol>
+        {iterateOptions()}
+        {[<p>1</p>,<p>2</p>]}
     </div>
     );
 
