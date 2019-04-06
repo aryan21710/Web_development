@@ -19,7 +19,7 @@ class Main extends React.Component {
         this.state = {
             title : 'INDECISION APP',
             subtitle: "Put Your Life hands on the Computer",
-            arr: []
+            arr: props.options // THIS IS HOW YOU CAN PASS CUSTOM VALUES TO YOUR MAIN COMPONENT
            
         }
     }
@@ -240,5 +240,6 @@ class ListItems extends React.Component {
 
 }
 
-
-ReactDOM.render(<Main />,document.getElementById('app'));
+// THIS IS HOW YOU CAN PASS CUSTOM VALUES TO YOUR MAIN COMPONENT. HERE WE ARE GIVING USER THE OPTION OF PASSING
+// DEFAULT VALUES FOR OPTIONS ARR TO APPEAR BY DEFAULT.
+ReactDOM.render(<Main options={['seema', 'aryan', 'ryan']}/>,document.getElementById('app'));

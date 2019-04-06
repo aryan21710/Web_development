@@ -34,7 +34,7 @@ var Main = function (_React$Component) {
         _this.state = {
             title: 'INDECISION APP',
             subtitle: "Put Your Life hands on the Computer",
-            arr: []
+            arr: props.options // THIS IS HOW YOU CAN PASS CUSTOM VALUES TO YOUR MAIN COMPONENT
 
         };
         return _this;
@@ -96,14 +96,9 @@ var Main = function (_React$Component) {
             // ARRAY. USING FILTER WE ARE RETURNING FALSE WHENEVER THAT ELEMENT IS ENCOUNTERED DURIG LOOP ITERATION
 
             this.setState(function (prevState) {
-                // return {
-                //     arr : prevState.arr.filter((elem)=> elem!==arrElem)
-                // }
                 return {
-                    arr: prevState.arr.forEach(function (elem) {
-                        if (elem === arrElem) {
-                            elem = false;
-                        }
+                    arr: prevState.arr.filter(function (elem) {
+                        return elem !== arrElem;
                     })
                 };
             });
@@ -328,4 +323,8 @@ var ListItems = function (_React$Component5) {
     return ListItems;
 }(React.Component);
 
-ReactDOM.render(React.createElement(Main, null), document.getElementById('app'));
+// THIS IS HOW YOU CAN PASS CUSTOM VALUES TO YOUR MAIN COMPONENT. HERE WE ARE GIVING USER THE OPTION OF PASSING
+// DEFAULT VALUES FOR OPTIONS ARR TO APPEAR BY DEFAULT.
+
+
+ReactDOM.render(React.createElement(Main, { options: ['seema', 'aryan', 'ryan'] }), document.getElementById('app'));

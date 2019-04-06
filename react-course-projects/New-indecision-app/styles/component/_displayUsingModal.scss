@@ -1,0 +1,48 @@
+ button {
+     margin-top: 7vh;
+    background: purple;
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+    height: 30vh;
+    border: 1px solid red;
+    position: absolute;
+    top: 35vh;
+    left: 25vw;
+    right: 25vw;
+    background: black;
+    color: white;
+    overflow-wrap: anywhere;
+    padding: 2rem;
+}
+
+h3,h4 {
+    margin: 0;
+    padding: 0;
+    font-size : $pAndLi;
+}
+
+.ReactModalPortal>div {
+    opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+
+

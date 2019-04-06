@@ -3,7 +3,7 @@ class Main extends React.Component {
         super(props);    
         // state is an Object which stores the component state (variables) in form of KEY:VALUE pair.
         // state can be changed are mutable unlike props which are immutable. State will be defined in
-        // same COMPONENT which needs to be changed. Props are defined in  parent and passed on to child
+        // same COMPONENT which needs to be changed. Props are defined in parent and passed on to child.
         // if state is defined in component A then from Component b,c .. you cant access the state by
         // doing this.state.varname. To do that make the var as a props , pass it to child component then
         // from child component you can access that var as shown below in Btns component for arr props 

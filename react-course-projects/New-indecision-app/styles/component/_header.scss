@@ -1,0 +1,20 @@
+.header {
+        background: $headerColor;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+}
+
+//#KEYWORDS:- BEM BLOCK ELEMENT MODIFIER (BLOCK IS H1, ELEM IS EVERTHING INSIDE H1
+
+.header__title {
+    font-size: $h1;
+    color: $bodyDefColor;
+}
+
+.header__subtitle {
+     font-size: $h2;
+     color: $bodyDefColor;
+}

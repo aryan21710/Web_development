@@ -1,0 +1,43 @@
+#myForm {
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #334543;
+    width: $contWidth;
+    border: 1px solid white;
+    font-size: 1.5rem;
+    text-align: center;
+}
+
+
+#error {
+    border: 1px solid white;
+    font-size: 2rem;
+    text-align: center;
+    color : $bodyDefColor;
+    width: $contWidth;
+}
+
+
+#myForm button {
+    background: purple;
+    color : $bodyDefColor;
+    height: 43px;
+    margin: 1rem 1.5rem 1rem 1.5rem;
+
+}
+
+ #myForm input {
+     width : 55vw;
+    margin: 1rem;
+     height: 43px;
+     background: $headerColor;
+     color: white;
+     text-align: center;
+     font-size : $pAndLi;
+    margin-left: $marginL;
+
+ }
+
+ 

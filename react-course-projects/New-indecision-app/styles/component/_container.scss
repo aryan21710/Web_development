@@ -1,0 +1,19 @@
+.container {
+    display : flex;
+    justify-content: center;
+    align-items: center;
+    font-size: $pAndLi;
+    flex-direction: column;
+}
+
+
+p,li {
+    font-size: $pAndLi;
+}
+
+button,input {
+    font-size: $btnInp
+}
+
+
+

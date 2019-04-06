@@ -1,0 +1,44 @@
+.btnContainer {
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 1rem;
+    font-size: $pAndLi;
+}
+
+
+#selectOption {
+    background: purple;
+    height: $height;
+    font-size: $h1;
+    color : $bodyDefColor;
+    width: $contWidth;
+    margin-top: 5rem;
+}
+
+.removeAll {
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    background: #443345;
+    height: 50px;
+    font-size: $pAndLi;
+    color : $bodyDefColor;
+    width: $contWidth;
+    margin-top: 5rem;
+    justify-content: space-between;
+}
+
+.removeAll button {
+    height: 4rem;
+          margin: 1rem;
+
+         background: purple;
+    color : $bodyDefColor;
+    padding: 1rem;
+
+}
+
+.removeAll span {
+    margin-left: $marginL;
+}

@@ -1,0 +1,32 @@
+
+
+#displayOption {
+    display : flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background: #334543;
+    width: $contWidth;
+    border: 1px solid white;
+}
+
+ #displayOption p  {
+    
+        margin-left: $marginL;
+        margin-right : $marginL;
+}
+
+#displayOption button {
+    background: purple;
+    color : $bodyDefColor;
+       height: 43px;
+    margin: 1rem;
+}
+
+ 
+
+ #displayOption p {
+     margin-left: $marginL;
+     overflow-wrap: anywhere;
+  
+ }
