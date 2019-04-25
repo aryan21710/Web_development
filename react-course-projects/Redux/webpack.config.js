@@ -1,7 +1,12 @@
 const path=require('path')
-console.log(path.join(__dirname, 'src', 'playground','hoc.js'));
+
 module.exports = {
-    entry: path.join(__dirname, 'src', 'playground','hoc.js'),
+    entry: path.join(__dirname,'src','app.js'),
+    devServer: {
+        publicPath: path.join(__dirname, 'public'),
+        contentBase: path.join(__dirname, 'public'),
+        hot: true
+    },
     output: {
         path: path.join(__dirname, 'public'),
         filename : 'bundle.js'
@@ -22,8 +27,4 @@ module.exports = {
     },
 
     devtool: 'cheap-module-eval-source-map',
-    devServer : {
-        contentBase: path.join(__dirname,'public'),
-        historyApiFallback: true
-    }
 }

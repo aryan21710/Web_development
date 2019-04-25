@@ -22,7 +22,6 @@ const Approutes = ()=>{
                     <Route component={Page404} />
                 </Switch>
             </div>
-
         </BrowserRouter>
     )
     

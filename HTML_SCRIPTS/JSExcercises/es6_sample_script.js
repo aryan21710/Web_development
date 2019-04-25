@@ -22,6 +22,20 @@ console.log(`${n} who is ${mAge} has
 wife named ${w}. She is
 ${hAge} Years old`);
 
+const book= {
+	title:'Da Vinci Code',
+	pages: 300,
+	Author : {
+		sex: 'Male',
+		Name : 'BROWN'
+	}
+}
+
+const {title,pages}=book;
+const {sex,Name,lastname:lname='GORDON'}=book.Author
+console.log(`${Name} ${lname} WROTE ${title} WHICH HAS 
+${pages} pages`);
+
 //2
 // padstart and padlength in a string:- It will add the string element ('-' in below case) or string at 
 // the end of the string till the length of string reaches the specified no (50 in below case.)
@@ -34,7 +48,7 @@ pad('-');
 
 //3]
 
-// DESTRUCTURING ARRAYS:- NORMAL ARRAY CAN BE MADE NAMED ARRAYS.
+// DESTRUCTURING ARRAYS:- NORMAL ARRAY CAN BE MADE NAMED ARRAYS. (array destructuring)
 
 const a=[11,22,33,44]
 const [eleven, twelve, thirteen, fourteen] = [11,22,33,44];
@@ -42,6 +56,15 @@ console.log(`ELEMENTS OF ARRAY'S USING DESTRUCTURING ARRAYS ARE AS FOLLOWS:-
 ${eleven}, ${twelve}, ${thirteen}, ${fourteen}`);
 
 pad('-');
+
+
+//3b] Example for array destructuring:-
+
+const item=['Coffee (hot)','$2.00', '$2.50', '$3.00']
+const [coffee, , MPrice]=item;
+
+console.log(`A Medium "${coffee}" costs "${MPrice}"`);
+
 
 //4 Rest and Spread Operator:-
 
