@@ -2,6 +2,11 @@ const path=require('path')
 
 module.exports = {
     entry: path.join(__dirname,'src','app.js'),
+    devServer: {
+        publicPath: path.join(__dirname, 'public'),
+        contentBase: path.join(__dirname, 'public'),
+        hot: true
+    },
     output: {
         path: path.join(__dirname, 'public'),
         filename : 'bundle.js'

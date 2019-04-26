@@ -4,15 +4,7 @@ import Header from './components/header';
 import {printHeader,information} from './actions/action'
 import store from './store/createStore'
 
-const renderMyApp = () => {
-     ReactDOM.render(<Template title='*MY REDUX BASIC APP*' />, document.getElementById('app'));
-}
-
-store.subscribe(()=>{
-    console.log('STORE SUBSCRIBE IS CALLED');
-    console.log(store.getState());
-    renderMyApp();
-});
+store.subscribe(renderMyApp);
 
 store.dispatch(printHeader());
 
@@ -28,23 +20,30 @@ class Template extends React.Component {
         this.lname=undefined;
         this.printfName=this.printfName.bind(this);
         this.printlName = this.printlName.bind(this);
+
+        
     }
 
 
     printfName() {
         store.dispatch(information());
+
         console.log('fname:-' + store.getState().fname);
         this.fname = store.getState().fname;
-        console.log(this.fname) 
+
+        console.log(this.fname)
+        
     }
 
      printlName() {
         store.dispatch(information());
-        console.log('lname:-' + store.getState().lname);
-        this.lname = store.getState().lname;
-        console.log(this.lname)
-     }
 
+        console.log('lname:-' + store.getState().lname);
+            this.lname = store.getState().lname;
+
+            console.log(this.lname)
+
+     }
     render() {
           return ( 
               <div>
@@ -66,7 +65,9 @@ class Template extends React.Component {
 }
 
 
-
+const renderMyApp= ()=> {
+    return ReactDOM.render(<Template title = '*MY REDUX BASIC APP*'/> , document.getElementById('app'));
+}
 
 renderMyApp();
 

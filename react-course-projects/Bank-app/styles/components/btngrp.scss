@@ -1,0 +1,12 @@
+@import './../base/setting';
+
+#btngrp {
+    display: flex;
+    flex-direction: row;
+}
+
+button {
+    font-size: 25px;
+    width: $btnWidth;
+    background: pink;
+}
