@@ -2,25 +2,30 @@ import {createStore,combineReducers} from 'redux';
 import expenseReducer from '../reducers/expenses';
 import filterReducer from '../reducers/filters';
 
+// export default ()=>{
+//      const store = createStore(
+//          combineReducers({
+//              expense: expenseReducer,
+//              filters: filterReducer,
+//          })
+//      );
+//      return store;
+// }
+
+// USE import import configStore from './store/configStore';
+// const store=configStore();
+
+// OR
 
 
-export default ()=>{
-     const store = createStore(
-         combineReducers({
-             expense: expenseReducer,
-             filters: filterReducer,
-         })
-     );
-     return store;
-}
+     export default createStore(
+        combineReducers({
+            expense: expenseReducer,
+            filters: filterReducer,
+        })
+    );
 
 
-    // export const store = createStore(
-    //     combineReducers({
-    //         expense: expenseReducer,
-    //         filters: filterReducer,
-    //     })
-    // );
-    
-    //      console.log(store.getState());
-
+// expense will be holding the latest expense state which is state.expense
+// filters will be holding the latest filters state which is state.filters
+// REASON being Reducers always return state to the createStore.

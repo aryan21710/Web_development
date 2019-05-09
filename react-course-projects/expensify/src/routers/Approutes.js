@@ -9,6 +9,7 @@ import ExpenseDashboardPage from '../components/ExpenseDashboardPage';
 import Header from '../components/Header';
 
 
+
 const Approutes = ()=>{
     return (
         <BrowserRouter>
@@ -16,9 +17,9 @@ const Approutes = ()=>{
                 <Header />
                 <Switch>
                     <Route path="/" component={ExpenseDashboardPage} exact={true} />
-                    <Route path="/create" component={AddExpensePage} exact={true} />
-                    <Route path="/edit" component={EditExpensePage} exact={true} />
-                    <Route path="/help" component={HelpPage} exact={true} />
+                    <Route path="/create" component={AddExpensePage} />
+                    <Route path="/edit/:id" component={EditExpensePage} />
+                    <Route path="/help" component={HelpPage}/>
                     <Route component={Page404} />
                 </Switch>
             </div>

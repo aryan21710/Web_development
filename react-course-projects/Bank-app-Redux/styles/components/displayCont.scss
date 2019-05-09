@@ -1,0 +1,21 @@
+
+@import './../base/setting';
+
+#displayCont {
+    background: rgba(255, 192, 203, 0.541);
+    border: 1px solid black;
+    width: $compWidth;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    line-height: 1px;
+}
+
+h3 {
+    font-size: 30px
+}
+
+p {
+    font-size: 20px;
+}

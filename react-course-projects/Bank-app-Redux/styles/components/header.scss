@@ -1,0 +1,21 @@
+@import './../base/setting';
+
+#header {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px ;
+}
+
+h1,h3 {
+        text-align: center;
+}
+
+h1 {
+        font-size: 25px;
+}
+
+h2 {
+        font-size: 20px;
+}

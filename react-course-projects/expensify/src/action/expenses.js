@@ -1,12 +1,7 @@
 
 import uuid from 'uuid';
 
-export const addExpense = ({
-    amount = 100,
-    description = '',
-    note = '',
-    createdAt = undefined
-} = {}) => ({
+export const addExpense = ({amount = 100,description = '',note = '',createdAt = undefined} = {}) => ({
     type: 'ADD_EXPENSE',
     expense: {
         id: uuid(),
@@ -17,9 +12,7 @@ export const addExpense = ({
     }
 })
 
-export const removeExpense = ({
-    id
-}) => {
+export const removeExpense = (id) => {
     console.log('id:-' + id);
     return {
         type: 'REMOVE_EXPENSE',
@@ -33,10 +26,10 @@ export const removeAllExpense = () => ({
 })
 
 
-export const editExpense = (id, newAmt) => ({
+export const editExpense = (id, updates)=>({
     type: 'EDIT_EXPENSE',
     id,
-    newAmt,
+    updates
 })
 
 

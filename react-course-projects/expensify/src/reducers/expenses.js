@@ -6,14 +6,11 @@ export default (state = defExpenses, action) => {
         case 'ADD_EXPENSE':
             console.log('ADDING EXPENSE');
             return [...state, action.expense]
-        case 'REMOVE_EXPENSE':
-            console.log('REMOVING ONE EXPENSE:-' + state.length);
-            return {
-                state: state.filter((exp) => {
-                    return exp.id != action.id
-                })
 
-            }
+        case 'REMOVE_EXPENSE':
+            console.log('REMOVING ONE EXPENSE WITH ID:-' +action.id);
+                return state.filter((exp) => exp.id != action.id) 
+                
         case 'REMOVE_ALL':
             console.log('REMOVING ALL EXPENSES');
             return {
@@ -22,19 +19,13 @@ export default (state = defExpenses, action) => {
 
         case 'EDIT_EXPENSE':
             console.log('EDITING THE EXPENSE NOW');
-            return {
-                state: state.map((exp) => {
+            return state.map((exp) => {
                     if (exp.id == action.id) {
-                        return {
-                            ...exp,
-                            ...action.newAmt
-                        }
+                        return {...exp, ...action.updates}
+                    } else {
+                        return exp
                     }
-
-
                 })
-
-            }
 
         default:
             return state;
