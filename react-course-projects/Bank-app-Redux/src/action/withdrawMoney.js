@@ -21,3 +21,11 @@ export const withdraw10k = () => {
 }
 
 
+export const withdraw5k = () => {
+    console.log('withdraw10k action generator is called:-');
+    return ({
+        type: 'WITHDRAW_5K',
+    })
+}
+
+

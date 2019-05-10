@@ -33,6 +33,11 @@ const withdrawReducer = ((state={amount:125000}, action) => {
             return {
                 amount: state.amount-10000
             }
+        case 'WITHDRAW_5K':
+        console.log('INSIDE WITHDRAW_5K SWITCH STATEMENT');
+        return {
+            amount: state.amount - 5000
+        }
         default:
             return state
     }

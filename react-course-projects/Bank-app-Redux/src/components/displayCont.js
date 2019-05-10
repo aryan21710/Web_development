@@ -6,7 +6,7 @@ import {connect} from 'react-redux';
     return ( 
         <div id="displayCont">
             <h3> 
-            {props.amount >= 0 ? props.amount : alert('NO BALANCE')}
+            {props.amount >= 0 ? props.amount : 'LOW BALANCE'}
             </h3> 
             <p> Total Amount </p>
         </div>
