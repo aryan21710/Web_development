@@ -5,31 +5,52 @@ import Header from './components/header';
 import DisplayCont from './components/displayCont';
 import BtnGrp from './components/btngrp';
 import {createStore} from 'redux';
+import {Provider} from 'react-redux';
 
-const amount = 125000;
+// const withdrawReducer=((state,action)=>{
+//     switch (action.type) {
+//         case 'WITHDRAW_10K':
+//         console.log('INSIDE WITHDRAW_10K SWITCH STATEMENT');
+//          state-=action.payload
+//          return state
 
-const reducer=(state={amount},action)=>{
+//             // return {
+//             //     amount: state.amount-10000
+//             // }
+//         default:
+//             return state
+//     }
+// })
+
+// OR
+
+// SOLUTION 2
+
+const withdrawReducer = ((state={amount:125000}, action) => {
     switch (action.type) {
         case 'WITHDRAW_10K':
-        console.log('INSIDE WITHDRAW_10K SWITCH STATEMENT');
+            console.log('INSIDE WITHDRAW_10K SWITCH STATEMENT');
             return {
-                state: state.amount-action.amount
+                amount: state.amount-10000
             }
         default:
-        return state
+            return state
     }
-}
+})
 
-const store = createStore(reducer)
+// const store = createStore(
+//     withdrawReducer,
+//     125000,
+//      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// );
 
-const withdraw10k = () => {
-    console.log('withdraw10k action generator is called');
-    return ({
-        type: 'WITHDRAW_10K',
-        amount
-    })
-}
+// OR 
 
+// SOLUTION 2
+const store = createStore(
+    withdrawReducer,
+     window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
 
 
 
@@ -38,24 +59,24 @@ store.subscribe(()=>{
     console.log('LATEST STATE:-'+JSON.stringify(state));
 })
 
-class Template extends React.Component {
-    render() {
-          return ( 
+const Template=()=>{
+    return ( 
               <div>
                 <Header/>
-                <DisplayCont amt={amount}/>
-                <BtnGrp tenK = {store.dispatch(withdraw10k(amount))}/>
+                <DisplayCont/>
+                <BtnGrp/>
               </div>
           )
-    }
 }
+ 
 
+const jsx=(
+    <Provider store={store}>
+        <Template/>
+    </Provider>
+)
 
-const renderMyApp= ()=> {
-    return ReactDOM.render(<Template/> , document.getElementById('app'));
-}
-
-renderMyApp();
+ReactDOM.render(jsx,document.getElementById('app'));
 
 
 

@@ -1,13 +1,7 @@
 import React from 'react';
 import {connect} from 'react-redux';
-import {
-    setTextFilter,
-    sortByDate,
-    sortByAmount
-} from '../action/filters'
+import {setTextFilter,sortByDate,sortByAmount} from '../action/filters'
 import getStateChanges from '../selectors/getvisiblechanges';
-
-
 
 const ExpenseListInputBox= (props) => {
     return ( 
@@ -29,6 +23,9 @@ const ExpenseListInputBox= (props) => {
     )
 }
 
+// HERE BELOW both expenses and filters are props which gets their values from
+// states. Thats why the child component ExpenseListInputBox gets access to props
+// props.expenses and props.filters.
 const mapStateToProp=(state)=>{
     return {
        expenses: getStateChanges(state.expense, state.filters),

@@ -114,3 +114,33 @@ console.log(`${arr.includes(22)} && ${arr.indexOf(22)}`);
 
 pad('-');
 
+
+//8 Nested object destructuring using spread operator.
+
+const expense=[{
+	description: 'RENT',
+	amount: 10000,
+	note: 'RENT FOR THE MONTH OF APRIL'
+},{
+	description: 'MOVIE',
+	amount: 600,
+	note: 'ENDGAME MOVIE'
+},{
+	description: 'MOBILE BILL',
+	amount: 399,
+	note: '3 MONTHS MOBILE BILL'
+}]
+
+const updateExp=(expense,{...newexp})=>{
+	// console.log(':' + JSON.stringify(exp, null, 4))
+	return expense.filter((exp,ind)=> {
+		if (exp.description===newexp.description) {
+			console.log('MATCH:-' + JSON.stringify(exp, null, 4));
+						return {...exp,...newexp.amount}
+
+
+		}
+	})
+}
+
+console.log('RETURN VALUE:-'+JSON.stringify(updateExp(expense,{description: 'MOBILE BILL',amount: 699})));
