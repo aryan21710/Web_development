@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<head>
+      <link rel="stylesheet" type="text/css" href="index.css" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.0/jquery.js"></script>
+
+</head>
+<body>
+    <main>
+            <div class="newDemo">
+
+            </div>
+    </main>
+
+
+    <script>
+        $('document').ready(function(){      
+
+            const smokeDiv=(parent)=>{
+            $(parent).append('<div id="newDemo"></div>');
+            $("#newDemo").css({marginTop: "50px"});
+            $('#newDemo').addClass('demo');
+            $('#newDemo').append(`<ul id="ulId">`)
+                $('#newDemo ul').css({
+                listStyleType: "none",
+                position: "absolute",
+                bottom: "0vh",
+                left: "200px",
+                transform: "translateX(-50%)",
+                margin: "0",
+                padding: "0",
+                })
+                for(let i=0;i < 9; i++) { $('#newDemo ul').append(`<li>
+                    </li>`);
+                    $('#ulId li').css({
+                    position: "absolute",
+                    borderRadius: "50%",
+                    width: "5.34vw",
+                    height: "10.68vh",
+                    background: "#262626",
+                    })
+
+                    if (i%2==0) {
+                    $("#ulId li:eq("+i+")").css({
+                    animation: 'animEven 2.8s linear infinite',
+                    animationDelay : (i*0.4)+'s'
+                    })
+                    } else {
+                    $("#ulId li:eq("+i+")").css({
+                    animation: 'animOdd 2.8s linear infinite',
+                    animationDelay : (i*0.4)+'s'
+                    })
+
+                    }
+
+                    }
+
+            }      
+
+            smokeDiv('main');
+  
+               
+            // setTimeout(()=>{
+            //                 $('#newDemo ul').addClass('ulCl');
+            // },3000)
+
+        
+        })
+    </script>
+</body>

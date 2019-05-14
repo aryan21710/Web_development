@@ -1,0 +1,85 @@
+:root {
+    --wide: 80vw;
+    
+}
+
+.main {
+        display: flex;
+        justify-content: center;
+        width: 99vw;
+        height: 80vh;
+
+}
+
+.create {
+    width: var(--wide);
+    height: 70vh;
+    background: pink;  
+    padding:20px;
+    box-shadow: 5px 10px grey;
+    color: #3333ff;
+
+}
+
+form {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    justify-content: space-between;
+    width: calc(var(--wide));
+}
+
+.DateInput_input,button {
+    grid-column-start: 1;
+    grid-column-end: 4;
+    color: #3333ff;   
+}
+
+.DateInput_input,.options {
+            text-indent: 1vw;
+
+}
+
+.options {
+     grid-column-start: 5;
+     grid-column-end: 7;
+     color: #3333ff;
+}
+
+.options,
+.DateInput_input,button {
+    height: 40px;
+    background:#99d6ff;
+    line-height: 10px;
+    font-size: 2rem;
+    padding:0;
+        cursor: pointer;
+
+}
+
+textarea {
+    margin: 5vh 0vh 3vh 0vh;
+    grid-column-start: 1;
+    grid-column-end: 7;
+    height: 50vh;
+        font-size: 2.5rem;
+        text-align: left;
+
+
+}
+
+::placeholder {
+    text-align: center;
+    font-size: 2rem;
+        cursor: pointer;
+
+}
+
+button {
+      grid-column-start: 3;
+      grid-column-end: 5;
+      color: #3333ff;
+          cursor: pointer;
+
+}
+
+

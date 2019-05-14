@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+
+        ul {
+            list-style-type: none;
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 0;
+            padding:0;
+        }
+        li {
+            position: absolute;
+            border-radius: 90px;
+            width: 80px;
+            height: 80px;
+            background: #262626;
+        }
+
+        li:nth-child(even) {
+            animation: animEven 2.8s linear infinite
+        }
+
+         li:nth-child(odd) {
+            animation: animOdd 2.8s linear infinite
+        }
+
+        li:nth-child(9) {
+            animation: none;
+            filter: blur(15px);
+        }
+
+
+        @keyframes animEven {
+            0% {
+                transform: translate(0,0) scale(1);
+                opacity:1;
+                filter: blur(5px);
+            }
+
+            100% {
+                transform: translate(100px,-500px) scale(3);
+                opacity:0;
+                filter: blur(10px);
+            }
+        }
+
+         @keyframes animOdd {
+            0% {
+                transform: translate(0,0) scale(1);
+                opacity:1;
+                filter: blur(5px);
+            }
+
+            100% {
+                transform: translate(-100px,-500px) scale(3);
+                opacity:0;
+                filter: blur(10px);
+            }
+        }
+
+        li:nth-child(1) {
+            animation-delay: 0.2s;
+        }
+        li:nth-child(2) {
+            animation-delay: 0.4s;
+        }
+        li:nth-child(3) {
+            animation-delay: 0.8s;
+        }
+        li:nth-child(4) {
+            animation-delay: 1.2s;
+        }
+        li:nth-child(5) {
+            animation-delay: 1.6s;
+        }
+          li:nth-child(6) {
+            animation-delay: 2.0s;
+        }
+
+          li:nth-child(7) {
+            animation-delay: 2.4s;
+        }
+
+          li:nth-child(8) {
+            animation-delay: 2.8s;
+        }
+
+          li:nth-child(9) {
+            animation-delay: 3.2s;
+        }
+
+    </style>
+</head>
+
+<body>
+    <div>
+        <ul>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li> 
+        </ul>
+    </div>
+
+<script>
+
+</script>   
+
+</body>
+
+
+</html>

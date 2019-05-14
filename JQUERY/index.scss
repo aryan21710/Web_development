@@ -1,0 +1,19 @@
+$bg: red;
+$w: 1000px;
+$h: 500px;
+$col: white;
+
+     .demo {
+         background: $bg;
+         width: $w;
+         height: $h;
+         border: 2px solid $bg;
+         position: relative;
+          .ulCl {
+              list-style-type: lower-roman;
+              float: left;
+              color: $col;
+          }
+     }
+
+    
