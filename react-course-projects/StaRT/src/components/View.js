@@ -1,9 +1,20 @@
 import React from 'react';
+import ViewReport from './ViewReport';
+import {connect} from 'react-redux';
 
-export default ()=>{
+
+const View= (props)=>{
     return (
         <div>
-            <h1>View Status Reporting Tool</h1>
+            <ViewReport report={props.report}/>
         </div>
     )
 }
+
+const mapStateToProps=(state)=>{
+    return {
+        report: state.report
+    }
+}
+
+export default connect(mapStateToProps)(View);

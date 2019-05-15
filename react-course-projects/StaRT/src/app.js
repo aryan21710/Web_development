@@ -5,12 +5,14 @@ import '../styles/_style.scss';
 import {Provider} from 'react-redux';
 import {createStore} from 'redux';
 
-const reducer=(state={text:'',category:'',date:''},action)=>{
+const report={text: '', category: '', date: ''}
+const reducer=(state={report},action)=>{
     switch (action.type) {
         case 'VIEW_REP':
         console.log('INSIDE VIEW_REP SWITCH STATEMENT');
         console.log('REPORT:-'+JSON.stringify(action.report));
-            return [...state, action.report]
+        // return Object.assign({},state.report,action.report)
+            return [...state.report, action.report]
         default:
             return state
     }

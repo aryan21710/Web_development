@@ -12,7 +12,9 @@ import moment from 'moment';
             createdAt: moment(),
             calFocussed: true,
             text: '',
-            category:'Choose Category'
+            category:'Choose Category',
+            categoryCnt: 1
+
         }
     }
 
@@ -21,7 +23,9 @@ import moment from 'moment';
         this.props.onSubmit({
              createdAt: this.state.createdAt,
              text: this.state.text,
-            category: this.state.category
+            category: this.state.category,
+            categoryCnt: this.state.categoryCnt
+
         })
     }
 
@@ -44,7 +48,14 @@ import moment from 'moment';
                         </SingleDatePicker>
                         
                         <select class="options" onChange={(e)=>{
-                            this.setState({category:e.target.value})
+                            const fullText=e.target.value;
+                            fullText!='Choose Category' && this.setState({category:fullText})
+                            this.setState({categoryCnt:this.state.categoryCnt+1})
+                            this.setState({
+                                text: this.state.text + '\n' + 
+                                this.state.categoryCnt + ']' + ' ' +
+                                fullText.toUpperCase() + ':-\n'
+                            })
                         }}>
                             <option value="React">React</option>
                             <option value="Javascript">Javascript</option>
@@ -54,7 +65,6 @@ import moment from 'moment';
                         </select>
 
                         <textarea placeholder="ENTER STATUS REPORT" value={this.state.text} onInput={(e)=>{
-                        
                              this.setState({text: e.target.value})
                         }}>
                         </textarea>
