@@ -15,7 +15,7 @@ export const Approutes=()=>{
             <Header/>
             <Switch>
                 <Route path ='/' component={Create} exact={true}/>
-                <Route path='/view' component={View} exact={true}/>
+                <Route path='/view' component={View}/>
                 <Route component={PagenotFound}/>
             </Switch>
             </div>

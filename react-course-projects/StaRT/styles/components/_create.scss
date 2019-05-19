@@ -1,18 +1,21 @@
 :root {
-    --wide: 80vw;
+    --w: 1000px;
+    --h: 20vh;
     
 }
-
+* {
+    box-sizing: border-box;
+}
+/* width:var(--w) not working under .create and .myform*/
 .main {
-        display: flex;
-        justify-content: center;
+    display: flex;
+    justify-content: center;
         width: 99vw;
         height: 80vh;
-
 }
 
 .create {
-    width: var(--wide);
+    width: 90%;
     height: 70vh;
     background: pink;  
     padding:20px;
@@ -21,65 +24,85 @@
 
 }
 
-form {
+.myForm {
     display: grid;
-    grid-template-columns: auto auto auto auto auto auto;
-    justify-content: space-between;
-    width: calc(var(--wide));
+    grid-template-rows: 10vh 50vh;
+    grid-gap: 2vh;
+    grid-template-columns: 1fr;
 }
 
-.DateInput_input,button {
-    grid-column-start: 1;
-    grid-column-end: 4;
-    color: #3333ff;   
+.addRepDiv {
+    display: grid;  
+    grid-template-columns: minmax(50px,10vw) minmax(50px,10vw) minmax(200px,59vw) minmax(10px,3vw);
+    align-items: center;
+    grid-gap: 1vw;
+    width: 100%;
 }
 
-.DateInput_input,.options {
-            text-indent: 1vw;
-
+.submitRepDiv {
+    display: grid;
+    grid-template-rows: 44vh 5vh;
+    justify-content: center;
+    grid-row-gap: 4vh;
 }
 
-.options {
-     grid-column-start: 5;
-     grid-column-end: 7;
-     color: #3333ff;
-}
 
 .options,
-.DateInput_input,button {
-    height: 40px;
+.DateInput_input,
+.btn1,
+.DateInput, .DateInput_1 {
     background:#99d6ff;
     line-height: 10px;
     font-size: 2rem;
     padding:0;
-        cursor: pointer;
+    cursor: pointer;
+    color: #3333ff;
+    height: calc(var(--h)/4);
+    
+}
+
+.textarea1:focus, .textarea1:focus {
+    background: #cccccc;
+}
+
+.btn2 {
+    width: 80vw;
+    display: flex;
+    justify-content: center;
+     
+
+} 
+
+.btn2 button {
+   background:#99d6ff;
+   font-size: 2rem;
+   cursor: pointer;
+   color: #3333ff;
+ 
+}
+
+
+.textarea1 {
+    font-size: 2rem;
+    text-align: left;
+    height: calc(var(--h)/4);
+}
+
+.textarea2 {
+    font-size: 2rem;
+    text-align: left;
+   width: 80vw;
 
 }
 
-textarea {
-    margin: 5vh 0vh 3vh 0vh;
-    grid-column-start: 1;
-    grid-column-end: 7;
-    height: 50vh;
-        font-size: 2.5rem;
-        text-align: left;
 
-
-}
 
 ::placeholder {
     text-align: center;
     font-size: 2rem;
-        cursor: pointer;
+    cursor: pointer;
 
 }
 
-button {
-      grid-column-start: 3;
-      grid-column-end: 5;
-      color: #3333ff;
-          cursor: pointer;
-
-}
 
 
