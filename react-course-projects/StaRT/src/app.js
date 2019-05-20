@@ -7,12 +7,10 @@ import { createStore } from "redux";
 
 const report = {
   createdAt: "",
-  category: "",
-  text: "",
-  fullData: "",
+  category: {},
   categoryCnt: 0
 };
-const reducer = (state = { report }, action) => {
+const reducer = (state = [report ], action) => {
   switch (action.type) {
     case "VIEW_REP":
       console.log("INSIDE VIEW_REP SWITCH STATEMENT");

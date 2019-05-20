@@ -16,17 +16,6 @@ store.subscribe(()=>{
      console.log('LATEST STATE:-'+JSON.stringify(state,null,4));
 
      const visibleChanges = getStateChanges(state.expense, state.filters);
-    //  console.log('LATEST visibleChanges:-' + JSON.stringify(visibleChanges, null, 4));
-        // if (visibleChanges != undefined) {
-        //     console.log('SETTING FILTER ');
-        //     Object.keys(visibleChanges).length > 0 ?
-        //         console.log('FILTERED DATA:-' + JSON.stringify(visibleChanges, null, 4)) :
-        //         console.log('NO FILTERED DATA FOUND');
-        //     console.log(store.getState());
-        // } else {
-        //         console.log(store.getState());
-
-        // }
 })
 
 store.dispatch(addExpense({amount: 1000, description: 'Mobile Bill', note:

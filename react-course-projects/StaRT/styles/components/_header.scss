@@ -9,9 +9,28 @@
     padding:0;
     // border: 2px solid red;
 }
+.logoHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+img {
+    width: 70px;
+    height: 40px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+h1 {
+        padding: 5px 20px;
+        color: white;
+        font-size: 30px;
+        text-shadow:2px 2px pink;
+}
 
 .navLinks {
-    margin-top: 6vh;
+    margin-top: 3vh;
    
 }
  

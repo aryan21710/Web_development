@@ -3,19 +3,26 @@ import { SingleDatePicker } from "react-dates";
 import "react-dates/lib/css/_datepicker.css";
 import "react-dates/initialize";
 import moment from "moment";
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 
 export default class StatusForm extends React.Component {
   constructor(props) {
     super(props);
     this.userText = "";
     this.state = {
-      createdAt: moment(),
-      calFocussed: false,
-      category: "Miscellaneous",
-      text: "",
-      fullData: "",
-      categoryCnt: 1
-    };
+		createdAt: moment(),
+		calFocussed: false,
+		categoryObj: {},
+		categoryCnt: 1,
+		category: 'Miscellaneous',
+		text: '',
+		data: [{
+			date: '',
+			category: '',
+			status: '',
+		}],
+	};
   }
 
   Submit = e => {
@@ -23,6 +30,21 @@ export default class StatusForm extends React.Component {
   };
 
   render() {
+	   const columns = [
+			{
+				Header: 'Date',
+				accessor: 'date', // String-based value accessors!
+			},
+			{
+				Header: 'Category',
+				accessor: 'category',
+			},
+			{
+				Header: 'Status',
+				accessor: 'status',
+			},
+		];
+					
     return (
 		<div className="main">
 			<div className="create">
@@ -62,8 +84,9 @@ export default class StatusForm extends React.Component {
 
 						<textarea
 							className="textarea1"
-							placeholder="ENTER STATUS REPORT"
+							placeholder="ENTER WORK DONE"
 							value={this.state.text}
+							name="textElm"
 							onInput={e => {
 								this.setState({
 									text: e.target.value,
@@ -73,25 +96,34 @@ export default class StatusForm extends React.Component {
 						/>
 						<button
 							className="btn1"
-							onClick={() => {
-								console.log(JSON.stringify(this.state.fullData, null, 4));
-								if (this.state.text.length > 0) {
+							onClick={e => {
+								if (this.state.text.length > 0 && this.state.text != '') {
 									this.setState({
 										categoryCnt: this.state.categoryCnt + 1,
-
-										fullData:
-											this.state.fullData +
-											this.state.categoryCnt +
-											']' +
-											this.state.category +
-											':--' +
-											this.state.text +
-											'\n\n',
 									});
+									const categ = this.state.category;
+									const text = this.state.text;
+									console.log('text:-' + text);
+									const obj1 = {};
+									obj1[categ] = text;
+
+									this.setState({
+										categoryObj: Object.assign({}, this.state.categoryObj, obj1),
+									});
+									console.log(JSON.stringify(this.state.categoryObj, null, 4));
 
 									this.setState({
 										text: '',
 									});
+									let dataobj = {
+										date: this.state.createdAt.format('MMM Do YYYY'),
+										category: this.state.category,
+										status: this.state.text,
+									};
+									this.setState({
+										data: this.state.data.concat(dataobj),
+									});
+									console.log('NEW DATA:-' + JSON.stringify(this.state.data, null, 4));
 								} else {
 									alert('NO STATUS REPORT ENTERED');
 								}
@@ -103,8 +135,17 @@ export default class StatusForm extends React.Component {
 					</div>
 
 					<div className="submitRepDiv">
-						<textarea disabled className="textarea2" value={this.state.fullData.toUpperCase()} />
-
+						<ReactTable
+							className="-striped -highlight"
+							data={this.state.data}
+							columns={columns}
+							defaultSorted={[
+								{
+									id: 'this.state.category',
+									desc: true
+								},
+							]}
+						/>
 						<div className="btn2">
 							<button
 								onClick={() => {
@@ -112,7 +153,7 @@ export default class StatusForm extends React.Component {
 										createdAt: this.state.createdAt,
 										category: this.state.category,
 										text: this.state.text,
-										fullData: this.state.fullData,
+										categoryObj: this.state.categoryObj,
 										categoryCnt: this.state.categoryCnt,
 									});
 								}}

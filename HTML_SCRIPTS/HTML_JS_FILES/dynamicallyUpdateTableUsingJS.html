@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			:root {
+				--w: 200px;
+				--h: 60px;
+				--bg: grey;
+			}
+
+			body {
+				background: var(--bg);
+			}
+			table,
+			th,
+			td {
+				border: 1px solid black;
+			}
+
+			th {
+				width: var(--w);
+				height: var(--h);
+			}
+
+			td {
+				height: calc(var(--h) / 2);
+				color: white;
+				font-size: 25px;
+			}
+		</style>
+	</head>
+	<body onload="basicTableSetup()">
+		<main>
+			<form>
+				<input onInput="enterText(event)" />
+			</form>
+			<table style="width:100%"></table>
+		</main>
+
+		<script>
+			// #KEYWORDS:- [dynamiically create table , tr and td and update its contents]
+			let text = '';
+			const myTable = document.querySelector('table');
+			const basicTableSetup = () => {
+				myTable.innerHTML = `
+					<tr>
+					<th>Date</th>
+					<th>Category</th>
+					<th>Report</th>
+				</tr>
+				`;
+			};
+
+			const createTr = () => {
+				document.querySelector('main').appendChild(myTable);
+				myTable.innerHTML += `
+					<tr>
+					<th></th>
+					<th></th>
+					<th></th>
+				</tr>`;
+			};
+			// const data = [{ date: '01/5/207' }, { category: { REACT: 'REDUX', JS: 'ES6', RESUME: 'GITHUB COMMIT' } }];
+			const data= [{
+	"date":"2019-05-15T12:23:59.970Z"},{"category":{JAVASCRIPT : "es6" , REACT:"redux", CSS:"darkcode"}}]
+
+
+			const fillDataInTable = () => {
+				createTr();
+				const l = document.querySelectorAll('table tr').length - 1;
+				myTable.rows[l].cells[0].innerHTML = data[0]['date'];
+				for (let i in data[1]['category']) {
+					myTable.rows[l].cells[1].innerHTML = i;
+					myTable.rows[l].cells[2].innerHTML = data[1]['category'][i];
+				}
+			};
+
+			const enterText = event => {
+				event.preventDefault();
+				text = event.target.value;
+				event.target.value = '';
+				fillDataInTable();
+			};
+		</script>
+	</body>
+</html>
