@@ -1,7 +1,9 @@
 import React from 'react';
 import {NavLink} from 'react-router-dom';
 
+
 export default ()=>{
+
     return (
 		<div className="header">
 			<div className="logoHeader">

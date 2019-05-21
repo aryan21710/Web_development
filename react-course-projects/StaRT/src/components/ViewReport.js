@@ -1,15 +1,49 @@
 import React from 'react';
+import ReactTable from 'react-table';
+import 'react-table/react-table.css';
 
 export default class ViewReport extends React.Component {
-    constructor(props) {
-        super(props)
-    }
-    displayReport=()=>{
-            console.log('this.props.report.category:-' + JSON.stringify(this.props.report.category));
-            return (this.props.report.fullData ? JSON.stringify(this.props.report) : '')
-    }
+	constructor(props) {
+		super(props);
+	}
+	displayReport = () => {
+		return this.props.report.data ? JSON.stringify(this.props.report.data) : '';
+	};
 	render() {
-       console.log('4:-' + JSON.stringify(this.props.report));
+		console.log('4:-' + JSON.stringify(this.props.report.data));
+		let displayData = [];
+
+		if (localStorage.getItem('data')) {
+			displayData = displayData.concat(JSON.parse(localStorage.getItem('data')));
+			if (this.props.report.data) {
+				console.log('2] LOCALSTORAGE AND PROPS.DATA');
+				this.props.report.data.forEach(v => {
+					console.log('v:-' + JSON.stringify(v));
+					displayData.push(v);
+				});
+			}
+		} else {
+			console.log('1] NO LOCALSTORAGE BUT PROPS.DATA');
+			if (this.props.report.data) displayData = this.props.report.data;
+		}
+		
+    localStorage.setItem('data', JSON.stringify(displayData));
+		
+		
+		const columns = [
+			{
+				Header: 'Date',
+				accessor: 'date', // String-based value accessors!
+			},
+			{
+				Header: 'Category',
+				accessor: 'category',
+			},
+			{
+				Header: 'Status',
+				accessor: 'status',
+			},
+		];
 
 		return (
 			<div className="mainView">
@@ -20,11 +54,45 @@ export default class ViewReport extends React.Component {
 							<option value="sort_date">SORT_BY_DATE</option>
 							<option value="sort_category">SORT_BY_CATEGORY</option>
 						</select>
-						<textarea className="textAreaView" value={this.displayReport()}/>
-                        }}/>
+						<ReactTable
+							className="-striped -highlight textAreaView"
+							data={displayData}
+							columns={columns}
+							defaultSorted={[
+								{
+									id: 'this.state.category',
+									desc: true,
+								},
+							]}
+						/>
+						}}/>
 					</div>
 				</div>
 			</div>
 		);
 	}
 }
+
+// if (localStorage.data) {
+// 			console.log('LOCALSTORAGE IF BLOCK 1:-' + localStorage.data);
+// 			localStorage.setItem('data',JSON.stringify())
+// 				this.props.report.data.forEach((rep)=> {
+// 					console.log('rep:-'+JSON.stringify(rep));
+// 					localStorage.data=localStorage.data.concat(JSON.stringify(rep));
+// 								console.log(
+// 									'LOCALSTORAGE IF BLOCK 2:-' + localStorage.data
+// 								);
+
+// 				})
+// 			} else {
+// 				console.log(this.props.report.data[0]);
+// 				localStorage.data = JSON.stringify(this.props.report.data);
+// 			}
+
+// 			console.log('LOCALSTORAGE:-'+localStorage.data)
+
+// 			const displayData=[]
+
+// for (let i in localStorage.data) displayData.push(JSON.parse(localStorage.data[i]))
+
+// console.log('DISPLAYDATA:-'+displayData);

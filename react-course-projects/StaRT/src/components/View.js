@@ -4,7 +4,7 @@ import {connect} from 'react-redux';
 
 
 const View= (props)=>{
-    console.log('2:-' + JSON.stringify(props));
+    // console.log('2:-' + JSON.stringify(props));
     return (
         <div>
             <ViewReport report={props.report}/>
@@ -13,7 +13,7 @@ const View= (props)=>{
 }
 
 const mapStateToProps=(state)=>{
-    console.log('1:-'+JSON.stringify(state))
+    // console.log('1:-'+JSON.stringify(state))
     return {
         report: state
     }

@@ -8,7 +8,15 @@ import { createStore } from "redux";
 const report = {
   createdAt: "",
   category: {},
-  categoryCnt: 0
+  categoryCnt: 0,
+	categoryObj: {},
+	category: 'Miscellaneous',
+	text: '',
+		data: [{
+			date: '',
+			category: '',
+			status: '',
+		}],
 };
 const reducer = (state = [report ], action) => {
   switch (action.type) {
@@ -35,3 +43,43 @@ const jsx = (
 );
 
 ReactDOM.render(jsx, document.getElementById("app"));
+
+// ***********************************************
+
+
+
+    
+
+  //   if (this.props.report.data) {
+	// 	if (localStorage.getItem('data')) {
+	// 		console.log('LOCALSTORAGE AND PROPS.DATA');
+
+	// 		displayData = this.props.report.data.map(v => {
+	// 			console.log('v:-' + JSON.stringify(v));
+	// 			console.log(JSON.parse(localStorage.getItem('data')));
+	// 			return displayData.concat(JSON.parse(localStorage.getItem('data'), v));
+	// 		});
+	// 	} else {
+	// 		console.log('NO LOCALSTORAGE BUT PROPS.DATA');
+	// 		displayData = this.props.report.data;
+	// 	}
+
+	// 	console.log('displayData:-' + displayData);
+
+	// 	localStorage.setItem('data', JSON.stringify(this.props.report.data));
+	// } else if (localStorage.getItem('data')) {
+	// 	if (this.props.report.data) {
+	// 		console.log('LOCALSTORAGE AND PROPS.DATA');
+
+	// 		displayData = this.props.report.data.map(v => {
+	// 			return displayData.concat(JSON.parse(localStorage.getItem('data')), v);
+	// 		});
+	// 	} else {
+	// 		console.log('ONLY LOCALSTORAGE');
+	// 		displayData = displayData.concat(JSON.parse(localStorage.getItem('data')));
+	// 	}
+
+	// 	console.log('displayData:-' + JSON.stringify(displayData));
+
+	// 	localStorage.setItem('data', JSON.stringify(displayData));
+	// }

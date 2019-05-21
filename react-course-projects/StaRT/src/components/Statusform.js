@@ -17,11 +17,7 @@ export default class StatusForm extends React.Component {
 		categoryCnt: 1,
 		category: 'Miscellaneous',
 		text: '',
-		data: [{
-			date: '',
-			category: '',
-			status: '',
-		}],
+		data: [],
 	};
   }
 
@@ -98,6 +94,7 @@ export default class StatusForm extends React.Component {
 							className="btn1"
 							onClick={e => {
 								if (this.state.text.length > 0 && this.state.text != '') {
+									console.log('ADD REPORT NOW');
 									this.setState({
 										categoryCnt: this.state.categoryCnt + 1,
 									});
@@ -120,10 +117,14 @@ export default class StatusForm extends React.Component {
 										category: this.state.category,
 										status: this.state.text,
 									};
+
+									console.log('DATAOBJ:-' + JSON.stringify(dataobj, null, 4));
+
+
 									this.setState({
-										data: this.state.data.concat(dataobj),
+										 data:this.state.data.concat(dataobj)
 									});
-									console.log('NEW DATA:-' + JSON.stringify(this.state.data, null, 4));
+									console.log('NEW DATA NOW:-' + JSON.stringify(this.state.data, null, 4));
 								} else {
 									alert('NO STATUS REPORT ENTERED');
 								}
@@ -151,10 +152,12 @@ export default class StatusForm extends React.Component {
 								onClick={() => {
 									this.props.onSubmit({
 										createdAt: this.state.createdAt,
-										category: this.state.category,
-										text: this.state.text,
+										calFocussed: this.state.calFocussed,
 										categoryObj: this.state.categoryObj,
 										categoryCnt: this.state.categoryCnt,
+										category: this.state.category,
+										text: this.state.text,
+										data: this.state.data
 									});
 								}}
 							>
