@@ -73,26 +73,3 @@ export default class ViewReport extends React.Component {
 	}
 }
 
-// if (localStorage.data) {
-// 			console.log('LOCALSTORAGE IF BLOCK 1:-' + localStorage.data);
-// 			localStorage.setItem('data',JSON.stringify())
-// 				this.props.report.data.forEach((rep)=> {
-// 					console.log('rep:-'+JSON.stringify(rep));
-// 					localStorage.data=localStorage.data.concat(JSON.stringify(rep));
-// 								console.log(
-// 									'LOCALSTORAGE IF BLOCK 2:-' + localStorage.data
-// 								);
-
-// 				})
-// 			} else {
-// 				console.log(this.props.report.data[0]);
-// 				localStorage.data = JSON.stringify(this.props.report.data);
-// 			}
-
-// 			console.log('LOCALSTORAGE:-'+localStorage.data)
-
-// 			const displayData=[]
-
-// for (let i in localStorage.data) displayData.push(JSON.parse(localStorage.data[i]))
-
-// console.log('DISPLAYDATA:-'+displayData);

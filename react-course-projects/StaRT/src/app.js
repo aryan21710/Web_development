@@ -1,6 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { Approutes } from "../src/routers/Approutes";
+import Approutes  from "./routers/Approutes";
+import 'normalize.css/normalize.css';
 import "../styles/_style.scss";
 import { Provider } from "react-redux";
 import { createStore } from "redux";
@@ -44,42 +45,3 @@ const jsx = (
 
 ReactDOM.render(jsx, document.getElementById("app"));
 
-// ***********************************************
-
-
-
-    
-
-  //   if (this.props.report.data) {
-	// 	if (localStorage.getItem('data')) {
-	// 		console.log('LOCALSTORAGE AND PROPS.DATA');
-
-	// 		displayData = this.props.report.data.map(v => {
-	// 			console.log('v:-' + JSON.stringify(v));
-	// 			console.log(JSON.parse(localStorage.getItem('data')));
-	// 			return displayData.concat(JSON.parse(localStorage.getItem('data'), v));
-	// 		});
-	// 	} else {
-	// 		console.log('NO LOCALSTORAGE BUT PROPS.DATA');
-	// 		displayData = this.props.report.data;
-	// 	}
-
-	// 	console.log('displayData:-' + displayData);
-
-	// 	localStorage.setItem('data', JSON.stringify(this.props.report.data));
-	// } else if (localStorage.getItem('data')) {
-	// 	if (this.props.report.data) {
-	// 		console.log('LOCALSTORAGE AND PROPS.DATA');
-
-	// 		displayData = this.props.report.data.map(v => {
-	// 			return displayData.concat(JSON.parse(localStorage.getItem('data')), v);
-	// 		});
-	// 	} else {
-	// 		console.log('ONLY LOCALSTORAGE');
-	// 		displayData = displayData.concat(JSON.parse(localStorage.getItem('data')));
-	// 	}
-
-	// 	console.log('displayData:-' + JSON.stringify(displayData));
-
-	// 	localStorage.setItem('data', JSON.stringify(displayData));
-	// }

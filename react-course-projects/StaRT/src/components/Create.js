@@ -8,6 +8,7 @@ const Create=(props)=>{
         <div>
             <StatusForm onSubmit={(report)=>{
                 props.dispatch(ViewRep(report))
+                props.history.push('/view');
             }}/>
         </div>
     )

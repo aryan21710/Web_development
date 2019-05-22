@@ -23,9 +23,9 @@ img {
 }
 
 h1 {
-        padding: 5px 20px;
+        padding: 1vh 2vw;
         color:black;
-        font-size: 30px;
+        font-size: 3rem;
         text-shadow:2px 2px pink;
 }
 
@@ -40,9 +40,34 @@ a:first-child {
 
 a.is-active button, a button {
         margin: 0;
-        padding:0;
-        font-size: 25px;
-        width: 10vw;
-        height: 5vh;
-        border: 2px solid pink;
+        padding:10px;
+        font-size: 2rem;
+        width: 13vw;
+        height: 6vh;
+        text-decoration: none;
+        border: 2px solid  #e60099;
+        text-align:center;
 }
+
+
+@media screen and (max-width:600px) {
+   
+    h1 {
+        font-size: 1.5rem;
+        padding:0;
+
+    }
+
+    a.is-active button, a button  {
+        font-size: 1.5rem;
+        width: 20vw;
+        height: 5vh;
+        padding-bottom: 10px
+    }
+
+    img {
+        width: 50px;
+        height: 30px;
+    }
+}
+

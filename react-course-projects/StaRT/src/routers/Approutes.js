@@ -1,14 +1,14 @@
 
 import React from 'react';
-import {BrowserRouter, Link, Switch, Route} from 'react-router-dom'; 
-import Header from '../../src/components/Header';
-import Create from '../../src/components/Create';
-import View from '../../src/components/View';
+import { BrowserRouter, Route, link, NavLink, Switch } from 'react-router-dom';
+import Header from '../components/Header';
+import Create from '../components/Create';
+import View from '../components/View';
 import PagenotFound from '../../src/components/PagenotFound';
 
 
 
-export const Approutes=()=>{
+ const Approutes=()=>{
     	var mainBg = require('./../../public/images/mainBg.jpg');
 		var bannerStyle = {
 			background: 'url(' + mainBg + ')',
@@ -31,3 +31,5 @@ export const Approutes=()=>{
 		</BrowserRouter>
 	);
 }
+
+export default Approutes

@@ -10,11 +10,11 @@ export default ()=>{
 				<img src={require('./../../public/images/mylogo.png')} /> <h1>StaRt.. A Status Reporting Tool</h1>
 			</div>
 			<div className="navLinks">
-				<NavLink to="/" activeClassName="is-active" exact={true}>
-					<button>Create</button>
+				<NavLink to='/' activeClassName='is-active' activeStyle={{ color: 'red' }} exact={true}>
+					<button>ADD</button>
 				</NavLink>
-				<NavLink to="/View" activeClassName="is-active">
-					<button>View</button>
+				<NavLink to='/view' activeClassName='is-active' activeStyle={{ color: 'red' }}>
+					<button>VIEW</button>
 				</NavLink>
 			</div>
 		</div>

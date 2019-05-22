@@ -9,7 +9,8 @@ import 'react-table/react-table.css';
 export default class StatusForm extends React.Component {
   constructor(props) {
     super(props);
-    this.userText = "";
+	this.userText = "";
+	this.submitBtn=true;
     this.state = {
 		createdAt: moment(),
 		calFocussed: false,
@@ -113,13 +114,13 @@ export default class StatusForm extends React.Component {
 										text: '',
 									});
 									let dataobj = {
-										date: this.state.createdAt.format('MMM Do YYYY'),
+										date: this.state.createdAt.format('LL'),
 										category: this.state.category,
 										status: this.state.text,
 									};
 
 									console.log('DATAOBJ:-' + JSON.stringify(dataobj, null, 4));
-
+									this.submitBtn=false;
 
 									this.setState({
 										 data:this.state.data.concat(dataobj)
@@ -148,17 +149,21 @@ export default class StatusForm extends React.Component {
 							]}
 						/>
 						<div className="btn2">
-							<button
+							<button 
 								onClick={() => {
-									this.props.onSubmit({
-										createdAt: this.state.createdAt,
-										calFocussed: this.state.calFocussed,
-										categoryObj: this.state.categoryObj,
-										categoryCnt: this.state.categoryCnt,
-										category: this.state.category,
-										text: this.state.text,
-										data: this.state.data
-									});
+									if (this.submitBtn)
+                                     alert('PLEASE ENTER STATUS, ADD REPORT TO PROCEED WITH SUBMIT')
+									if (this.state.category && this.state.text) {
+											this.props.onSubmit({
+												createdAt: this.state.createdAt,
+												calFocussed: this.state.calFocussed,
+												categoryObj: this.state.categoryObj,
+												categoryCnt: this.state.categoryCnt,
+												category: this.state.category,
+												text: this.state.text,
+												data: this.state.data,
+											});
+									}
 								}}
 							>
 								Submit Report

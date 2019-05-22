@@ -7,7 +7,7 @@ const View= (props)=>{
     // console.log('2:-' + JSON.stringify(props));
     return (
         <div>
-            <ViewReport report={props.report}/>
+            <ViewReport report={props.report}/>   
         </div>
     )
 }
